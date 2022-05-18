@@ -1,80 +1,45 @@
+#include "Statechart.hpp"
 
+// // void Statechart::luz(){
 
-class Statechart
-{
-public:
-    Statechart();
+// // };
 
-    virtual ~Statechart();
+// Statechart::Statechart()
+// {
+// }
+// Statechart::~Statechart()
+// {
+// }
+// // Statechart::Pir::Pir(Statechart *parent) : ON_raised(false),
+// //                                            OFF_raised(false),
+// //                                            parent(parent)
+// // {
+// // }
+// // Statechart::Luz::Luz()
+// // {
+// // }
+// bool Statechart::Luz::isRaisedOFF()
+// {
+//     return this->luzStatus == false;
+// };
 
-public:
-    class Luz
-    {
+// bool Statechart::Luz::isRaisedON()
+// {
 
-    public:
-        bool luzStatus;
+//     return this->luzStatus == true;
+// };
 
-        Luz()
-        {
-            this->luzStatus = true;
-        }
-        bool isRaisedOFF()
-        {
-            //  Serial.println("na classe luz ");
-            // this->luzStatus = true;
+// bool Statechart::Pir::raiseOFF()
+// {
+//     return this->pirStatus == false;
+// };
 
-            return luzStatus == false;
-        };
-        bool isRaisedON()
-        {
+// bool Statechart::Pir::raiseON()
+// {
 
-            return this->luzStatus == true;
-        };
-    };
+//     return this->pirStatus == true;
+// };
 
-    // public:
-    class Pir
-    {
-
-        bool pirStatus;
-
-    public:
-        bool raiseON()
-        {
-
-            return this->pirStatus == true;
-        };
-
-        bool raiseOFF()
-        {
-            return this->pirStatus == false;
-        };
-    };
-
-public:
-    Luz *luz = new Luz();
-
-    Pir *pir = new Pir;
-
-public:
-    void enter()
-    {
-        luz->luzStatus = false;
-    }
-    // virtual void enter();
-    int getCount();
-    // private:
-    //     bool luzStatus;
-    //     bool pirStatus;
-
-    // public:
-    //     void enter();
-    //     // Statechart *luz();
-    //     // bool isRaisedOFF();
-    //     // bool isRaisedON();
-
-    //     // Statechart *pir();
-    //     // bool raiseON();
-    //     // bool raiseOFF();
-    //     int getCount();
-};
+// // void Statechart::enter()
+// // {
+// // }
