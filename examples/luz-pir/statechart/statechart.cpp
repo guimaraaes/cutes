@@ -1,3 +1,6 @@
+#ifndef STATECHART_H_INCLUDED
+#define STATECHART_H_INCLUDED
+
 class Statechart
 {
 
@@ -6,9 +9,11 @@ public:
     {
     public:
         bool luzStatus;
-        Luz()
+        Luz(){};
+        void set(bool value)
         {
-        }
+            luzStatus = value;
+        };
         bool isRaisedOFF()
         {
             return luzStatus == false;
@@ -21,30 +26,34 @@ public:
 
     class Pir
     {
-        bool pirStatus;
+        bool pirStatus = true;
 
     public:
-        Pir()
+        Pir(){};
+        void set(bool value)
         {
-            pirStatus = false;
-        }
-        bool raiseON()
-        {
-            this->pirStatus = true;
-            return this->pirStatus == true;
+            pirStatus = value;
         };
-
-        bool raiseOFF()
+        void raiseON()
         {
-            return this->pirStatus == false;
+
+            while (this->pirStatus == false)
+            {
+            };
+        };
+        void raiseOFF()
+        {
+            while (this->pirStatus == true)
+            {
+            };
         };
     };
 
     Luz *luz;
     Pir *pir;
-    void enter(bool t)
+    void enter()
     {
-        luz->luzStatus = t;
+        // luz->luzStatus = t;
     }
 
     int getCount();
@@ -68,3 +77,4 @@ private:
     static Statechart *statechart;
 };
 Statechart *Statechart::statechart = 0;
+#endif

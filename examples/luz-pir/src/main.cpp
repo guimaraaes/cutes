@@ -1,14 +1,15 @@
 
-#include "../arduino/arduino.cpp"
+// #include "../arduino/arduino.cpp"
+// Arduino *arduino;
+
 #include "../test/test.cpp"
-Arduino *arduino;
 StatechartTest *statecharttest;
+
 void setup()
 {
-  Serial.begin(115200);
-
   // put your setup code here, to run once:
-  arduino->setupArduino();
+  Serial.begin(115200);
+  // arduino->setupArduino();
   statecharttest->setupTeste();
   // setupTeste();
 }
@@ -16,7 +17,7 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-  arduino->loopArduino();
+  // arduino->loopArduino();
   statecharttest->loopTeste();
   // Test::run();
 }

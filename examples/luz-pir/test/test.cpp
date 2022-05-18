@@ -1,5 +1,10 @@
+#include "../arduino/arduino.cpp"
+Arduino *arduino;
+
 #include <ArduinoUnit.h>
-#include "../statechart/Statechart.hpp"
+
+#include "../statechart/statechart.cpp"
+Statechart *statechart = Statechart::get();
 
 class StatechartTest : public Test
 {
@@ -7,30 +12,31 @@ class StatechartTest : public Test
 public:
   void setupTeste()
   {
+    arduino->setupArduino();
   }
   void loopTeste()
   {
+    // arduino->loopArduino(statechart);
+
     Test::run();
   }
 };
 
-Statechart *statechart = Statechart::get();
 test(testLuzInitOFF)
 {
-  statechart->enter(true);
+  arduino->loopArduino(statechart);
 
+  statechart->enter();
   assertTrue(statechart->luz->isRaisedOFF());
 }
 
 test(testSinalPIR_SinalLuz)
 {
+  arduino->loopArduino(statechart);
 
-  statechart->enter(true);
+  statechart->enter();
   statechart->pir->raiseON();
-
   assertTrue(statechart->luz->isRaisedON());
   statechart->pir->raiseOFF();
-  // instance2->enter(false);
-
   assertTrue(statechart->luz->isRaisedOFF());
 }

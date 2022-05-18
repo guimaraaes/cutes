@@ -1,9 +1,9 @@
 #include <Arduino.h>
 const int pinoPIR = 3;
 const int pinoLED = 13;
-// int ledStatus;
-// #include "../statechart/Statechart.hpp"
-// Statechart *statechart;
+
+#include "../statechart/statechart.cpp"
+// Statechart *statechart = Statechart::get();
 
 class Arduino
 {
@@ -16,22 +16,25 @@ public:
     pinMode(pinoPIR, INPUT);
   }
 
-  void loopArduino()
+  void loopArduino(Statechart *statechart)
   {
 
     // put your main code here, to run repeatedly:
-    // if (digitalRead(pinoPIR) == HIGH)
-    // {
-    //   digitalWrite(pinoLED, HIGH);
-    //   ledStatus = 1;
-    // }
-    // else if (digitalRead(pinoPIR) == LOW)
-    // {
-    //   digitalWrite(pinoLED, LOW);
-    // }
-    digitalWrite(pinoLED, HIGH);
-    delay(1000);
-    digitalWrite(pinoLED, LOW);
+    // Serial.println(digitalRead(pinoPIR));
+    if (digitalRead(pinoPIR) == HIGH)
+    {
+      statechart->pir->set(true);
+
+      digitalWrite(pinoLED, HIGH);
+      statechart->luz->set(false);
+    }
+    else if (digitalRead(pinoPIR) == LOW)
+    {
+      statechart->pir->set(false);
+
+      digitalWrite(pinoLED, LOW);
+      statechart->luz->set(true);
+    }
     delay(1000);
   }
 };
