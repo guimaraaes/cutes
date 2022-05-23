@@ -5,55 +5,64 @@ class Statechart
 {
 
 public:
-    class Luz
+    class Runner
     {
     public:
-        bool luzStatus;
-        Luz(){};
+        Runner(){};
+        void proceed_time(long time)
+        {
+            delay(time);
+        };
+    };
+    class Light
+    {
+    public:
+        bool light_status;
+        Light(){};
         void set(bool value)
         {
-            luzStatus = value;
+            this->light_status = value;
         };
         bool isRaisedOFF()
         {
-            return luzStatus == false;
+            return this->light_status == false;
         };
         bool isRaisedON()
         {
-            return luzStatus == true;
+            return this->light_status == true;
         };
     };
 
     class Pir
     {
-        bool pirStatus = true;
+        bool pir_status = true;
 
     public:
         Pir(){};
         void set(bool value)
         {
-            pirStatus = value;
+            this->pir_status = value;
         };
         void raiseON()
         {
 
-            while (this->pirStatus == false)
+            while (this->pir_status == false)
             {
             };
         };
         void raiseOFF()
         {
-            while (this->pirStatus == true)
+            while (this->pir_status == true)
             {
             };
         };
     };
 
-    Luz *luz;
+    Runner *runner;
+    Light *light;
     Pir *pir;
     void enter()
     {
-        // luz->luzStatus = t;
     }
 
     int getCount();
@@ -70,7 +79,8 @@ public:
 private:
     Statechart()
     {
-        luz = new Luz();
+        runner = new Runner();
+        light = new Light();
         pir = new Pir();
     }
 

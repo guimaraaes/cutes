@@ -24,7 +24,7 @@ protected:
   }
 
 public:
-  void setupTeste()
+  void setupTest()
   {
     TestRunner::setTimeout(30);
     TestRunner::exclude("*");
@@ -32,28 +32,29 @@ public:
     TestRunner::include("StatechartTest", "*");
   }
 
-  void loopTeste()
+  void loopTest()
   {
     // arduino->loopArduino(statechart);
     TestRunner::run();
   }
 };
 
-test(StatechartTest, testLuzInitOFF)
+test(StatechartTest, testLightInitOFF)
 {
 
   arduino->loopArduino(statechart);
   statechart->enter();
-  assertTrue(statechart->luz->isRaisedOFF());
+  assertTrue(statechart->light->isRaisedOFF());
 }
-test(StatechartTest, testSinalPIR_SinalLuz)
+test(StatechartTest, testSignalPirToLight)
 {
 
   statechart->enter();
   statechart->pir->raiseON();
-  assertTrue(statechart->luz->isRaisedON());
+  assertTrue(statechart->light->isRaisedON());
+  statechart->runner->proceed_time(5 * 1000);
   statechart->pir->raiseOFF();
-  assertTrue(statechart->luz->isRaisedOFF());
+  assertTrue(statechart->light->isRaisedOFF());
 }
 // test(StatechartTest, test5Ativacoes)
 // {

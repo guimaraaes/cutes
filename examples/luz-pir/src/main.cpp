@@ -11,12 +11,12 @@ void setup()
   Serial.begin(115200);
 
   // arduino->setupArduino();
-  statecharttest->setupTeste();
+  statecharttest->setupTest();
 }
 
 void loop()
 {
   // put your main code here, to run repeatedly:
   // arduino->loopArduino();
-  statecharttest->loopTeste();
+  statecharttest->loopTest();
 }

@@ -1,6 +1,6 @@
 #include <Arduino.h>
-const int pinoPIR = 6;
-const int pinoLED = 13;
+const int pinPir = 6;
+const int pinLight = 13;
 
 #include "../statechart/statechart.cpp"
 // Statechart *statechart = Statechart::get();
@@ -11,27 +11,27 @@ public:
   void setupArduino()
   {
     // put your setup code here, to run once:
-    pinMode(pinoLED, OUTPUT);
-    pinMode(pinoPIR, INPUT);
+    pinMode(pinLight, OUTPUT);
+    pinMode(pinPir, INPUT);
   }
 
   void loopArduino(Statechart *statechart)
   {
     // put your main code here, to run repeatedly:
-    // Serial.println(digitalRead(pinoPIR));
-    if (digitalRead(pinoPIR) == HIGH)
+    // Serial.println(digitalRead(pinPir));
+    if (digitalRead(pinPir) == HIGH)
     {
       statechart->pir->set(true);
 
-      digitalWrite(pinoLED, HIGH);
-      statechart->luz->set(false);
+      digitalWrite(pinLight, HIGH);
+      statechart->light->set(false);
     }
-    else if (digitalRead(pinoPIR) == LOW)
+    else if (digitalRead(pinPir) == LOW)
     {
       statechart->pir->set(false);
 
-      digitalWrite(pinoLED, LOW);
-      statechart->luz->set(true);
+      digitalWrite(pinLight, LOW);
+      statechart->light->set(true);
     }
     delay(1000);
   }
