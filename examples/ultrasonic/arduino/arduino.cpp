@@ -6,7 +6,7 @@
 #define pin_echo 5
 Ultrasonic ultrasonic(pin_trigger, pin_echo);
 
-// #include "../statechart/statechart.cpp"
+#include "../statechart/statechart.cpp"
 // Statechart *statechart = Statechart::get();
 
 class Arduino
@@ -24,32 +24,46 @@ public:
     {
         // put your main code here, to run repeatedly:
         float distance = ultrasonic.read(CM);
+        statechart->ultrasonic->set(distance);
+
         while (distance > 10 && distance <= 20)
         {
             digitalWrite(pin_light, LOW);
+            statechart->light->set(false);
+
             distance = ultrasonic.read(CM);
-            Serial.print("distance: ");
-            Serial.println(distance);
+            statechart->ultrasonic->set(distance);
+
+            // Serial.print("distance: ");
+            // Serial.println(distance);
         }
         while (distance > 20 && distance <= 30)
         {
+            statechart->light->set(true);
+
             digitalWrite(pin_light, HIGH);
             delay(500);
             digitalWrite(pin_light, LOW);
             delay(500);
             distance = ultrasonic.read(CM);
-            Serial.print("distance: ");
-            Serial.println(distance);
+            statechart->ultrasonic->set(distance);
+
+            // Serial.print("distance: ");
+            // Serial.println(distance);
         }
         while (distance > 30)
         {
+            statechart->light->set(true);
+
             digitalWrite(pin_light, HIGH);
             distance = ultrasonic.read(CM);
-            Serial.print("distance: ");
-            Serial.println(distance);
+            statechart->ultrasonic->set(distance);
+
+            // Serial.print("distance: ");
+            // Serial.println(distance);
         }
-        Serial.print("distance: ");
-        Serial.println(distance);
+        // Serial.print("distance: ");
+        // Serial.println(distance);
 
         delay(1000);
     }

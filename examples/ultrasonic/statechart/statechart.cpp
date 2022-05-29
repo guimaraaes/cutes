@@ -86,4 +86,6 @@ private:
     static Statechart *statechart;
 };
 Statechart *Statechart::statechart = 0;
+Statechart *statechart = Statechart::get();
+
 #endif

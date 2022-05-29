@@ -1,10 +1,9 @@
 #include <AUnit.h>
 using namespace aunit;
-// #include "../arduino/arduino.cpp"
-// Arduino *arduino;
+#include "../arduino/arduino.cpp"
+Arduino *arduino;
 
 #include "../statechart/statechart.cpp"
-Statechart *statechart = Statechart::get();
 
 class StatechartTest : public TestOnce
 {
@@ -13,7 +12,7 @@ protected:
     void setup() override
     {
         TestOnce::setup();
-        // arduino->setupArduino();
+        arduino->setupArduino();
     }
     void teardown() override
     {
@@ -39,7 +38,7 @@ public:
 
 test(StatechartTest, testLightBeginOFF)
 {
-
+    arduino->loopArduino();
     statechart->enter();
 
     assertTrue(statechart->light->isRaisedOFF());
@@ -48,6 +47,7 @@ test(StatechartTest, testLightBeginOFF)
 }
 test(StatechartTest, testLightONOFF)
 {
+    arduino->loopArduino();
 
     statechart->enter();
 
@@ -59,6 +59,7 @@ test(StatechartTest, testLightONOFF)
 }
 test(StatechartTest, testLightONOFFtoLightOFF)
 {
+    arduino->loopArduino();
 
     statechart->enter();
 
@@ -72,6 +73,7 @@ test(StatechartTest, testLightONOFFtoLightOFF)
 }
 test(StatechartTest, testLightON)
 {
+    arduino->loopArduino();
 
     statechart->enter();
 
