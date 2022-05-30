@@ -2,8 +2,7 @@
 #define STATECHART_H_INCLUDED
 #include <LinkedList.h>
 #include "store.cpp"
-#include <AUnit.h>
-using namespace aunit;
+ 
 
 class Statechart
 {

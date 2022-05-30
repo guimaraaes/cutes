@@ -1,4 +1,6 @@
-#include <AUnit.h>
+#include "../src/AUnit/src/AUnit.h"
+// #include "../.pio/libdeps/uno/AUnit/src/AUnit.h"
+// #include <AUnit.h>
 using namespace aunit;
 #include "../arduino/arduino.cpp"
 Arduino *arduino;
@@ -36,52 +38,57 @@ public:
     }
 };
 
-test(StatechartTest, testLightBeginOFF)
+// test(StatechartTest, testLightBeginOFF)
+// {
+//     arduino->loopArduino();
+//     statechart->enter();
+
+//     assertTrue(statechart->light->isRaisedOFF());
+
+//     // assertTrue(statechart->isStateActive(Statechart::StateLightOff));
+// }
+
+test(StatechartTest, testInterval_0to20)
 {
+    Serial.println("testInterval_0to20");
+    delay(2000);
+
     arduino->loopArduino();
     statechart->enter();
+
+    statechart->ultrasonic->raise_0to20();
 
     assertTrue(statechart->light->isRaisedOFF());
 
-    // assertTrue(statechart->isStateActive(Statechart::StateLightOff));
+    // runner->proceed_time(4 * 1000);
 }
-test(StatechartTest, testLightONOFF)
+test(StatechartTest, _20to30)
 {
+    Serial.println("_20to30");
+
+    delay(2000);
     arduino->loopArduino();
 
     statechart->enter();
 
-    statechart->ultrasonic->raise_20a30();
+    statechart->ultrasonic->raise_20to30();
 
     assertTrue(statechart->light->isRaisedONOFF());
 
-    // assertTrue(statechart->isStateActive(Statechart::StateLightOnOff));
+    // runner->proceed_time(4 * 1000);
 }
-test(StatechartTest, testLightONOFFtoLightOFF)
+test(StatechartTest, _30toLarger)
 {
+    Serial.println("_30toLarger");
+
+    delay(2000);
     arduino->loopArduino();
 
     statechart->enter();
 
-    statechart->ultrasonic->raise_20a30();
-
-    statechart->ultrasonic->raise_10a20();
-
-    assertTrue(statechart->light->isRaisedOFF());
-
-    // assertTrue(statechart->isStateActive(Statechart::StateLightOff));
-}
-test(StatechartTest, testLightON)
-{
-    arduino->loopArduino();
-
-    statechart->enter();
-
-    statechart->ultrasonic->raise_20a30();
-
-    statechart->ultrasonic->raise_30();
+    statechart->ultrasonic->raise_30toLarger();
 
     assertTrue(statechart->light->isRaisedON());
 
-    // assertTrue(statechart->isStateActive(Statechart::StateLightOn));
+    // runner->proceed_time(4 * 1000);
 }
