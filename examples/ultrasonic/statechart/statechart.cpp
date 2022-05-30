@@ -16,26 +16,22 @@ public:
 
         bool isRaisedOFF()
         {
-            Store element = statechart->list->get(0);
-            statechart->list->remove(0);
+            Store element = statechart->list->shift();
 
             return false == element.status && pin == element.pin;
         };
         bool isRaisedON()
         {
-            Store element = statechart->list->get(0);
-            statechart->list->remove(0);
+            Store element = statechart->list->shift();
 
             return true == element.status && pin == element.pin;
         };
         bool isRaisedONOFF()
         {
-            Store element1 = statechart->list->get(0);
-            statechart->list->remove(0);
-            Store element2 = statechart->list->get(0);
-            statechart->list->remove(0);
+            Store element1 = statechart->list->shift();
+            Store element2 = statechart->list->shift();
 
-            return (true == element1.status && pin == element1.pin) && (true == element2.status && pin == element2.pin);
+            return (true == element1.status && pin == element1.pin) && (false == element2.status && pin == element2.pin);
         };
     };
 
@@ -50,34 +46,54 @@ public:
 
         bool raise_0to20()
         {
-            Store element = statechart->list->get(0);
-            statechart->list->remove(0);
-
-            return element.distance < 10 && element.distance > 20 && pinTrigger == element.pin;
+            Store element = statechart->list->shift();
+            while ((element.distance >= 20 || pinTrigger != element.pin) && statechart->list->size() > 0)
+            {
+                element = statechart->list->shift();
+            }
+            return element.distance < 20 && pinTrigger == element.pin;
         };
         bool raise_20to30()
         {
-            Store element = statechart->list->get(0);
-            statechart->list->remove(0);
-
-            return element.distance < 20 && element.distance > 30 && pinTrigger == element.pin;
-            while (this->distance < 20 && this->distance > 30)
+            Store element = statechart->list->shift();
+            while ((element.distance < 20 || element.distance > 30 || pinTrigger != element.pin) && statechart->list->size() > 0)
             {
-            };
+                element = statechart->list->shift();
+            }
+            return element.distance >= 20 && element.distance < 30 && pinTrigger == element.pin;
         };
 
         bool raise_30toLarger()
         {
-            Store element = statechart->list->get(0);
-            statechart->list->remove(0);
-
-            return element.distance > 30 && pinTrigger == element.pin;
+            Store element = statechart->list->shift();
+            while ((element.distance < 30 || pinTrigger != element.pin) && statechart->list->size() > 0)
+            {
+                element = statechart->list->shift();
+            }
+            return element.distance >= 30 && pinTrigger == element.pin;
         };
     };
 
     Light *light;
     Ultrasonic *ultrasonic;
     LinkedList<Store> *list;
+    void showList()
+    {
+        Store element = Store();
+        for (int i = 0; i < statechart->list->size(); i++)
+        {
+            element = statechart->list->get(i);
+            Serial.print(element.time);
+            Serial.print(", ");
+            Serial.print(element.pin);
+            Serial.print(", ");
+            Serial.print(element.status);
+            Serial.print(", ");
+            Serial.print(element.distance);
+            Serial.println(" ");
+        }
+    }
+
     void enter()
     {
     }
@@ -103,5 +119,22 @@ private:
 };
 Statechart *Statechart::statechart = 0;
 Statechart *statechart = Statechart::get();
+
+class Runner
+{
+public:
+    Runner(){};
+
+    void proceed_time(int time)
+    {
+        Store element = statechart->list->shift();
+        for (int i = element.time; i < time; i++)
+        {
+            element = statechart->list->shift();
+        }
+        // delay(time);
+    }
+};
+Runner *runner = new Runner();
 
 #endif

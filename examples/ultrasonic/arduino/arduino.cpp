@@ -18,30 +18,16 @@ public:
         // put your setup code here, to run once:
         pinMode(pinLight, OUTPUT);
     }
-    void showListStore()
-    {
-        Store element = Store();
-        for (int i = 0; i < statechart->list->size(); i++)
-        {
-            element = statechart->list->get(i);
-            Serial.print(element.time);
-            Serial.print(", ");
-            Serial.print(element.pin);
-            Serial.print(", ");
-            Serial.print(element.status);
-            Serial.print(", ");
-            Serial.print(element.distance);
-            Serial.println(" ");
-        }
-    }
+
     void loopArduino()
     {
         // put your main code here, to run repeatedly:
+        statechart->list->clear();
+
         float distance = ultrasonic.read();
         Serial.println(distance);
-        delay(1000);
-        statechart->list->clear();
         statechart->list->add(Store(millis(), false, distance, pinTrigger));
+        delay(1000);
 
         if (distance > 10 && distance <= 20)
         {
@@ -50,9 +36,8 @@ public:
 
             distance = ultrasonic.read();
             Serial.println(distance);
-            delay(1000);
-
             statechart->list->add(Store(millis(), false, distance, pinTrigger));
+            delay(1000);
         }
         if (distance > 20 && distance <= 30)
         {
@@ -66,10 +51,8 @@ public:
             delay(500);
             distance = ultrasonic.read();
             Serial.println(distance);
-            delay(1000);
-
-            // statechart->ultrasonic->set(distance);
             statechart->list->add(Store(millis(), false, distance, pinTrigger));
+            delay(1000);
         }
         if (distance > 30)
         {
@@ -78,10 +61,9 @@ public:
 
             distance = ultrasonic.read();
             Serial.println(distance);
-            delay(1000);
-
             statechart->list->add(Store(millis(), false, distance, pinTrigger));
+            delay(1000);
         }
-        showListStore();
+        statechart->showList();
     }
 };

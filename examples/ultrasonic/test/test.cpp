@@ -15,6 +15,7 @@ protected:
     {
         TestOnce::setup();
         arduino->setupArduino();
+        // TestRunner::setVerbosity(Verbosity::kAll);
     }
     void teardown() override
     {
@@ -38,16 +39,6 @@ public:
     }
 };
 
-// test(StatechartTest, testLightBeginOFF)
-// {
-//     arduino->loopArduino();
-//     statechart->enter();
-
-//     assertTrue(statechart->light->isRaisedOFF());
-
-//     // assertTrue(statechart->isStateActive(Statechart::StateLightOff));
-// }
-
 test(StatechartTest, testInterval_0to20)
 {
     Serial.println("testInterval_0to20");
@@ -55,8 +46,8 @@ test(StatechartTest, testInterval_0to20)
 
     arduino->loopArduino();
     statechart->enter();
-
-    statechart->ultrasonic->raise_0to20();
+    if (!statechart->ultrasonic->raise_0to20())
+        failTestNow();
 
     assertTrue(statechart->light->isRaisedOFF());
 
@@ -65,17 +56,16 @@ test(StatechartTest, testInterval_0to20)
 test(StatechartTest, _20to30)
 {
     Serial.println("_20to30");
-
     delay(2000);
     arduino->loopArduino();
 
     statechart->enter();
-
-    statechart->ultrasonic->raise_20to30();
+    if (!statechart->ultrasonic->raise_20to30())
+        failTestNow();
 
     assertTrue(statechart->light->isRaisedONOFF());
 
-    // runner->proceed_time(4 * 1000);
+    runner->proceed_time(4 * 1000);
 }
 test(StatechartTest, _30toLarger)
 {
@@ -85,8 +75,8 @@ test(StatechartTest, _30toLarger)
     arduino->loopArduino();
 
     statechart->enter();
-
-    statechart->ultrasonic->raise_30toLarger();
+    if (!statechart->ultrasonic->raise_30toLarger())
+        failTestNow();
 
     assertTrue(statechart->light->isRaisedON());
 
