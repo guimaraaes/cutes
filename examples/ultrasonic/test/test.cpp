@@ -39,10 +39,11 @@ public:
     }
 };
 
-test(StatechartTest, testInterval_0to20)
+test(StatechartTest, test_0to20)
 {
-    Serial.println("testInterval_0to20");
-    delay(2000);
+    statechart->list->clear();
+    Serial.println("test_0to20");
+    delay(3000);
 
     arduino->loopArduino();
     statechart->enter();
@@ -53,10 +54,11 @@ test(StatechartTest, testInterval_0to20)
 
     // runner->proceed_time(4 * 1000);
 }
-test(StatechartTest, _20to30)
+test(StatechartTest, test_20to30)
 {
-    Serial.println("_20to30");
-    delay(2000);
+    statechart->list->clear();
+    Serial.println("test_20to30");
+    delay(3000);
     arduino->loopArduino();
 
     statechart->enter();
@@ -65,13 +67,14 @@ test(StatechartTest, _20to30)
 
     assertTrue(statechart->light->isRaisedONOFF());
 
-    runner->proceed_time(4 * 1000);
+    // runner->proceed_time(4 * 1000);
 }
-test(StatechartTest, _30toLarger)
+test(StatechartTest, test_30toLarger)
 {
-    Serial.println("_30toLarger");
+    statechart->list->clear();
+    Serial.println("test_30toLarger");
 
-    delay(2000);
+    delay(3000);
     arduino->loopArduino();
 
     statechart->enter();
@@ -82,3 +85,28 @@ test(StatechartTest, _30toLarger)
 
     // runner->proceed_time(4 * 1000);
 }
+
+// test(StatechartTest, test_30toLargerTO_0to20)
+// {
+//     statechart->list->clear();
+//     Serial.println("_30toLarger to _0to20");
+
+//     delay(2000);
+//     arduino->loopArduino();
+
+//     statechart->enter();
+//     if (!statechart->ultrasonic->raise_30toLarger())
+//         failTestNow();
+
+//     assertTrue(statechart->light->isRaisedON());
+
+//     arduino->loopArduino();
+
+//     // if (!runner->proceed_time(1 * 1000))
+//     //     failTestNow();
+
+//     if (!statechart->ultrasonic->raise_0to20())
+//         failTestNow();
+
+//     assertTrue(statechart->light->isRaisedOFF());
+// }

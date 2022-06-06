@@ -47,16 +47,16 @@ public:
         bool raise_0to20()
         {
             Store element = statechart->list->shift();
-            while ((element.distance >= 20 || pinTrigger != element.pin) && statechart->list->size() > 0)
+            while ((element.distance < 0 || element.distance >= 20 || pinTrigger != element.pin) && statechart->list->size() > 0)
             {
                 element = statechart->list->shift();
             }
-            return element.distance < 20 && pinTrigger == element.pin;
+            return element.distance >= 0 && element.distance < 20 && pinTrigger == element.pin;
         };
         bool raise_20to30()
         {
             Store element = statechart->list->shift();
-            while ((element.distance < 20 || element.distance > 30 || pinTrigger != element.pin) && statechart->list->size() > 0)
+            while ((element.distance < 20 || element.distance >= 30 || pinTrigger != element.pin) && statechart->list->size() > 0)
             {
                 element = statechart->list->shift();
             }
@@ -125,14 +125,12 @@ class Runner
 public:
     Runner(){};
 
-    void proceed_time(int time)
+    bool proceed_time(int time)
     {
-        Store element = statechart->list->shift();
-        for (int i = element.time; i < time; i++)
-        {
-            element = statechart->list->shift();
-        }
-        // delay(time);
+        Store element1 = statechart->list->shift();
+        Store element2 = statechart->list->get(0);
+
+        return (element2.time - element1.time) >= time;
     }
 };
 Runner *runner = new Runner();

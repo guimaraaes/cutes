@@ -22,14 +22,13 @@ public:
     void loopArduino()
     {
         // put your main code here, to run repeatedly:
-        statechart->list->clear();
 
         float distance = ultrasonic.read();
         Serial.println(distance);
         statechart->list->add(Store(millis(), false, distance, pinTrigger));
         delay(1000);
 
-        if (distance > 10 && distance <= 20)
+        if (distance < 20)
         {
             digitalWrite(pinLight, LOW);
             statechart->list->add(Store(millis(), false, distance, pinLight));
@@ -39,7 +38,7 @@ public:
             statechart->list->add(Store(millis(), false, distance, pinTrigger));
             delay(1000);
         }
-        if (distance > 20 && distance <= 30)
+        if (distance >= 20 && distance < 30)
         {
             digitalWrite(pinLight, HIGH);
             statechart->list->add(Store(millis(), true, distance, pinLight));
@@ -54,7 +53,7 @@ public:
             statechart->list->add(Store(millis(), false, distance, pinTrigger));
             delay(1000);
         }
-        if (distance > 30)
+        if (distance >= 30)
         {
             digitalWrite(pinLight, HIGH);
             statechart->list->add(Store(millis(), true, distance, pinLight));
