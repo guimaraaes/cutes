@@ -1,7 +1,13 @@
 # framework-teste-embarcados-arduino-nodemcu
 
 ## Atividades para realizar testes em sistemas embarcados
+- Prototipar os componentes eletrônicos que vão fazer parte do Sistema Embarcado (SE).
+- Definir a lógica de controle para o arduino.
 
+- Com o Yakindu definir a Máquina de Estados Finitos (MEF) ou Statechart que traduza o comportamento esperado para o SE prototipado e codificado.
+- Ainda no Yakindu definir casos de teste para garantir 100% de cobertura da MEF.
+
+- Os casos de teste vão auxiliar a construção destes com um framework (AUnit ou ArduinoUnit) diretamente no arduino.
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/atividades_para_testar.png" width="50%" height="50%">
 
 ## Estrutura dos algoritmos para realizar os testes
