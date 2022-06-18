@@ -8,9 +8,9 @@ StatechartTest *statecharttest;
 void setup()
 {
   // put your setup code here, to run once:
-  Serial.begin(115200);
-
   // arduino->setupArduino();
+
+  Serial.begin(115200);
   statecharttest->setupTest();
 }
 
