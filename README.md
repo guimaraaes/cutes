@@ -8,10 +8,10 @@
 - Ainda no Yakindu definir casos de teste para garantir 100% de cobertura da MEF.
 
 - Os casos de teste vão auxiliar a construção destes com um framework (AUnit ou ArduinoUnit) diretamente no arduino.
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/atividades_para_testar.png" width="50%" height="50%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/atividades_para_testar.png" width="80%" height="80%">
 
 ## Estrutura dos algoritmos para realizar os testes
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/diagrama_modulos.png" width="70%" height="70%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/diagrama_modulos.png" width="80%" height="80%">
 
 ## exemplos
 ### casos de teste para o pir-luz
