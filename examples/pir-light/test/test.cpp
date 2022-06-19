@@ -16,8 +16,6 @@ public:
   }
   void loopTeste()
   {
-    // arduino->loopArduino(statechart);
-
     Test::run();
   }
 };
@@ -35,6 +33,10 @@ test(testLuzInitOFF)
 
 test(testSinalPIR_SinalLuz)
 {
+  statechart->list->clear();
+  Serial.println("testSinalPIR_SinalLuz");
+  delay(3000);
+
   arduino->loopArduino();
 
   if (!statechart->pir->raiseON())
