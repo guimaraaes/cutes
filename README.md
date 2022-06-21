@@ -1,6 +1,6 @@
 # framework-teste-embarcados-arduino-nodemcu
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/diagrama_modulos.png" width="80%" height="80%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/diagrama_classes.png" width="80%" height="80%">
 
 ## atividades para realizar testes em sistemas embarcados
 
