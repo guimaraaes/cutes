@@ -4,7 +4,6 @@
 
 ## atividades para realizar testes em sistemas embarcados
 
-
 ## estrutura dos algoritmos para realizar os testes
 
 ## exemplos
