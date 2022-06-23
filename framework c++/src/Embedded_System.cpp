@@ -48,21 +48,11 @@ public:
     {
         std::cout << "Hello World!" << std::endl;
     };
-    // Component createComponent(Creator *creator)
-    // {
-    //     // CreatorLight c;
-    //     // creator->createComponent();
-    //     return creator->createComponent();
-    // };
-    // Component createActuator(Creator creator)
-    // {
-    //     return creator.createComponent();
-    // };
+
     void setup()
     {
 
         CreatorLight c = CreatorLight();
-
         c.createComponent();
     }
     void loop()
