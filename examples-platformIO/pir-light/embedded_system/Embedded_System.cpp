@@ -1,58 +1,39 @@
 #include "../component/Creator.h"
 #include "../component/Component.h"
-#include "../component/ComponentBehavior.cpp"
+// #include "../component/ComponentBehavior.cpp"
 #include "Embedded_System.h"
 #include <Arduino.h>
 
 class Arduino : public AbstractEmbedded_System
 {
 
-    class Light : public Actuator
-    {
-    public:
-        Light(){};
-
-        void configuration(int pin, ComponentBehavior behavior)
-        {
-            this->pin = pin;
-            this->componentBehavior = behavior;
-            pinMode(pin, OUTPUT);
-        };
-        void getStatus(){
-
-        };
-        void write()
-        {
-            digitalWrite(this->pin, LOW);
-            delay(1000);
-            digitalWrite(this->pin, HIGH);
-            delay(1000);
-        };
-    };
-    class CreatorLight : public AbstractCreatorActuator
+    class CreatorLight : public AbstractCreator
     {
     public:
         CreatorLight(){};
-        Component *createComponent(int pin, ComponentBehavior behavior)
+        Component *createComponent(int pin)
         {
-            Serial.print("create");
-            Light *light_arduino = new Light();
-            light_arduino->configuration(pin, behavior);
-            return light_arduino;
+            ActuatorHighLow *lig = new ActuatorHighLow();
+            lig->configuration(pin);
+            return lig;
         };
     };
 
 public:
-    Light *light;
+    ActuatorHighLow *light;
+
     void configuration(){};
 
     void setup()
     {
         CreatorLight *creator_light = new CreatorLight();
-        this->light = creator_light->createComponent(13, HighLow());
+        this->light = creator_light->createComponent(13);
     }
     void loop()
     {
-        this->light->write();
+        this->light->write(1);
+        delay(1000);
+        this->light->write(0);
+        delay(1000);
     }
 };

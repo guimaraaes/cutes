@@ -5,18 +5,18 @@
 class Creator
 {
 public:
-    Component *createComponent(int pin, ComponentBehavior behavior);
+    Component *createComponent(int pin);
 };
 
-class AbstractCreatorSensor : public Creator
+class AbstractCreator : public Creator
 {
 public:
-    virtual Component *createComponent(int pin, ComponentBehavior behavior) = 0;
+    virtual Component *createComponent(int pin) = 0;
 };
 
-class AbstractCreatorActuator : public Creator
-{
-public:
-    virtual Component *createComponent(int pin, ComponentBehavior behavior) = 0;
-};
+// class AbstractCreatorActuator : public Creator
+// {
+// public:
+//     virtual Component *createComponent(int pin) = 0;
+// };
 #endif

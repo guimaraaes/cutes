@@ -8,5 +8,11 @@ class ComponentBehavior
 {
 public:
     Store store;
+    void addStore(int pin, int value)
+    {
+        Interation element = Interation(millis(), value, pin);
+        this->store.list->add(element);
+        this->store.showList();
+    };
 };
 #endif

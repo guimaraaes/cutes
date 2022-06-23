@@ -3,13 +3,11 @@
 
 #include "ComponentBehavior.h"
 
-#ifndef HIGHLOW_H_INCLUDED
-#define HIGHLOW_H_INCLUDED
-
 class HighLow : public ComponentBehavior
 {
 public:
     HighLow(){};
+
     bool isRaisedHigh(int pin)
     {
         Interation element = store.list->shift();
@@ -49,9 +47,6 @@ public:
         return element.value != 0 && element.value != 1 && element.pin == pin;
     };
 };
-#endif
-#ifndef NUMERIC_H
-#define NUMERIC_H
 
 class Numeric : public ComponentBehavior
 {
@@ -81,4 +76,3 @@ public:
         return element.value > this->upperValue && element.value < this->lowerValue && element.pin == pin;
     };
 };
-#endif
