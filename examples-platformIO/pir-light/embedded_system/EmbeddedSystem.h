@@ -1,9 +1,10 @@
 #include "../component/Creator.h"
 #include "../component/Component.h"
 
-#ifndef EMBEDDED_SYSTEM_H_INCLUDED
-#define EMBEDDED_SYSTEM_H_INCLUDED
-class Embedded_System
+#include <Arduino.h>
+#ifndef EMBEDDEDSYSTEM_H_INCLUDED
+#define EMBEDDEDSYSTEM_H_INCLUDED
+class EmbeddedSystem
 {
 protected:
     String description;
@@ -15,7 +16,7 @@ public:
     void loop();
 };
 
-class AbstractEmbedded_System : public Embedded_System
+class AbstractEmbeddedSystem : public EmbeddedSystem
 {
 protected:
     String description;

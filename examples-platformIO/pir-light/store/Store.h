@@ -1,8 +1,8 @@
 
 #ifndef STORE_H_INCLUDED
 #define STORE_H_INCLUDED
-
-#include "Interation.cpp"
+#include <Arduino.h>
+#include "Interation.h"
 #include "../lib/LinkedList/LinkedList.h"
 class Store
 {
