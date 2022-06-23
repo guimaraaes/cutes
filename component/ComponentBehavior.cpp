@@ -4,21 +4,14 @@
 #include <string>
 using namespace std;
 #include "ComponentBehavior.h"
-// #ifndef ABSTRACTCOMPONENTBEHAVIOR_H
-// #define ABSTRACTCOMPONENTBEHAVIOR_H
 
-// class AbstractComponentBehavior
-// {
-// public:
-//     Store store;
-// };
-// #endif
-#ifndef HIGHLOW_H
-#define HIGHLOW_H
+#ifndef HIGHLOW_H_INCLUDED
+#define HIGHLOW_H_INCLUDED
 
 class HighLow : public ComponentBehavior
 {
 public:
+    HighLow(){};
     bool isRaisedHigh(int pin)
     {
         Interation element = store.list->shift();

@@ -1,9 +1,12 @@
 #include "../component/Creator.h"
 #include "../component/Component.h"
-#include "../component/Component.cpp"
+#include "../component/ComponentBehavior.cpp"
+// #include "../component/Component.cpp"
 #include <iostream>
 #include <list>
 #include <string>
+#include <typeinfo>
+
 using namespace std;
 class AbstractEmbedded_System
 {
@@ -11,6 +14,7 @@ protected:
     list<Component> components;
     Creator creatorSensor;
     Creator creatorActuator;
+
     string description;
     string author;
 
@@ -21,6 +25,37 @@ public:
 };
 class Arduino : public AbstractEmbedded_System
 {
+    class Light : public Sensor
+    {
+    public:
+        Light(){};
+
+        void configuration(int pin, ComponentBehavior behavior)
+        {
+            this->pin = pin;
+            this->componentBehavior = behavior;
+            std::cout << typeid(behavior).name() << std::endl;
+        };
+        void getStatus(){
+
+        };
+        void read(){
+
+        };
+    };
+    class CreatorLight : public CreatorActuator
+    {
+    public:
+        void configuration(){};
+        Component createComponent()
+        {
+            std::cout << "creator light" << std::endl;
+            Light light_arduino;
+            light_arduino.configuration(13, HighLow());
+            return light_arduino;
+        };
+    };
+
 public:
     void configuration()
     {
@@ -28,14 +63,15 @@ public:
     };
     Component createSensor()
     {
-        std::cout << "Hello World!" << std::endl;
-        Light c;
+        CreatorLight c;
+        return c.createComponent();
         // Light c;
-        return c;
+        // Light c;
+        // return c;
     };
     Component createActuator()
     {
-        std::cout << "Hello World!" << std::endl;
-        return Light();
+        CreatorLight c;
+        return c.createComponent();
     };
 };

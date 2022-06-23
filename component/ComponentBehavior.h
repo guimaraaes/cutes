@@ -1,8 +1,8 @@
 #include "../store/Store.cpp"
 #include "../store/Interation.cpp"
 
-#ifndef ABSTRACTCOMPONENTBEHAVIOR_H
-#define ABSTRACTCOMPONENTBEHAVIOR_H
+#ifndef COMPONENTBEHAVIOR_H_INCLUDED
+#define COMPONENTBEHAVIOR_H_INCLUDED
 
 class ComponentBehavior
 {
