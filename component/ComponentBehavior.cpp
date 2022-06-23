@@ -16,19 +16,39 @@ public:
     {
         Interation element = store.list->shift();
 
-        return 1 == element.value && pin == element.pin;
+        return element.value == 1 && element.pin == pin;
     };
     bool isRaisedLow(int pin)
     {
         Interation element = store.list->shift();
 
-        return 0 == element.value && pin == element.pin;
+        return element.value == 0 && element.pin == pin;
     };
+    bool raiseHigh(int pin)
+    {
+        Interation element = store.list->shift();
+        while ((element.value != 1 || element.pin != pin) && store.list->size() > 0)
+        {
+            element = store.list->shift();
+        }
+        return element.value >= 1 && element.pin == pin;
+    };
+
+    bool raiseLow(int pin)
+    {
+        Interation element = store.list->shift();
+        while ((element.value != 0 || element.pin != pin) && store.list->size() > 0)
+        {
+            element = store.list->shift();
+        }
+        return element.value >= 0 && element.pin == pin;
+    };
+
     bool outLimit(int pin)
     {
         Interation element = store.list->shift();
 
-        return 0 != element.value && 1 != element.value && pin == element.pin;
+        return element.value != 0 && element.value != 1 && element.pin == pin;
     };
 };
 #endif
@@ -41,8 +61,26 @@ class Numeric : public ComponentBehavior
     int lowerValue;
 
 public:
-    virtual bool isRaisedViVf(int Vi, int Vf) = 0;
-    virtual bool upperLimit() = 0;
-    virtual bool lowerLimit() = 0;
+    bool raisedViVf(int pin, int Vi, int Vf)
+    {
+        Interation element = store.list->shift();
+        while ((element.value < Vi || element.value >= Vf || element.pin != pin) && store.list->size() > 0)
+        {
+            element = store.list->shift();
+        }
+        return element.value >= Vi && element.value < Vf && element.pin == pin;
+    };
+    bool isRaisedViVf(int pin, int Vi, int Vf)
+    {
+        Interation element = store.list->shift();
+
+        return element.value >= Vi && element.value < Vf && element.pin == pin;
+    };
+    bool outLimit(int pin)
+    {
+        Interation element = store.list->shift();
+
+        return element.value > this->upperValue && element.value < this->lowerValue && element.pin == pin;
+    };
 };
 #endif

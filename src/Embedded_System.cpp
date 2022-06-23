@@ -1,28 +1,14 @@
 #include "../component/Creator.h"
 #include "../component/Component.h"
 #include "../component/ComponentBehavior.cpp"
-// #include "../component/Component.cpp"
+#include "Embedded_System.h"
 #include <iostream>
 #include <list>
 #include <string>
 #include <typeinfo>
 
 using namespace std;
-class AbstractEmbedded_System
-{
-protected:
-    list<Component> components;
-    Creator creatorSensor;
-    Creator creatorActuator;
 
-    string description;
-    string author;
-
-public:
-    virtual void configuration() = 0;
-    virtual Component createSensor() = 0;
-    virtual Component createActuator() = 0;
-};
 class Arduino : public AbstractEmbedded_System
 {
     class Light : public Sensor
@@ -43,9 +29,10 @@ class Arduino : public AbstractEmbedded_System
 
         };
     };
-    class CreatorLight : public CreatorActuator
+    class CreatorLight : public AbstractCreator
     {
     public:
+        CreatorLight(){};
         void configuration(){};
         Component createComponent()
         {
@@ -61,17 +48,24 @@ public:
     {
         std::cout << "Hello World!" << std::endl;
     };
-    Component createSensor()
+    // Component createComponent(Creator *creator)
+    // {
+    //     // CreatorLight c;
+    //     // creator->createComponent();
+    //     return creator->createComponent();
+    // };
+    // Component createActuator(Creator creator)
+    // {
+    //     return creator.createComponent();
+    // };
+    void setup()
     {
-        CreatorLight c;
-        return c.createComponent();
-        // Light c;
-        // Light c;
-        // return c;
-    };
-    Component createActuator()
+
+        CreatorLight c = CreatorLight();
+
+        c.createComponent();
+    }
+    void loop()
     {
-        CreatorLight c;
-        return c.createComponent();
-    };
+    }
 };

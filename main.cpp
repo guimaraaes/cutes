@@ -4,11 +4,8 @@ using namespace std;
 
 int main()
 {
-    // Embedded_System configuration();
     Arduino es;
-    es.createSensor();
-    // es.configuration();
-    // std::cout << "Hello World!" << std::endl;
+    es.setup();
 
     return 0;
 }
