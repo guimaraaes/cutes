@@ -12,7 +12,7 @@ public:
     {
         Interation element = Interation(millis(), value, pin);
         this->store.list->add(element);
-        this->store.showList();
+        // this->store.showList();
     };
 };
 #endif

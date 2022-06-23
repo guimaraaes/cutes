@@ -10,17 +10,13 @@ public:
     int pin;
     ComponentBehavior *componentBehavior;
     Store store;
-
-public:
-    void configuration(int pin);
 };
 
 class ActuatorHighLow : public Component
 {
 public:
     HighLow *behavior;
-    ActuatorHighLow(){};
-    void configuration(int pin)
+    ActuatorHighLow(int pin)
     {
         this->pin = pin;
         this->behavior = new HighLow();
@@ -43,12 +39,30 @@ public:
     };
 };
 
+class SensorHighLow : public Component
+{
+public:
+    HighLow *behavior;
+    SensorHighLow(int pin)
+    {
+        this->pin = pin;
+        this->behavior = new HighLow();
+        pinMode(pin, INPUT);
+    };
+
+    int read()
+    {
+        int value = digitalRead(this->pin);
+        this->behavior->addStore(this->pin, value);
+        return value;
+    };
+};
+
 class ActuatorNumeric : public Component
 {
 public:
     Numeric *behavior;
-    ActuatorNumeric(){};
-    void configuration(int pin)
+    ActuatorNumeric(int pin)
     {
         this->pin = pin;
         this->behavior = new Numeric();

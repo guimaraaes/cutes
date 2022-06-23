@@ -13,14 +13,14 @@ class Arduino : public AbstractEmbedded_System
         CreatorLight(){};
         Component *createComponent(int pin)
         {
-            ActuatorHighLow *lig = new ActuatorHighLow();
-            lig->configuration(pin);
-            return lig;
+            ActuatorHighLow *light = new ActuatorHighLow(pin);
+            return light;
         };
     };
 
 public:
     ActuatorHighLow *light;
+    SensorHighLow *pir;
 
     void configuration(){};
 
