@@ -29,7 +29,7 @@ public:
         {
             element = store.list->shift();
         }
-        return element.value >= 1 && element.pin == pin;
+        return element.value == 1 && element.pin == pin;
     };
 
     bool raiseLow(int pin)
@@ -39,7 +39,7 @@ public:
         {
             element = store.list->shift();
         }
-        return element.value >= 0 && element.pin == pin;
+        return element.value == 0 && element.pin == pin;
     };
 
     bool outLimit(int pin)
