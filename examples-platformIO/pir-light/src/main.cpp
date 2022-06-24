@@ -1,8 +1,8 @@
 #include <Arduino.h>
-#include "../embedded_system/EmbeddedSystem.h"
+#include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
 class Arduino : public AbstractEmbeddedSystem
 {
-  class CreatorLight : public AbstractCreator
+  class CreatorLight : public Creator
   {
   public:
     CreatorLight(){};
@@ -12,7 +12,7 @@ class Arduino : public AbstractEmbeddedSystem
     };
   };
 
-  class CreatorPir : public AbstractCreator
+  class CreatorPir : public Creator
   {
   public:
     CreatorPir(){};
@@ -35,7 +35,7 @@ public:
 
     CreatorPir *creator_pir = new CreatorPir();
     this->pir = creator_pir->createComponent(3);
-  }
+  };
   void loop()
   {
     if (digitalRead(3) == HIGH)
@@ -48,7 +48,7 @@ public:
       this->light->write(0);
       delay(1000);
     }
-  }
+  };
 };
 Arduino pir_light;
 void setup()

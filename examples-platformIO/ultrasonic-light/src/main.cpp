@@ -1,8 +1,6 @@
 #include <Arduino.h>
-#include "../embedded_system/EmbeddedSystem.h"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
-// Ultrasonic ultrasonic(4, 5);
-
+#include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
 class Arduino : public AbstractEmbeddedSystem
 {
   class CreatorLight : public Creator
@@ -75,7 +73,6 @@ void setup()
 
 void loop()
 {
-
   // put your main code here, to run repeatedly:
   ultrasonic_light.loop();
 }
