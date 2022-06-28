@@ -1,0 +1,49 @@
+testclass StatechartTest for statechart Statechart {
+	
+	@Test
+	operation testLightOn() {
+		enter
+		raise pir.ON
+ 		assert light.ON
+ 		proceed 1s
+
+	}
+	
+	@Test
+	operation testLightOff() {
+		enter
+		raise pir.OFF
+ 		assert light.OFF
+ 		proceed 1s
+	}
+	
+	 
+	
+//	@Test
+//	operation testMovementAfter5s() {
+//		//testStateDelay
+//		enter
+//		raise pir.ON	
+//		assert light.ON
+//		//active(main_region.StateLightOn)
+//		proceed 5s
+//		raise pir.ON
+//		assert light.ON
+//		//active(main_region.StateLightOn)
+//	}
+//	
+//	@Test
+//	operation testMovementAndNoMovement() {
+//		//testStateDelay
+//		enter
+//		raise pir.ON	
+//		assert light.ON
+//		//active(main_region.StateLightOn)
+//		proceed 5s
+//		raise pir.OFF
+//		assert light.OFF
+//		//active(main_region.StateLightOff)
+//	}
+
+
+}

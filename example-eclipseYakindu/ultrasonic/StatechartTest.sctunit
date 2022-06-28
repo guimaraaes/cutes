@@ -1,0 +1,55 @@
+testclass StatechartTest for statechart Statechart {
+	
+	@Test
+	operation test_0to20() {
+		enter
+		raise ultrasonic._0to20
+		assert light.OFF
+		proceed 1 s
+	}
+	
+	@Test
+	operation _20to30() {
+		enter
+		raise ultrasonic._20to30
+		assert light.ONOFF
+		proceed 1 s
+	}
+	
+	@Test
+	operation _30toLarger() {
+		enter
+		raise ultrasonic._30toLarger
+		assert light.ON
+		proceed 1 s
+	}
+//	@Test
+//	operation test() {
+//		enter
+//		raise ultrasonic._20to30
+//		assert light.ONOFF
+//		assert active(main_region.StateLightOnOff)
+//
+////		exit
+//	}
+//	@Test
+//	operation testLightONOFFtoLightOFF() {
+//		enter
+//		raise ultrasonic._20a30
+//		raise ultrasonic._10a20
+//		assert light.OFF
+//		assert active(main_region.StateLightOff)
+//
+////		exit
+//	}
+//	@Test
+//	operation testLightON() {
+//		enter
+//		raise ultrasonic._20a30
+//		raise ultrasonic._30
+//		assert light.ON
+//		assert active(main_region.StateLightOn)
+//
+////		exit
+//	}
+}

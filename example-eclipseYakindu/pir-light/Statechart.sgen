@@ -1,0 +1,14 @@
+GeneratorModel for sctunit::cpp {
+
+	const PROJECT : string = "Yakindu-PirLuz"
+
+	const FOLDER : string = "src-gen"
+
+	test StatechartTest {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+	}
+}
