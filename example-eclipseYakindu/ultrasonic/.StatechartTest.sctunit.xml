@@ -1,0 +1,8 @@
+<testsuite name="StatechartTest" time="">
+  <testcase name="test_0to20" classname="platform:/resource/Yakindu-Ultrasonico/StatechartTest.sctunit#StatechartTest.test_0to20" time="">
+  </testcase>
+  <testcase name="_20to30" classname="platform:/resource/Yakindu-Ultrasonico/StatechartTest.sctunit#StatechartTest._20to30" time="">
+  </testcase>
+  <testcase name="_30toLarger" classname="platform:/resource/Yakindu-Ultrasonico/StatechartTest.sctunit#StatechartTest._30toLarger" time="">
+  </testcase>
+</testsuite>
