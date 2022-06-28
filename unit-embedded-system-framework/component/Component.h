@@ -1,6 +1,7 @@
 
 #ifndef COMPONENT_H_INCLUDED
 #define COMPONENT_H_INCLUDED
+
 #include "ComponentBehavior.h"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../store/Store.h"
@@ -12,11 +13,11 @@ public:
     Store store;
 };
 
-class ActuatorHighLow : public Component
+class ActuatorDigital : public Component
 {
 public:
     HighLow *behavior;
-    ActuatorHighLow(int pin)
+    ActuatorDigital(int pin)
     {
         this->pin = pin;
         this->behavior = new HighLow();
@@ -38,11 +39,11 @@ public:
     };
 };
 
-class SensorHighLow : public Component
+class SensorDigital : public Component
 {
 public:
     HighLow *behavior;
-    SensorHighLow(int pin)
+    SensorDigital(int pin)
     {
         this->pin = pin;
         this->behavior = new HighLow();
@@ -79,6 +80,7 @@ public:
         Ultrasonic ultrasonic(this->pinTrigger, this->pinEcho);
         float distance = 0;
         distance = ultrasonic.read();
+        // Serial.println(distance);
         this->behavior->addStore(this->pin, distance);
         return distance;
     };

@@ -9,7 +9,7 @@ class Arduino : public AbstractEmbeddedSystem
     CreatorLight(){};
     Component *createComponent(int pin)
     {
-      return new ActuatorHighLow(pin);
+      return new ActuatorDigital(pin);
     };
   };
 
@@ -24,7 +24,7 @@ class Arduino : public AbstractEmbeddedSystem
   };
 
 public:
-  ActuatorHighLow *light;
+  ActuatorDigital *light;
   SensorUltrasonicNumeric *ultrasonic;
 
   void configuration(){};
@@ -42,22 +42,22 @@ public:
     float distance = ultrasonic->read_cm();
     if (distance < 20)
     {
-      this->light->write(0);
+      this->light->write(LOW);
       distance = ultrasonic->read_cm();
       delay(1000);
     }
     if (distance >= 20 && distance < 30)
     {
-      this->light->write(1);
+      this->light->write(HIGH);
       delay(500);
-      this->light->write(0);
+      this->light->write(LOW);
       delay(500);
       distance = ultrasonic->read_cm();
       delay(1000);
     }
     if (distance >= 30)
     {
-      this->light->write(1);
+      this->light->write(HIGH);
       distance = ultrasonic->read_cm();
       delay(1000);
     }

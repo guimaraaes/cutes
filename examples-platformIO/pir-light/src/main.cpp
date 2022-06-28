@@ -8,7 +8,7 @@ class Arduino : public AbstractEmbeddedSystem
     CreatorLight(){};
     Component *createComponent(int pin)
     {
-      return new ActuatorHighLow(pin);
+      return new ActuatorDigital(pin);
     };
   };
 
@@ -18,13 +18,13 @@ class Arduino : public AbstractEmbeddedSystem
     CreatorPir(){};
     Component *createComponent(int pin)
     {
-      return new SensorHighLow(pin);
+      return new SensorDigital(pin);
     };
   };
 
 public:
-  ActuatorHighLow *light;
-  SensorHighLow *pir;
+  ActuatorDigital *light;
+  SensorDigital *pir;
 
   void configuration(){};
 
@@ -38,14 +38,14 @@ public:
   };
   void loop()
   {
-    if (digitalRead(3) == HIGH)
+    if (this->pir->read() == HIGH)
     {
-      this->light->write(1);
+      this->light->write(HIGH);
       delay(1000);
     }
-    if (digitalRead(3) == LOW)
+    if (this->pir->read() == LOW)
     {
-      this->light->write(0);
+      this->light->write(LOW);
       delay(1000);
     }
   };
