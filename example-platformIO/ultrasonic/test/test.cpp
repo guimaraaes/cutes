@@ -60,7 +60,6 @@ test(StatechartTest, test_20to30)
 
     arduino->loopArduino();
 
-    statechart->enter();
     if (!statechart->ultrasonic->raise_20to30())
         failTestNow();
 
@@ -74,9 +73,9 @@ test(StatechartTest, test_30toLarger)
     Serial.println("test_30toLarger");
 
     delay(3000);
+
     arduino->loopArduino();
 
-    statechart->enter();
     if (!statechart->ultrasonic->raise_30toLarger())
         failTestNow();
 

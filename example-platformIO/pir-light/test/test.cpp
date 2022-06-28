@@ -35,36 +35,29 @@ public:
   }
 };
 
-test(StatechartTest, test_LightOff_PirOff_LightOff)
+test(StatechartTest, testLightOn)
 {
   statechart->list->clear();
-  Serial.println("test_LightOff_PirOff_LightOff");
+  Serial.println("testLightOn");
   delay(3000);
 
   arduino->loopArduino();
 
-  assertTrue(statechart->light->isRaisedOFF());
-  // statechart->pir->raiseOFF();
+  if (!statechart->pir->raiseON())
+    failTestNow();
+  assertTrue(statechart->light->isRaisedON());
+  runner->proceed_time(1 * 1000);
+}
+test(StatechartTest, testLightOff)
+{
+  statechart->list->clear();
+  Serial.println("testLightOff");
+  delay(3000);
+
+  arduino->loopArduino();
+
   if (!statechart->pir->raiseOFF())
     failTestNow();
   assertTrue(statechart->light->isRaisedOFF());
-}
-test(StatechartTest, test_PirOn_LightOn_5s_PirOn_LightOn)
-{
-  statechart->list->clear();
-  Serial.println("testStateLightOn");
-  delay(3000);
-
-  arduino->loopArduino();
-
-  if (!statechart->pir->raiseON())
-    failTestNow();
-
-  assertTrue(statechart->light->isRaisedON());
-
-  runner->proceed_time(5 * 1000);
-  if (!statechart->pir->raiseON())
-    failTestNow();
-
-  assertTrue(statechart->light->isRaisedON());
+  runner->proceed_time(1 * 1000);
 }
