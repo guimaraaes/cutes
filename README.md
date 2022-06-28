@@ -8,7 +8,7 @@
 - Ainda no Yakindu definir casos de teste para garantir 100% de cobertura da MEF.
 
 - Os casos de teste vão auxiliar a construção destes com um framework (AUnit ou ArduinoUnit) diretamente no arduino.
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/atividades_para_testar.png" width="80%" height="80%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/activies_to_test.png" width="80%" height="80%">
 
 ## estrutura dos algoritmos para realizar os testes
 Nessa abordagem foram definidas classes para auxiliar no processo de teste. 
@@ -24,19 +24,28 @@ Nessa abordagem foram definidas classes para auxiliar no processo de teste.
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/diagrama_modulos.png" width="80%" height="80%">
 
 ## exemplos
-### casos de teste para o pir-luz
+### casos de teste para o pir-light
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/statechart_pir-light.png" width="50%" height="50%">
+
 Funcionalidades
 - Luz acesa ao detectar o movimento pelo PIR
 - Luz apagado quando o movimento não é detectado
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/casetest_pir-light.png" width="30%" height="30%">
+
 
 
 ### casos de teste para o exemplo do ultrasônico
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/statechart_ultrasonic.png" width="50%" height="50%">
+
 Funcionalidades
 - Luz pagada para distância no intervalo de \[0, 20\[ de um obstáculo até o ultrasônico;
 - Luz piscando com intervalo de 0.segundos para distância no intervalo de \[20, 30\[ de um obstáculo até o ultrasônico;
 - Luz pagada para distância no intervalo de \[30, infinito\[ de um obstáculo até o ultrasônico;
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/ultrasonic.png" width="30%" height="30%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/feat/statechart_compare_arduinounit_aunit/assets/casetest_ultrasonic.png" width="30%" height="30%">
 
+## considerações
+- os dois frameworks de teste de unidade são aptos.
+- a ferramenta yakindu é apta para realizar a documentação e elaboração de casos de teste com controle da cobertura.
 
 ### :mailbox: Dúvidas? Me manda um [e-mail](sguimaraaes@gmail.com) 
 
