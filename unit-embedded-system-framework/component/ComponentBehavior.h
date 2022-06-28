@@ -60,6 +60,11 @@ class Numeric : public ComponentBehavior
     int lowerValue;
 
 public:
+    Numeric(int upper, int lower)
+    {
+        this->upperValue = upper;
+        this->lowerValue = lower;
+    }
     bool raisedViVf(int pin, int Vi, int Vf)
     {
         Interation element = store.list->shift();

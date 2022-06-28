@@ -59,19 +59,57 @@ public:
     };
 };
 
-class SensorUltrasonicNumeric : public Component
+class ActuatorAnalogic : public Component
+{
+public:
+    Numeric *behavior;
+    ActuatorAnalogic(uint8_t pin)
+    {
+        this->pin = pin;
+        this->behavior = new Numeric(0, 1023);
+        pinMode(pin, OUTPUT);
+    };
+
+    void write(int value)
+    {
+        analogWrite(this->pin, value);
+        this->behavior->addStore(this->pin, value);
+    };
+};
+
+class SensorAnalogic : public Component
+{
+public:
+    Numeric *behavior;
+    SensorAnalogic(uint8_t pin)
+    {
+        this->pin = pin;
+        this->behavior = new Numeric(0, 1023);
+        pinMode(pin, INPUT);
+    };
+
+    int read()
+    {
+        int value = analogRead(this->pin);
+        this->behavior->addStore(this->pin, value);
+        // Serial.println(value);
+        return value;
+    };
+};
+
+class SensorUltrasonicNumericCM : public Component
 {
 public:
     Numeric *behavior;
     int pinTrigger;
     int pinEcho;
 
-    SensorUltrasonicNumeric(int pinTrigger, int pinEcho)
+    SensorUltrasonicNumericCM(int pinTrigger, int pinEcho)
     {
         this->pin = pinTrigger;
         this->pinTrigger = pinTrigger;
         this->pinEcho = pinEcho;
-        this->behavior = new Numeric();
+        this->behavior = new Numeric(2, 400);
         // pinMode(pin, INPUT);
     };
 

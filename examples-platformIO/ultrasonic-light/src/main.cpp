@@ -19,13 +19,13 @@ class Arduino : public AbstractEmbeddedSystem
     CreatorUltrasonic(){};
     Component *createComponent(int pinTrigger, int pinEcho)
     {
-      return new SensorUltrasonicNumeric(4, 5);
+      return new SensorUltrasonicNumericCM(4, 5);
     };
   };
 
 public:
   ActuatorDigital *light;
-  SensorUltrasonicNumeric *ultrasonic;
+  SensorUltrasonicNumericCM *ultrasonic;
 
   void configuration(){};
 
