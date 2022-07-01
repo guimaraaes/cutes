@@ -1,13 +1,24 @@
 # framework-teste-embarcados-arduino-nodemcu
-
+- CUTES: Create and Units Testing to Embedded Systems.
 
 ## atividades para realizar testes em sistemas embarcados
+- Realizar a elicitação de requisitos (funcionais para essa etapa) e criar o diagrama de requisitos com o sysADL.
+- Em paralelo podem ser feitas as atividades de:
+  - Sistema Embarcado com Arduino
+    - Prototipagem de eletrônica do circuito realizando o designer no fritizing e a contrução em laboratório com ferramentas adequadas.
+    - utilizar o framework cutes e a plataformio para codificar em c++ a programação responsável por controlar o sistema embarcado.
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/activies_to_test.png" width="80%" height="80%">
+  - Documentação
+    - desenhar o statechart que represente o funcionamento adequado do sistema embarcado.
+    - criar os casos de teste que garam cobertura de 100% da máquina de estados.
+- Tendo finalizado as etapas anteriores, utilizando o framework cutes e a plataformio é possível codificar os casos de teste através de um framework para teste(AUnit ou ArduinoUnit, por exemplo).
+
+
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/activies_to_test.png" width="100%" height="100%">
  
  ## estrutura dos algoritmos para realizar os testes
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/diagrama_classes.png" width="80%" height="80%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/diagrama_classes.png" width="100%" height="100%">
 
 ## exemplos
 ### casos de teste para o pir-light
@@ -17,7 +28,6 @@ Funcionalidades
 - Luz acesa ao detectar o movimento pelo PIR
 - Luz apagado quando o movimento não é detectado
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/casetest_pir-light.png" width="30%" height="30%">
-
 
 
 ### casos de teste para o exemplo do ultrasônico
