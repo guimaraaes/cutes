@@ -2,15 +2,10 @@
 using namespace aunit;
 
 #include "../../../unit-embedded-system-framework/store/Store.h"
-// #include "../../../unit-embedded-system-framework/test/Test.h"
+#include "../../../unit-embedded-system-framework/test/Test.h"
 
-// #ifndef TEST_H_INCLUDED
-// #define TEST_H_INCLUDED
-class TestUltrasonic : public TestOnce
+class TestUltrasonic : public TestOnce, TestCutes
 {
-    // EmbeddedSystem *embeddedSystem = &ultrasonic_light;
-    // Store store;
-
 public:
     void setup() override
     {
@@ -30,7 +25,6 @@ void configuration(String name)
     delay(3000);
     ultrasonic_light.loop();
 };
-
 testF(TestUltrasonic, test_0to20)
 {
     configuration("test_0to20");
@@ -65,5 +59,3 @@ test(TestUltrasonic, test_30toLarger)
 
     // runner->proceed_time(4 * 1000);
 }
-
-// #endif

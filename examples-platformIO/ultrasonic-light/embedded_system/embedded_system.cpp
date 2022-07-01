@@ -1,11 +1,13 @@
 // #include <Arduino.h>
 // #include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
+#include "../../../unit-embedded-system-framework/component/Creator.h"
 
-// #ifndef ARDUINO_H_INCLUDED
-// #define ARDUINO_H_INCLUDED
-class Arduino
+class Arduino : public EmbeddedSystem
 {
+  String description;
+  String author;
+
   class CreatorLight : public Creator
   {
   public:
@@ -29,7 +31,7 @@ class Arduino
 public:
   ActuatorDigital *light;
   SensorUltrasonicNumericCM *ultrasonic;
-
+  Arduino(String description, String author) : EmbeddedSystem(description, author){};
   void configuration(){};
 
   void setup()
@@ -68,5 +70,4 @@ public:
     }
   }
 };
-Arduino ultrasonic_light;
-// #endif
+Arduino ultrasonic_light = Arduino("sistema embarcado alerta com luz de acordo com a distância", "Sara Guimarães");
