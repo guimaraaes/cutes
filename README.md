@@ -21,7 +21,7 @@ Funcionalidades
 
 
 ### casos de teste para o exemplo do ultrasônico
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/casetest_pir.png" width="50%" height="50%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/statechart_ultrasonic.png" width="50%" height="50%">
 
 Funcionalidades
 - Luz pagada para distância no intervalo de \[0, 20\[ de um obstáculo até o ultrasônico;
@@ -30,8 +30,6 @@ Funcionalidades
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/casetest_ultrasonic.png" width="30%" height="30%">
 
 ## considerações
-- os dois frameworks de teste de unidade são aptos.
-- a ferramenta yakindu é apta para realizar a documentação e elaboração de casos de teste com controle da cobertura.
 
 ### :mailbox: Dúvidas? Me manda um [e-mail](sguimaraaes@gmail.com) 
 
