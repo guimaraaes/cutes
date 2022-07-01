@@ -1,7 +1,7 @@
 
 #ifndef STORE_H_INCLUDED
 #define STORE_H_INCLUDED
-#include <Arduino.h>
+// #include <Arduino.h>
 #include "Interation.h"
 #include "../lib/LinkedList/LinkedList.h"
 class Store
@@ -11,6 +11,7 @@ public:
     LinkedList<Interation> *list;
     void showList()
     {
+        // Serial.println("show list");
         Interation element = Interation();
         for (int i = 0; i < list->size(); i++)
         {

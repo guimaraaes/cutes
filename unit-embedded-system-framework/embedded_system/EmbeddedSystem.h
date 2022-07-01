@@ -1,7 +1,6 @@
 #include "../component/Creator.h"
 #include "../component/Component.h"
 
-#include <Arduino.h>
 #ifndef EMBEDDEDSYSTEM_H_INCLUDED
 #define EMBEDDEDSYSTEM_H_INCLUDED
 class EmbeddedSystem

@@ -6,7 +6,7 @@ class Interation
 
 public:
     unsigned long time;
-    bool value;
+    int value;
     int pin;
     Interation(){};
     Interation(unsigned long time, int value, int pin)

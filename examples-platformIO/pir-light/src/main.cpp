@@ -50,17 +50,17 @@ public:
     }
   };
 };
-Arduino pir_light;
+Arduino *pir_light;
 void setup()
 {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pir_light.setup();
+  pir_light->setup();
 }
 
 void loop()
 {
 
   // put your main code here, to run repeatedly:
-  pir_light.loop();
+  pir_light->loop();
 }
