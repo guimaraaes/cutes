@@ -1,6 +1,6 @@
 
 // #include <ArduinoUnit.h>
-#include "../src/ArduinoUnit/src/ArduinoUnit.h"
+#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 #include "../arduino/arduino.cpp"
 Arduino *arduino;
 

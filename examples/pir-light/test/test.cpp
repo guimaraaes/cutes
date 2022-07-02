@@ -1,6 +1,6 @@
 
 // #include <ArduinoUnit.h>
-#include "../src/ArduinoUnit/src/ArduinoUnit.h"
+#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 #include "../arduino/arduino.cpp"
 Arduino *arduino;
 
@@ -20,21 +20,10 @@ public:
   }
 };
 
-test(testLuzInitOFF)
+test(testLightOn)
 {
   statechart->list->clear();
-  Serial.println("testLuzInitOFF");
-  delay(3000);
-
-  arduino->loopArduino();
-
-  assertTrue(statechart->light->isRaisedOFF());
-}
-
-test(testSinalPIR_SinalLuz)
-{
-  statechart->list->clear();
-  Serial.println("testSinalPIR_SinalLuz");
+  Serial.println("testLightOn");
   delay(3000);
 
   arduino->loopArduino();
@@ -42,7 +31,19 @@ test(testSinalPIR_SinalLuz)
   if (!statechart->pir->raiseON())
     fail();
   assertTrue(statechart->light->isRaisedON());
+  runner->proceed_time(1 * 1000);
+}
+
+test(testLightOff)
+{
+  statechart->list->clear();
+  Serial.println("testLightOff");
+  delay(3000);
+
+  arduino->loopArduino();
+
   if (!statechart->pir->raiseOFF())
     fail();
   assertTrue(statechart->light->isRaisedOFF());
+  runner->proceed_time(1 * 1000);
 }

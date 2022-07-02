@@ -1,6 +1,7 @@
 
 // #include "../arduino/arduino.cpp"
 // Arduino *arduino;
+#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
 #include "../test/test.cpp"
 StatechartTest *statecharttest;
