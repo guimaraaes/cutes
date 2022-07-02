@@ -1,5 +1,4 @@
-#include "../component/Creator.h"
-#include "../component/Component.h"
+
 
 #ifndef EMBEDDEDSYSTEM_H_INCLUDED
 #define EMBEDDEDSYSTEM_H_INCLUDED
@@ -10,20 +9,14 @@ protected:
     String author;
 
 public:
-    void configuration();
-    void setup();
-    void loop();
-};
-
-class AbstractEmbeddedSystem : public EmbeddedSystem
-{
-protected:
-    String description;
-    String author;
-
-public:
+    EmbeddedSystem(String description, String author)
+    {
+        this->description = description;
+        this->author = author;
+    };
     virtual void configuration() = 0;
     virtual void setup() = 0;
     virtual void loop() = 0;
 };
+
 #endif

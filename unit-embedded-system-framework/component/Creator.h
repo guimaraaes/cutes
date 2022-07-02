@@ -8,15 +8,4 @@ public:
     Component *createComponent(int pin);
 };
 
-// class AbstractCreator : public Creator
-// {
-// public:
-//     virtual Component *createComponent(int pin) = 0;
-// };
-
-// class AbstractCreatorActuator : public Creator
-// {
-// public:
-//     virtual Component *createComponent(int pin) = 0;
-// };
 #endif

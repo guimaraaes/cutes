@@ -3,8 +3,10 @@
 #define COMPONENT_H_INCLUDED
 
 #include "ComponentBehavior.h"
-#include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../store/Store.h"
+
+#include "../lib/Ultrasonic/src/Ultrasonic.h"
+
 class Component
 {
 public:
@@ -12,7 +14,6 @@ public:
     ComponentBehavior *componentBehavior;
     Store store;
 };
-
 class ActuatorDigital : public Component
 {
 public:

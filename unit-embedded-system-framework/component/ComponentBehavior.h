@@ -1,20 +1,16 @@
 #include "../store/Store.h"
 #include "../store/Interation.h"
-// #include <Arduino.h>
+
 #ifndef COMPONENTBEHAVIOR_H_INCLUDED
 #define COMPONENTBEHAVIOR_H_INCLUDED
 
 class ComponentBehavior
 {
 public:
-    // Store store;
     void addStore(int pin, int value)
     {
         Interation element = Interation(millis(), value, pin);
         store->list->add(element);
-        // store->list->add(element);
-
-        // this->store.showList();
     };
 };
 

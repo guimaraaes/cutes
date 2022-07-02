@@ -4,27 +4,13 @@
 
 #ifndef TEST_H_INCLUDED
 #define TEST_H_INCLUDED
-class Test
+class TestCutes
 {
-protected:
-    EmbeddedSystem embeddedSystem;
-    Store store;
 
 public:
-    void configuration();
-    void setup();
-    void loop();
-};
-
-class AbstractTest : public Test
-{
-public:
-    EmbeddedSystem embeddedSystem;
-    Store store;
-
-public:
-    // virtual void configuration() = 0;
+    // void configuration(String name);
     virtual void setup() = 0;
-    virtual void loop() = 0;
+    virtual void teardown() = 0;
 };
+
 #endif
