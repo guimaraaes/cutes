@@ -2,12 +2,12 @@
 #include "../embedded_system/embedded_system.cpp"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
 
-#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
-#include "../test/test_ArduinoUnit.cpp"
+// #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
+// #include "../test/test_ArduinoUnit.cpp"
 
-// #include "../test/test_AUnit.cpp"
-// #include "AUnit/src/AUnit.h"
-// using namespace aunit;
+#include "../test/test_AUnit.cpp"
+#include "AUnit/src/AUnit.h"
+using namespace aunit;
 
 void setup()
 {
@@ -17,8 +17,8 @@ void setup()
 
   // casesTest->setup();
 
-  // TestRunner::exclude("*");
-  // TestRunner::include("TestUltrasonic", "*");
+  TestRunner::exclude("*");
+  TestRunner::include("TestUltrasonic", "*");
 }
 
 void loop()
@@ -26,7 +26,7 @@ void loop()
   // put your main code here, to run repeatedly:
   // ultrasonic_light.loop();
   // casesTest->loop();
-  Test::run();
+  // Test::run();
 
-  // TestRunner::run();
+  TestRunner::run();
 }

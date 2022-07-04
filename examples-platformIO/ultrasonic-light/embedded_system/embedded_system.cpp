@@ -2,11 +2,11 @@
 // #include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
 #include "../../../unit-embedded-system-framework/component/Creator.h"
+#include "../../../unit-embedded-system-framework/component/units-components/ActuatorDigital.h"
+#include "../../../unit-embedded-system-framework/component/units-components/SensorUltrasonicNumericCM.h"
 
 class Arduino : public EmbeddedSystem
 {
-  String description;
-  String author;
 
   class CreatorLight : public Creator
   {
