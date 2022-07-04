@@ -1,32 +1,10 @@
 // #include <Arduino.h>
 // #include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
-#include "../../../unit-embedded-system-framework/component/Creator.h"
-#include "../../../unit-embedded-system-framework/component/units-components/ActuatorDigital.h"
-#include "../../../unit-embedded-system-framework/component/units-components/SensorUltrasonicNumericCM.h"
-
+#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorUltrasonic.h"
+#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorLight.h"
 class Arduino : public EmbeddedSystem
 {
-
-  class CreatorLight : public Creator
-  {
-  public:
-    CreatorLight(){};
-    Component *createComponent(int pin)
-    {
-      return new ActuatorDigital(pin);
-    };
-  };
-
-  class CreatorUltrasonic : public Creator
-  {
-  public:
-    CreatorUltrasonic(){};
-    Component *createComponent(int pinTrigger, int pinEcho)
-    {
-      return new SensorUltrasonicNumericCM(4, 5);
-    };
-  };
 
 public:
   ActuatorDigital *light;
@@ -36,7 +14,6 @@ public:
 
   void setup()
   {
-
     CreatorLight *creator_light = new CreatorLight();
     this->light = creator_light->createComponent(13);
 
