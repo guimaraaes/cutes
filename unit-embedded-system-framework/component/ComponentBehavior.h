@@ -1,8 +1,6 @@
+#pragma once
 #include "../store/Store.h"
 #include "../store/Interation.h"
-
-#ifndef COMPONENTBEHAVIOR_H_INCLUDED
-#define COMPONENTBEHAVIOR_H_INCLUDED
 
 class ComponentBehavior
 {
@@ -13,5 +11,3 @@ public:
         store->list->add(element);
     };
 };
-
-#endif

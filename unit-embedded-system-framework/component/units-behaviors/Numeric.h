@@ -1,3 +1,4 @@
+#pragma once
 #include "../ComponentBehavior.h"
 
 class Numeric : public ComponentBehavior

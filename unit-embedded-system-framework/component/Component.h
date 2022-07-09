@@ -1,6 +1,4 @@
-
-#ifndef COMPONENT_H_INCLUDED
-#define COMPONENT_H_INCLUDED
+#pragma once
 
 #include "ComponentBehavior.h"
 #include "../store/Store.h"
@@ -12,5 +10,3 @@ public:
     ComponentBehavior *componentBehavior;
     Store store;
 };
-
-#endif

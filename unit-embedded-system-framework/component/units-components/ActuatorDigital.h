@@ -1,6 +1,8 @@
+
+#pragma once
+
 #include "../Component.h"
 #include "../units-behaviors/HighLow.h"
-
 class ActuatorDigital : public Component
 {
 public:

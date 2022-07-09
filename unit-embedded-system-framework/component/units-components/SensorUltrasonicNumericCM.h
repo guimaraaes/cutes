@@ -1,3 +1,4 @@
+#pragma once
 #include "../Component.h"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../units-behaviors/Numeric.h"

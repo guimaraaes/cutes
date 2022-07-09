@@ -1,7 +1,5 @@
+#pragma once
 
-
-#ifndef EMBEDDEDSYSTEM_H_INCLUDED
-#define EMBEDDEDSYSTEM_H_INCLUDED
 class EmbeddedSystem
 {
 protected:
@@ -18,5 +16,3 @@ public:
     virtual void setup() = 0;
     virtual void loop() = 0;
 };
-
-#endif

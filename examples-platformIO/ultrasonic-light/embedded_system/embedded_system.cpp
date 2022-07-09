@@ -2,7 +2,7 @@
 // #include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
 #include "../../../unit-embedded-system-framework/component/units-creatores/CreatorUltrasonic.h"
-#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorLight.h"
+#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorActuatorDigital.h"
 class Arduino : public EmbeddedSystem
 {
 
@@ -14,7 +14,7 @@ public:
 
   void setup()
   {
-    CreatorLight *creator_light = new CreatorLight();
+    CreatorActuatorDigital *creator_light = new CreatorActuatorDigital();
     this->light = creator_light->createComponent(13);
 
     CreatorUltrasonic *creator_ultrasonic = new CreatorUltrasonic();
@@ -26,22 +26,22 @@ public:
     float distance = ultrasonic->read_cm();
     if (distance < 20)
     {
-      this->light->write(LOW);
+      light->write(LOW);
       distance = ultrasonic->read_cm();
       delay(1000);
     }
     if (distance >= 20 && distance < 30)
     {
-      this->light->write(HIGH);
+      light->write(HIGH);
       delay(500);
-      this->light->write(LOW);
+      light->write(LOW);
       delay(500);
       distance = ultrasonic->read_cm();
       delay(1000);
     }
     if (distance >= 30)
     {
-      this->light->write(HIGH);
+      light->write(HIGH);
       distance = ultrasonic->read_cm();
       delay(1000);
     }
