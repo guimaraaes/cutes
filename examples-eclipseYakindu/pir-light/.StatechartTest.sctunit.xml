@@ -1,0 +1,6 @@
+<testsuite name="StatechartTest" time="">
+  <testcase name="testLightOn" classname="platform:/resource/Yakindu-PirLuz/StatechartTest.sctunit#StatechartTest.testLightOn" time="">
+  </testcase>
+  <testcase name="testLightOff" classname="platform:/resource/Yakindu-PirLuz/StatechartTest.sctunit#StatechartTest.testLightOff" time="">
+  </testcase>
+</testsuite>

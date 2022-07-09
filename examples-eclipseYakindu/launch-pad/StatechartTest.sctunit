@@ -1,0 +1,131 @@
+testclass StatechartTest for statechart Statechart {
+	
+	@Test
+	operation testActivateMotor() {
+		enter
+		raise buttonMotor.ON
+		proceed 1s
+		raise buttonCancel.OFF
+		proceed 3s
+		assert motor.ON
+		proceed 200ms
+		assert motor.OFF
+		exit
+	}
+	
+	@Test
+	operation testActivateMotorCancel() {
+		enter
+		raise buttonMotor.ON
+		proceed 2s
+		raise buttonCancel.ON
+ 		assert motor.OFF
+ 		assert valve.CLOSE
+		exit
+	}
+	
+	@Test
+	operation testActivateValveCancel() {
+		enter
+		raise buttonValve.ON
+		proceed 2s
+		raise buttonCancel.ON
+ 		assert motor.OFF
+ 		assert valve.CLOSE
+		exit
+	}
+	
+	@Test
+	operation testActivateValveTime1() {
+		enter
+		raise buttonValve.ON
+		proceed 1s
+		raise buttonCancel.OFF
+		proceed 3001ms
+		assert acionamento == 1
+  
+		assert valve.OPEN
+		proceed 20s
+		assert valve.CLOSE
+		exit
+	}
+	
+	@Test
+	operation testActivateValveTime2() {
+		enter
+		raise buttonValve.ON
+//		proceed 1s
+//		raise buttonCancel.OFF
+		proceed 3001ms
+//		assert acionamento == 1
+  
+//		assert valve.OPEN
+		proceed 20s
+//		assert valve.CLOSE
+		raise buttonValve.ON
+		proceed 3001ms
+		assert valve.OPEN
+		proceed 32s
+		assert valve.CLOSE
+		exit
+	}
+	
+	@Test
+	operation testActivateValveTime3() {
+		enter
+		raise buttonValve.ON
+//		proceed 1s
+//		raise buttonCancel.OFF
+		proceed 3001ms
+//		assert acionamento == 1
+  
+//		assert valve.OPEN
+		proceed 20s
+//		assert valve.CLOSE
+		raise buttonValve.ON
+		proceed 3001ms
+//		assert valve.OPEN
+		proceed 32s
+//		assert valve.CLOSE
+
+		raise buttonValve.ON
+		proceed 3001ms
+		assert valve.OPEN
+		proceed 40s
+		assert valve.CLOSE
+		exit
+	}
+	
+	@Test
+	operation testActivateValveOutTimes() {
+		enter
+		raise buttonValve.ON
+//		proceed 1s
+//		raise buttonCancel.OFF
+		proceed 3001ms
+//		assert acionamento == 1
+  
+//		assert valve.OPEN
+		proceed 20s
+//		assert valve.CLOSE
+		raise buttonValve.ON
+		proceed 3001ms
+//		assert valve.OPEN
+		proceed 32s
+//		assert valve.CLOSE
+
+		raise buttonValve.ON
+		proceed 3001ms
+//		assert valve.OPEN
+		proceed 40s
+//		assert valve.CLOSE
+		
+		raise buttonValve.ON
+		proceed 3001ms
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	
+}

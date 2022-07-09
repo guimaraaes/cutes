@@ -1,0 +1,16 @@
+<testsuite name="StatechartTest" time="">
+  <testcase name="testActivateMotor" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateMotor" time="">
+  </testcase>
+  <testcase name="testActivateValveTime1" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveTime1" time="">
+  </testcase>
+  <testcase name="testActivateValveTime2" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveTime2" time="">
+  </testcase>
+  <testcase name="testActivateValveTime3" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveTime3" time="">
+  </testcase>
+  <testcase name="testActivateValveOutTimes" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveOutTimes" time="">
+  </testcase>
+  <testcase name="testActivateMotorCancel" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateMotorCancel" time="">
+  </testcase>
+  <testcase name="testActivateValveCancel" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveCancel" time="">
+  </testcase>
+</testsuite>

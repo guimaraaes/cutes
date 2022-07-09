@@ -1,0 +1,20 @@
+testclass StatechartTest for statechart Statechart {
+	
+	@Test
+	operation testLightOn() {
+		enter
+		raise pir.ON
+ 		assert light.ON
+ 		proceed 1s
+
+	}
+	
+	@Test
+	operation testLightOff() {
+		enter
+		raise pir.OFF
+ 		assert light.OFF
+ 		proceed 1s
+	}
+
+}
