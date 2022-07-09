@@ -1,9 +1,8 @@
 // #include <Arduino.h>
 
-#include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
-// #include "../../../unit-embedded-system-framework/component/units-creatores/CreatorUltrasonic.h"
-#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorActuatorDigital.h"
-#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorSensorDigital.h"
+#include "../../../cutes/embedded_system/EmbeddedSystem.h"
+#include "../../../cutes/component/units-creatores/CreatorActuatorDigital.h"
+#include "../../../cutes/component/units-creatores/CreatorSensorDigital.h"
 
 class Arduino : public EmbeddedSystem
 {
@@ -22,20 +21,14 @@ public:
 
     void setup()
     {
-        CreatorSensorDigital *creator_buttonMotor = new CreatorSensorDigital();
-        buttonMotor = creator_buttonMotor->createComponent(7);
+        CreatorSensorDigital *creator_button = new CreatorSensorDigital();
+        buttonMotor = creator_button->createComponent(7);
+        buttonValve = creator_button->createComponent(12);
+        buttonCancel = creator_button->createComponent(13);
 
-        CreatorSensorDigital *creator_buttonValve = new CreatorSensorDigital();
-        buttonValve = creator_buttonValve->createComponent(12);
-
-        CreatorSensorDigital *creator_buttonCancel = new CreatorSensorDigital();
-        buttonCancel = creator_buttonCancel->createComponent(13);
-
-        CreatorActuatorDigital *creator_motor = new CreatorActuatorDigital();
-        motor = creator_motor->createComponent(3);
-
-        CreatorActuatorDigital *creator_valve = new CreatorActuatorDigital();
-        valve = creator_valve->createComponent(11);
+        CreatorActuatorDigital *creator_actuator_digital = new CreatorActuatorDigital();
+        motor = creator_actuator_digital->createComponent(3);
+        valve = creator_actuator_digital->createComponent(11);
     }
     void loop()
     {

@@ -1,6 +1,6 @@
-#include "../../../unit-embedded-system-framework/embedded_system/EmbeddedSystem.h"
-#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorActuatorDigital.h"
-#include "../../../unit-embedded-system-framework/component/units-creatores/CreatorSensorDigital.h"
+#include "../../../cutes/embedded_system/EmbeddedSystem.h"
+#include "../../../cutes/component/units-creatores/CreatorActuatorDigital.h"
+#include "../../../cutes/component/units-creatores/CreatorSensorDigital.h"
 
 class Arduino : public EmbeddedSystem
 {

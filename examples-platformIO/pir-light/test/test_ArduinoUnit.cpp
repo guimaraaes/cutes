@@ -1,6 +1,6 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-#include "../../../unit-embedded-system-framework/store/Store.h"
+#include "../../../cutes/store/Store.h"
 
 void configuration(String name)
 {
@@ -16,10 +16,10 @@ test(testLightOn)
 {
     configuration("testLightOn");
 
-    if (!pir_light.pir->behavior->raiseHigh(3))
+    if (!pir_light.pir->behavior->raiseHigh())
         fail();
 
-    assertTrue(pir_light.light->behavior->isRaisedHigh(13));
+    assertTrue(pir_light.light->behavior->isRaisedHigh());
 
     // runner->proceed_time(4 * 1000);
 }
@@ -28,10 +28,10 @@ test(testLightOff)
 {
     configuration("testLightOff");
 
-    if (!pir_light.pir->behavior->raiseLow(3))
+    if (!pir_light.pir->behavior->raiseLow())
         fail();
 
-    assertTrue(pir_light.light->behavior->isRaisedLow(13));
+    assertTrue(pir_light.light->behavior->isRaisedLow());
 
     // runner->proceed_time(4 * 1000);
 }

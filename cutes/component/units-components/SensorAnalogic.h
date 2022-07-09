@@ -9,7 +9,7 @@ public:
     SensorAnalogic(uint8_t pin)
     {
         this->pin = pin;
-        this->behavior = new Numeric(0, 1023);
+        this->behavior = new Numeric(pin, 0, 1023);
         pinMode(pin, INPUT);
     };
 

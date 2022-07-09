@@ -10,7 +10,7 @@ public:
     ActuatorDigital(int pin)
     {
         this->pin = pin;
-        this->behavior = new HighLow();
+        this->behavior = new HighLow(pin);
         pinMode(pin, OUTPUT);
     };
 

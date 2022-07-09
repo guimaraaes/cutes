@@ -2,8 +2,8 @@
 #include "../embedded_system/embedded_system.cpp"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
 
-// #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
-// #include "../test/test_ArduinoUnit.cpp"
+#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
+#include "../test/test_ArduinoUnit.cpp"
 
 // #include "../test/test_AUnit.cpp"
 // #include "AUnit/src/AUnit.h"
@@ -13,7 +13,7 @@ void setup()
 {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  ultrasonic_light.setup();
+  // ultrasonic_light.setup();
 
   // casesTest->setup();
 
@@ -24,9 +24,9 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-  ultrasonic_light.loop();
+  // ultrasonic_light.loop();
   // casesTest->loop();
-  // Test::run();
+  Test::run();
 
   // TestRunner::run();
 }

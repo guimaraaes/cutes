@@ -15,7 +15,7 @@ public:
         this->pin = pinTrigger;
         this->pinTrigger = pinTrigger;
         this->pinEcho = pinEcho;
-        this->behavior = new Numeric(2, 400);
+        this->behavior = new Numeric(pinTrigger, 2, 400);
         // pinMode(pin, INPUT);
     };
 
