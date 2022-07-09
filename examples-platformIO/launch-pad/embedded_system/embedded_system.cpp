@@ -39,6 +39,7 @@ public:
     }
     void loop()
     {
+
         if (buttonValve->read() == HIGH)
         { // Se o botão for pressionado
             if (buttonCancel->read() == LOW)
