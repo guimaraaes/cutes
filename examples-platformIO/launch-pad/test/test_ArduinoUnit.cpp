@@ -1,11 +1,11 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-#include "../../../cutes/store/Store.h"
+#include "../../../cutes/history/History.h"
 void configuration(String name)
 {
     launch_pad.setup();
 
-    store->list->clear();
+    history->list->clear();
     Serial.println(name);
     delay(3000);
     launch_pad.loop();

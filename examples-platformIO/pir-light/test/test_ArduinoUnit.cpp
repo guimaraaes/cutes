@@ -1,12 +1,12 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-#include "../../../cutes/store/Store.h"
+#include "../../../cutes/history/History.h"
 
 void configuration(String name)
 {
     pir_light.setup();
 
-    store->list->clear();
+    history->list->clear();
     Serial.println(name);
     delay(3000);
     pir_light.loop();

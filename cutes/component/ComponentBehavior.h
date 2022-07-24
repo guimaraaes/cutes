@@ -1,6 +1,6 @@
 #pragma once
-#include "../store/Store.h"
-#include "../store/Interation.h"
+#include "../history/History.h"
+#include "../history/Interation.h"
 
 class ComponentBehavior
 {
@@ -10,9 +10,9 @@ public:
     {
         this->pin = pin;
     };
-    void addStore(int pin, int value)
+    void addHistory(int pin, int value)
     {
         Interation element = Interation(millis(), value, pin);
-        store->list->add(element);
+        history->list->add(element);
     };
 };

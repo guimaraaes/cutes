@@ -1,10 +1,10 @@
 #include "Interation.h"
 #include "../lib/LinkedList/LinkedList.h"
 
-#ifndef STORE_H_INCLUDED
-#define STORE_H_INCLUDED
+#ifndef HISTORY_H_INCLUDED
+#define HISTORY_H_INCLUDED
 
-class Store
+class History
 {
 
 public:
@@ -34,22 +34,22 @@ public:
         return (element2.time - element1.time) >= time;
     }
 
-    static Store *get()
+    static History *get()
     {
-        if (store == 0)
-            store = new Store();
-        return store;
+        if (history == 0)
+            history = new History();
+        return history;
     }
 
-    // Store(const Store &) = delete;
+    // History(const History &) = delete;
 
 public:
-    Store()
+    History()
     {
         list = new LinkedList<Interation>();
     }
-    static Store *store;
+    static History *history;
 };
-Store *Store::store = 0;
-Store *store = Store::get();
+History *History::history = 0;
+History *history = History::get();
 #endif

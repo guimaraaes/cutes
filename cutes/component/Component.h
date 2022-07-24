@@ -1,12 +1,12 @@
 #pragma once
 
 #include "ComponentBehavior.h"
-#include "../store/Store.h"
+#include "../history/History.h"
 
 class Component
 {
 public:
     int pin;
     ComponentBehavior *componentBehavior;
-    Store store;
+    History history;
 };

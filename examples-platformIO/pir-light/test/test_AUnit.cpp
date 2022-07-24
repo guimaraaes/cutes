@@ -1,7 +1,7 @@
 #include "../src/AUnit/src/AUnit.h"
 using namespace aunit;
 
-#include "../../../cutes/store/Store.h"
+#include "../../../cutes/history/History.h"
 #include "../../../cutes/test/Test.h"
 
 class TestPirLigh : public TestOnce, TestCutes
@@ -20,7 +20,7 @@ public:
 
 void configuration(String name)
 {
-    store->list->clear();
+    history->list->clear();
     Serial.println(name);
     delay(3000);
     pir_light.loop();

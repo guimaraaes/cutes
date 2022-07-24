@@ -19,12 +19,12 @@ public:
         if (value == 0)
         {
             digitalWrite(this->pin, LOW);
-            this->behavior->addStore(pin, 0);
+            this->behavior->addHistory(pin, 0);
         }
         if (value == 1)
         {
             digitalWrite(this->pin, HIGH);
-            this->behavior->addStore(this->pin, 1);
+            this->behavior->addHistory(this->pin, 1);
         }
     };
 };

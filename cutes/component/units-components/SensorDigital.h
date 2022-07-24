@@ -15,7 +15,7 @@ public:
     int read()
     {
         int value = digitalRead(this->pin);
-        this->behavior->addStore(this->pin, value);
+        this->behavior->addHistory(this->pin, value);
         Serial.println(value);
         return value;
     };

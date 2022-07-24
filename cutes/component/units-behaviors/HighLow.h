@@ -10,34 +10,34 @@ public:
 
     bool isRaisedHigh()
     {
-        Interation element = store->list->shift();
+        Interation element = history->list->shift();
         return element.value == 1 && element.pin == this->pin;
     };
     bool isRaisedLow()
     {
         // Serial.println("is raised low");
-        Interation element = store->list->shift();
+        Interation element = history->list->shift();
         return element.value == 0 && element.pin == this->pin;
     };
     bool raiseHigh()
     {
-        Interation element = store->list->shift();
-        while ((element.value != 1 || element.pin != this->pin) && store->list->size() > 0)
-            element = store->list->shift();
+        Interation element = history->list->shift();
+        while ((element.value != 1 || element.pin != this->pin) && history->list->size() > 0)
+            element = history->list->shift();
         return element.value == 1 && element.pin == this->pin;
     };
 
     bool raiseLow()
     {
-        Interation element = store->list->shift();
-        while ((element.value != 0 || element.pin != this->pin) && store->list->size() > 0)
-            element = store->list->shift();
+        Interation element = history->list->shift();
+        while ((element.value != 0 || element.pin != this->pin) && history->list->size() > 0)
+            element = history->list->shift();
         return element.value == 0 && element.pin == this->pin;
     };
 
     bool outLimit()
     {
-        Interation element = store->list->shift();
+        Interation element = history->list->shift();
         return element.value != 0 && element.value != 1 && element.pin == this->pin;
     };
 };

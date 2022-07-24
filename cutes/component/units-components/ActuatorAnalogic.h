@@ -16,6 +16,6 @@ public:
     void write(int value)
     {
         analogWrite(this->pin, value);
-        this->behavior->addStore(this->pin, value);
+        this->behavior->addHistory(this->pin, value);
     };
 };

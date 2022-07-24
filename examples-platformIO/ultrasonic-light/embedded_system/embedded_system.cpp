@@ -8,16 +8,17 @@ class Arduino : public EmbeddedSystem
 
 public:
   ActuatorDigital *light;
+  CreatorActuatorDigital *creator_light = new CreatorActuatorDigital();
+
   SensorUltrasonicNumericCM *ultrasonic;
+  CreatorUltrasonic *creator_ultrasonic = new CreatorUltrasonic();
+
   Arduino(String description, String author) : EmbeddedSystem(description, author){};
   void configuration(){};
 
   void setup()
   {
-    CreatorActuatorDigital *creator_light = new CreatorActuatorDigital();
     this->light = creator_light->createComponent(13);
-
-    CreatorUltrasonic *creator_ultrasonic = new CreatorUltrasonic();
     this->ultrasonic = creator_ultrasonic->createComponent(4, 5);
   }
   void loop()

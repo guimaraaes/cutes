@@ -25,7 +25,7 @@ public:
         float distance = 0;
         distance = ultrasonic.read();
         Serial.println((int)distance);
-        this->behavior->addStore(this->pin, (int)distance);
+        this->behavior->addHistory(this->pin, (int)distance);
         return distance;
     };
 };

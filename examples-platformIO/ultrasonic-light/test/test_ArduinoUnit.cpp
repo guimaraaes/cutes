@@ -1,6 +1,6 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-#include "../../../cutes/store/Store.h"
+#include "../../../cutes/history/History.h"
 // #include "../../../cutes/test/Test.h"
 
 // class CasesTest : public Test
@@ -23,7 +23,7 @@ void configuration(String name)
 {
     ultrasonic_light.setup();
 
-    store->list->clear();
+    history->list->clear();
     Serial.println(name);
     delay(3000);
     ultrasonic_light.loop();

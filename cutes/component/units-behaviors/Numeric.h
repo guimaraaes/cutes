@@ -14,19 +14,19 @@ public:
     }
     bool raisedViVf(int Vi, int Vf)
     {
-        Interation element = store->list->shift();
-        while ((element.value < Vi || element.value >= Vf || element.pin != this->pin) && store->list->size() > 0)
-            element = store->list->shift();
+        Interation element = history->list->shift();
+        while ((element.value < Vi || element.value >= Vf || element.pin != this->pin) && history->list->size() > 0)
+            element = history->list->shift();
         return element.value >= Vi && element.value < Vf && element.pin == this->pin;
     };
     bool isRaisedViVf(int Vi, int Vf)
     {
-        Interation element = store->list->shift();
+        Interation element = history->list->shift();
         return element.value >= Vi && element.value < Vf && element.pin == this->pin;
     };
     bool outLimit()
     {
-        Interation element = store->list->shift();
+        Interation element = history->list->shift();
         return element.value > this->upperValue && element.value < this->lowerValue && element.pin == this->pin;
     };
 };
