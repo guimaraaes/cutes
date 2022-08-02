@@ -1,6 +1,6 @@
 #include "../embedded_system/EmbeddedSystem.h"
 #include "../component/ComponentBehavior.h"
-#include "../store/Store.h"
+#include "../history/History.h"
 
 #ifndef TEST_H_INCLUDED
 #define TEST_H_INCLUDED

@@ -2,29 +2,45 @@
 #pragma once
 
 #include "../Component.h"
+
+#ifdef TEST_ENVIROMENT
 #include "../units-behaviors/HighLow.h"
+#endif
+
 class ActuatorDigital : public Component
 {
 public:
+#ifdef TEST_ENVIROMENT
     HighLow *behavior;
+#endif
     ActuatorDigital(int pin)
     {
-        this->pin = pin;
+#ifdef TEST_ENVIROMENT
         this->behavior = new HighLow(pin);
+#endif
+        this->pin = pin;
         pinMode(pin, OUTPUT);
     };
+    void addHistory(int pin, int value)
+    {
+#ifdef TEST_ENVIROMENT
+        this->behavior->addHistory(pin, value);
+#endif
+    }
 
     void write(int value)
     {
         if (value == 0)
         {
             digitalWrite(this->pin, LOW);
-            this->behavior->addHistory(pin, 0);
+            this->addHistory(this->pin, 0);
+            // this->behavior->addHistory(this->pin, 1);
         }
         if (value == 1)
         {
             digitalWrite(this->pin, HIGH);
-            this->behavior->addHistory(this->pin, 1);
+            this->addHistory(this->pin, 1);
+            // this->behavior->addHistory(this->pin, 1);
         }
     };
 };

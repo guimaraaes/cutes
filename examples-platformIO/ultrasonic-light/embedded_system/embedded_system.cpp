@@ -10,7 +10,7 @@ public:
   ActuatorDigital *light;
   CreatorActuatorDigital *creator_light = new CreatorActuatorDigital();
 
-  SensorUltrasonicNumericCM *ultrasonic;
+  SensorUltrasonicCM *ultrasonic;
   CreatorUltrasonic *creator_ultrasonic = new CreatorUltrasonic();
 
   Arduino(String description, String author) : EmbeddedSystem(description, author){};
