@@ -21,12 +21,6 @@ public:
         this->pin = pin;
         pinMode(pin, OUTPUT);
     };
-    void addHistory(int pin, int value)
-    {
-#ifdef TEST_ENVIROMENT
-        this->behavior->addHistory(pin, value);
-#endif
-    }
 
     void write(int value)
     {
@@ -34,13 +28,11 @@ public:
         {
             digitalWrite(this->pin, LOW);
             this->addHistory(this->pin, 0);
-            // this->behavior->addHistory(this->pin, 1);
         }
         if (value == 1)
         {
             digitalWrite(this->pin, HIGH);
             this->addHistory(this->pin, 1);
-            // this->behavior->addHistory(this->pin, 1);
         }
     };
 };

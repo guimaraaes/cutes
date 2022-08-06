@@ -27,12 +27,6 @@ public:
         this->pinEcho = pinEcho;
     };
 
-    void addHistory(int pin, int value)
-    {
-#ifdef TEST_ENVIROMENT
-        this->behavior->addHistory(pin, value);
-#endif
-    }
     float read_cm()
     {
         Ultrasonic ultrasonic(this->pinTrigger, this->pinEcho);
@@ -40,7 +34,6 @@ public:
         distance = ultrasonic.read();
         Serial.println((int)distance);
         this->addHistory(this->pin, (int)distance);
-        // this->behavior->addHistory(this->pin, (int)distance);
         return distance;
     };
 };

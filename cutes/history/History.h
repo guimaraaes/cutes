@@ -1,8 +1,6 @@
-#include "Interation.h"
+#pragma once
 #include "../lib/LinkedList/LinkedList.h"
-
-#ifndef HISTORY_H_INCLUDED
-#define HISTORY_H_INCLUDED
+#include "Interation.h"
 
 class History
 {
@@ -11,7 +9,7 @@ public:
     LinkedList<Interation> *list;
     void showList()
     {
-        // Serial.println("show list");
+        Serial.println("---- history embedded system ----");
         Interation element = Interation();
         for (int i = 0; i < list->size(); i++)
         {
@@ -52,4 +50,3 @@ public:
 };
 History *History::history = 0;
 History *history = History::get();
-#endif
