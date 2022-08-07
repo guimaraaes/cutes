@@ -38,7 +38,8 @@ test(test_0to20)
 
     assertTrue(ultrasonic_light.light->behavior->isRaisedLow());
 
-    // runner->proceed_time(4 * 1000);
+    if (!ultrasonic_light.light->behavior->proceed_time(4 * 1000))
+        fail();
 }
 
 test(test_20to30)
@@ -51,7 +52,8 @@ test(test_20to30)
     assertTrue(ultrasonic_light.light->behavior->isRaisedHigh());
     assertTrue(ultrasonic_light.light->behavior->isRaisedLow());
 
-    // runner->proceed_time(4 * 1000);
+    if (!ultrasonic_light.light->behavior->proceed_time(4 * 1000))
+        fail();
 }
 
 test(test_30toLarger)
@@ -62,4 +64,7 @@ test(test_30toLarger)
         fail();
 
     assertTrue(ultrasonic_light.light->behavior->isRaisedHigh());
+
+    if (!ultrasonic_light.light->behavior->proceed_time(4 * 1000))
+        fail();
 }
