@@ -21,7 +21,8 @@ test(testLightOn)
 
     assertTrue(pir_light.light->behavior->isRaisedHigh());
 
-    // runner->proceed_time(4 * 1000);
+    if (!pir_light.light->behavior->proceed_time(4 * 1000))
+        fail();
 }
 
 test(testLightOff)
@@ -33,5 +34,6 @@ test(testLightOff)
 
     assertTrue(pir_light.light->behavior->isRaisedLow());
 
-    // runner->proceed_time(4 * 1000);
+    if (!pir_light.light->behavior->proceed_time(4 * 1000))
+        fail();
 }

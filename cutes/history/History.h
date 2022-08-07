@@ -24,14 +24,6 @@ public:
         }
     }
 
-    bool proceed_time(int time)
-    {
-        Interation element1 = list->shift();
-        Interation element2 = list->get(0);
-
-        return (element2.time - element1.time) >= time;
-    }
-
     static History *get()
     {
         if (history == 0)

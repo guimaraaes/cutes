@@ -1,5 +1,4 @@
-#ifndef INTERATION_H_INCLUDED
-#define INTERATION_H_INCLUDED
+#pragma once
 
 class Interation
 {
@@ -17,4 +16,3 @@ public:
     };
 };
 Interation *interation;
-#endif

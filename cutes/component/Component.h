@@ -12,7 +12,7 @@ public:
     int pin;
 #ifdef TEST_ENVIROMENT
     ComponentBehavior *behavior;
-    // History history;
+    History *history;
 #endif
     void addHistory(int pin, int value)
     {
