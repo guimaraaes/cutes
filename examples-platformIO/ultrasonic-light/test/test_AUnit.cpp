@@ -2,9 +2,9 @@
 using namespace aunit;
 
 #include "../../../cutes/history/History.h"
-#include "../../../cutes/test/Test.h"
+// #include "../../../cutes/test/units-adapters/AdapterAUnit.h"
 
-class TestUltrasonic : public TestOnce, TestCutes
+class TestUltrasonic : public TestOnce
 {
 public:
     void setup() override
@@ -37,6 +37,20 @@ testF(TestUltrasonic, test_0to20)
     if (!ultrasonic_light.light->behavior->proceed_time(4 * 1000))
         failTestNow();
 }
+
+test(test_0to20)
+{
+    configuration("test_0to20");
+
+    if (!ultrasonic_light.ultrasonic->behavior->raisedViVf(0, 20))
+        fail();
+
+    assertTrue(ultrasonic_light.light->behavior->isRaisedLow());
+
+    if (!ultrasonic_light.light->behavior->proceed_time(4 * 1000))
+        fail();
+}
+
 test(TestUltrasonic, test_20to30)
 {
     configuration("test_20to30");

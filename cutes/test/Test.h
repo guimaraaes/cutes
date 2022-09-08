@@ -1,16 +1,21 @@
+#pragma once
 #include "../embedded_system/EmbeddedSystem.h"
 #include "../component/ComponentBehavior.h"
 #include "../history/History.h"
 
-#ifndef TEST_H_INCLUDED
-#define TEST_H_INCLUDED
 class TestCutes
 {
 
 public:
-    // void configuration(String name);
+    EmbeddedSystem *embeddedsystem;
+    History *history;
     virtual void setup() = 0;
     virtual void teardown() = 0;
-};
+    virtual void beforeEach(String name) = 0;
+    virtual void case_test(String name) = 0;
 
-#endif
+    virtual bool assertTrue(bool value) = 0;
+    virtual void failTest() = 0;
+    virtual void passTest() = 0;
+    virtual void run() = 0;
+};

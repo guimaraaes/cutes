@@ -1,14 +1,31 @@
-// #include "../lib/AUnit/src/AUnit.h"
-// class Target
-// {
-// public:
-//     virtual ~Target() = default;
+#pragma once
+#include "../../lib/AUnit/src/AUnit.h"
+using namespace aunit;
+#include "../Test.h"
+class AdapterAUnit : public TestCutes, TestOnce
+{
+public:
+    void setup() override
+    {
+        TestOnce::setup();
+        this->embeddedsystem->setup();
+    };
+    void teardown() override
+    {
+        TestOnce::teardown();
+    };
 
-//     virtual void Test() const
-//     {
-//         return "Target: The default target's behavior.";
-//     }
-// };
+    void before(String name)
+    {
+        this->history->list->clear();
+        Serial.println(name);
+        delay(3000);
+        this->embeddedsystem->loop();
+    };
+    void case_test(String name){
+
+    };
+};
 // class AdapteeAUnit : public TestOnce
 // {
 // public:

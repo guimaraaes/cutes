@@ -1,8 +1,8 @@
 #include <Arduino.h>
-#define TEST_ENVIROMENT
+// #define TEST_ENVIROMENT
 // #define Test_AUnit
 #define Test_ArduinoUnit
-// #define CREATE_ENVIROMENT
+#define CREATE_ENVIROMENT
 
 #include "../embedded_system/embedded_system.cpp"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
