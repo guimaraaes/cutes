@@ -1,6 +1,10 @@
 # framework-teste-embarcados-arduino-nodemcu
+<<<<<<< HEAD
 
 - CUTES: Create and Units Testing to Embedded Systems.
+=======
+- CUTES: Creation and testing of units and integration for components of embedded systems with arduino.
+>>>>>>> ab31c4675471af964ac5e3913a2dc972202c0eb4
 
 ## atividades para realizar testes em sistemas embarcados
 
@@ -26,11 +30,11 @@ Além disso, na classe Component são definidos atributos para o comportamento, 
 
 Na classe History é definido o atributo de list para armazenar em uma lista encadeada de modo temporal as interações – instâncias da classe Interaction – ocorridas no SE e mapeadas com informações do tempo, pino e o valor da interação. De volta na classe Component, é definido um método (addHistory) para registrar as interações ocorridas no sistema embarcado. Já o atributo de comportamento é um objeto instanciado de uma especialização da classe abstrata ComponentBehavior utilizada para verificar assertivas dos casos de teste. Esta possui uma referência para a classe History e a informação no pino do componente.
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-arquitetura.png" width="100%" height="100%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-arquitetura.png" width="70%" height="70%">
 
 Cada especialização vai definir um comportamento com base na saída ou nos comandos recebidos pelos componentes. Classes como Creator, Component e Component- Behavior possuem suas especializações armazenadas em pastas de unitis-\* pois essas unidades podem ser reaproveitadas na criações de outros SE.
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-units.png" width="100%" height="100%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-units.png" width="70%" height="70%">
 
 lém disso, nem todo SE vai precisar utilizar todas as especializações das pastas unitis-\*. Pela Figura 5.2 observa-se unidades de criadores (unit-creatores) para atuadores e sensores digitais, além do criador do sensor ultrasônico; para as unidades de componentes (units-components) observa-se os componentes resultantes das unidades criadoras.
 
@@ -45,7 +49,7 @@ O registro do comportamento desses sistemas é feito em uma lista temporal. As c
 
 Para a Figura a seguir foram utilizadas as informações retornadas pela PlatformIO sobre o uso das memórias RAM e Flash do microcontrolador. Inicialmente é apresentado o consumo das memórias para a criação da lógica de controle sem o framework, seguindo com o consumo utilizando o CUTES tanto no ambiente de criação (CREATE_ENVIROMENT) como no ambiente de teste (TEST_ENVIROMENT). Para o ambiente de teste é possível analisar o consumo tanto com o AUnit e o Arduino Unit. Para todos os cenários foi utilizado o mesmo exemplo.
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-memória.png" width="100%" height="100%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-memoria.png" width="70%" height="70%">
 
 ## exemplos
 
