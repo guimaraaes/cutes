@@ -1,10 +1,7 @@
 # framework-teste-embarcados-arduino-nodemcu
-<<<<<<< HEAD
 
-- CUTES: Create and Units Testing to Embedded Systems.
-=======
 - CUTES: Creation and testing of units and integration for components of embedded systems with arduino.
->>>>>>> ab31c4675471af964ac5e3913a2dc972202c0eb4
+
 
 ## atividades para realizar testes em sistemas embarcados
 
