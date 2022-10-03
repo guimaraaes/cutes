@@ -1,5 +1,10 @@
 #include <Arduino.h>
+
+#define TEST_ENVIROMENT
+#define Test_ArduinoUnit
+
 #include "../embedded_system/embedded_system.cpp"
+
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 #include "../test/test_ArduinoUnit.cpp"
 
