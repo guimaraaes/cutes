@@ -56,5 +56,14 @@ public:
             }
         }
     };
+    void unitTests()
+    {
+        buttonActuation->unitTest();
+        buttonCancel->unitTest();
+
+        motor->unitTest();
+        ledRed->unitTest();
+        ledGreen->unitTest();
+    }
 };
 Arduino launch_pad = Arduino("sistema embarcado para acionamento de foguete pet", "Sara Guimarães");
