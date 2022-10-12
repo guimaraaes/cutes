@@ -35,7 +35,6 @@ public:
             this->addHistory(this->pin, 1);
         }
     };
-#ifdef TEST_ENVIROMENT
 
     void unitTest(int value)
     {
@@ -45,5 +44,4 @@ public:
         Serial.println("--- Unit test result: you must assert");
         delay(2000);
     }
-#endif
 };

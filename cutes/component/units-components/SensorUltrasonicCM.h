@@ -42,7 +42,7 @@ public:
         Serial.println("Begining unit test to component in pin " + this->pin);
         Serial.println("--- Verify if within 2 seconds component is in " + value);
         delay(2000);
-        Serial.println("--- Unit test result: you must assert");
+        Serial.println("--- Unit test result: " + (this->read_cm() == value));
         delay(2000);
     }
 };
