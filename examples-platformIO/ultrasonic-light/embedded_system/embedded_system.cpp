@@ -1,8 +1,5 @@
 #include <Arduino.h>
-// #include "../lib/Ultrasonic/src/Ultrasonic.h"
-#include "../../../cutes/embedded_system/EmbeddedSystem.h"
-#include "../../../cutes/component/units-creatores/CreatorUltrasonic.h"
-#include "../../../cutes/component/units-creatores/CreatorActuatorDigital.h"
+#include "../../../cutes/cutes.h"
 
 class Arduino : public EmbeddedSystem
 {
@@ -52,8 +49,8 @@ public:
 
   void unitTests()
   {
-    light->unitTest(1);
-    ultrasonic->unitTest(20);
+    light->unitTest();
+    ultrasonic->unitTest();
   }
 };
 Arduino ultrasonic_light = Arduino("sistema embarcado alerta com luz de acordo com a distância", "Sara Guimarães");
