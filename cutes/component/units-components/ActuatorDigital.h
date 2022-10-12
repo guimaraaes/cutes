@@ -36,11 +36,19 @@ public:
         }
     };
 
-    void unitTest(int value)
+    void unitTest()
     {
         Serial.println("Begining unit test to component in pin " + this->pin);
-        Serial.println("--- Verify if within 2 seconds component is with the " + value);
+        this.assertValue(HIGH);
+        this.assertValue(LOW);
+    }
+
+    void assertValue(int value)
+    {
+        Serial.println("--- Verify if within 2 seconds component is during 1 second with the value " + value);
         delay(2000);
+        this->write(value);
+        delay(1000);
         Serial.println("--- Unit test result: you must assert");
         delay(2000);
     }
