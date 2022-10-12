@@ -21,4 +21,6 @@ public:
         history->list->add(element);
 #endif
     };
+
+    void unitTest(int value);
 };

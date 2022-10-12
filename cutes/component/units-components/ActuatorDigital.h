@@ -35,4 +35,15 @@ public:
             this->addHistory(this->pin, 1);
         }
     };
+#ifdef TEST_ENVIROMENT
+
+    void unitTest(int value)
+    {
+        Serial.println("Begining unit test to component in pin " + this->pin);
+        Serial.println("--- Verify if within 2 seconds component is with the " + value);
+        delay(2000);
+        Serial.println("--- Unit test result: you must assert");
+        delay(2000);
+    }
+#endif
 };

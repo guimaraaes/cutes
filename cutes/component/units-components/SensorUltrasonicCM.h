@@ -36,4 +36,13 @@ public:
         this->addHistory(this->pin, (int)distance);
         return distance;
     };
+
+    void unitTest(int value)
+    {
+        Serial.println("Begining unit test to component in pin " + this->pin);
+        Serial.println("--- Verify if within 2 seconds component is in " + value);
+        delay(2000);
+        Serial.println("--- Unit test result: you must assert");
+        delay(2000);
+    }
 };
