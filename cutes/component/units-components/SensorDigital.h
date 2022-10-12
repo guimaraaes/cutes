@@ -31,8 +31,8 @@ public:
     void unitTest()
     {
         Serial.println("Begining unit test to component in pin " + this->pin);
-        this.assertValue(HIGH);
-        this.assertValue(LOW);
+        this->assertValue(HIGH);
+        this->assertValue(LOW);
     }
 
     void assertValue(int value)
