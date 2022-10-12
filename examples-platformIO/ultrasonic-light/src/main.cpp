@@ -1,19 +1,12 @@
 #include <Arduino.h>
 // #define TEST_ENVIROMENT
-// #define Test_AUnit
-#define Test_ArduinoUnit
+
 #define CREATE_ENVIROMENT
 
 #include "../embedded_system/embedded_system.cpp"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
 
-#if (defined TEST_ENVIROMENT && defined Test_AUnit)
-#include "../test/test_AUnit.cpp"
-#include "AUnit/src/AUnit.h"
-using namespace aunit;
-#endif
-
-#if (defined TEST_ENVIROMENT && defined Test_ArduinoUnit)
+#ifdef TEST_ENVIROMENT
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 #include "../test/test_ArduinoUnit.cpp"
 #endif
@@ -25,14 +18,6 @@ void setup()
 #ifdef CREATE_ENVIROMENT
   ultrasonic_light.setup();
 #endif
-
-#if (defined TEST_ENVIROMENT && defined Test_AUnit)
-  TestRunner::exclude("*");
-  TestRunner::include("TestUltrasonic", "*");
-#endif
-#if (defined TEST_ENVIROMENT && defined Test_AUnit)
-
-#endif
 }
 
 void loop()
@@ -42,11 +27,8 @@ void loop()
   ultrasonic_light.loop();
 #endif
 
-#if (defined TEST_ENVIROMENT && defined Test_AUnit)
-  TestRunner::run();
-#endif
-
-#if (defined TEST_ENVIROMENT && defined Test_ArduinoUnit)
+#ifdef TEST_ENVIROMENT
+  ultrasonic_light.unitTests();
   Test::run();
 #endif
 }
