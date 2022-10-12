@@ -37,12 +37,20 @@ public:
         return distance;
     };
 
-    void unitTest(int value)
+    void unitTest()
     {
         Serial.println("Begining unit test to component in pin " + this->pin);
-        Serial.println("--- Verify if within 2 seconds component is in " + value);
+        this->assertValue(10);
+        this->assertValue(20);
+    }
+
+    void assertValue(int value)
+    {
+        Serial.println("--- Put within 2 seconds component with the value " + value);
         delay(2000);
-        Serial.println("--- Unit test result: " + (this->read_cm() == value));
+        int valueReaded = this->read_cm();
+        Serial.println("--- Unit test result: " + (valueReaded == value));
+        Serial.println("--- Value readed: " + valueReaded);
         delay(2000);
     }
 };

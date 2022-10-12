@@ -27,12 +27,21 @@ public:
         return value;
     };
 
-    void unitTest(int value)
+    void unitTest()
     {
         Serial.println("Begining unit test to component in pin " + this->pin);
-        Serial.println("--- Verify if within 2 seconds component is with the " + value);
+        this.assertValue(0);
+        this.assertValue(500);
+        this.assertValue(1023);
+    }
+
+    void assertValue(int value)
+    {
+        Serial.println("--- Put within 2 seconds component with the value " + value);
         delay(2000);
-        Serial.println("--- Unit test result: " + (this->read() == value));
+        int valueReaded = this->read();
+        Serial.println("--- Unit test result: " + (valueReaded == value));
+        Serial.println("--- Value readed: " + valueReaded);
         delay(2000);
     }
 };
