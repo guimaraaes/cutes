@@ -12,7 +12,8 @@ public:
         this->description = description;
         this->author = author;
     };
-    virtual void configuration() = 0;
-    virtual void setup() = 0;
-    virtual void loop() = 0;
+    void configuration();
+    void setup();
+    void loop();
+    void unitTests();
 };
