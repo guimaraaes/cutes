@@ -1,4 +1,5 @@
 #pragma once
+#include "../lib/Ultrasonic/src/Ultrasonic.h"
 #include "../Creator.h"
 #include "../Component.h"
 #include "../units-components/SensorUltrasonicCM.h"

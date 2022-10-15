@@ -1,5 +1,4 @@
-#include <Arduino.h>
-#include "../../../cutes/cutes.h"
+
 
 class UltrasonicLight : public EmbeddedSystem
 {
