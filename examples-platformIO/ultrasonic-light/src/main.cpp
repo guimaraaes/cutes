@@ -1,13 +1,13 @@
 #include <Arduino.h>
-// #define TEST_ENVIROMENT
 
 #define CREATE_ENVIROMENT
+
+#define TEST_ENVIROMENT
 
 #include "../embedded_system/embedded_system.cpp"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
 
 #ifdef TEST_ENVIROMENT
-#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 #include "../test/test_ArduinoUnit.cpp"
 #endif
 
@@ -16,7 +16,7 @@ void setup()
   // put your setup code here, to run once:
   Serial.begin(9600);
 #ifdef CREATE_ENVIROMENT
-  ultrasonic_light.setup();
+  ultrasonicLight.setup();
 #endif
 }
 
@@ -24,11 +24,11 @@ void loop()
 {
 // put your main code here, to run repeatedly:
 #ifdef CREATE_ENVIROMENT
-  ultrasonic_light.loop();
+  ultrasonicLight.loop();
 #endif
 
 #ifdef TEST_ENVIROMENT
-  ultrasonic_light.unitTests();
-  Test::run();
+  ultrasonicLight.runUnitTests();
+  integrationTests.run();
 #endif
 }

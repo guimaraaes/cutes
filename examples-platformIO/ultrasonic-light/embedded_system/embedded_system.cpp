@@ -1,14 +1,14 @@
 #include <Arduino.h>
 #include "../../../cutes/cutes.h"
 
-class Arduino : public EmbeddedSystem
+class UltrasonicLight : public EmbeddedSystem
 {
 
 public:
   ActuatorDigital *light;
   SensorUltrasonicCM *ultrasonic;
 
-  Arduino(String description, String author) : EmbeddedSystem(description, author){};
+  UltrasonicLight(String description, String author) : EmbeddedSystem(description, author){};
   void configuration(){};
 
   void setup()
@@ -47,10 +47,10 @@ public:
     }
   }
 
-  void unitTests()
+  void runUnitTests()
   {
     light->unitTest();
     ultrasonic->unitTest();
   }
 };
-Arduino ultrasonic_light = Arduino("sistema embarcado alerta com luz de acordo com a distância", "Sara Guimarães");
+UltrasonicLight ultrasonicLight = UltrasonicLight("sistema embarcado alerta com luz de acordo com a distância", "Sara Guimarães");
