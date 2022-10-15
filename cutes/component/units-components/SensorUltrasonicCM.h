@@ -32,25 +32,26 @@ public:
         Ultrasonic ultrasonic(this->pinTrigger, this->pinEcho);
         float distance = 0;
         distance = ultrasonic.read();
-        Serial.println((int)distance);
+        Serial.println((String) "--- Value readed: " + (int)distance);
         this->addHistory(this->pin, (int)distance);
         return distance;
     };
 
     void unitTest()
     {
-        Serial.println("Begining unit test to component in pin " + this->pin);
+        Serial.println((String) "Begining unit test to component in pin " + this->pin);
         this->assertValue(10);
         this->assertValue(20);
+        Serial.println();
+        Serial.println();
     }
 
     void assertValue(int value)
     {
-        Serial.println("--- Put within 2 seconds component with the value " + value);
-        delay(2000);
+        Serial.println((String) "--- Put within 2 seconds component with the value " + value);
+        delay(5000);
         int valueReaded = this->read_cm();
-        Serial.println("--- Unit test result: " + (valueReaded == value));
-        Serial.println("--- Value readed: " + valueReaded);
+        Serial.println((String) "--- Unit test result: " + (valueReaded == value));
         delay(2000);
     }
 };

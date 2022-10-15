@@ -29,19 +29,20 @@ public:
 
     void unitTest()
     {
-        Serial.println("Begining unit test to component in pin " + this->pin);
+        Serial.println((String) "Begining unit test to component in pin " + this->pin);
         this->assertValue(0);
         this->assertValue(500);
         this->assertValue(1023);
+        Serial.println();
+        Serial.println();
     }
 
     void assertValue(int value)
     {
-        Serial.println("--- Verify if within 2 seconds component is during 1 second with the value " + value);
+        Serial.println((String) "--- Verify if within 2 seconds component is during 1 second with the value " + value);
         delay(2000);
         this->write(value);
-        delay(1000);
         Serial.println("--- Unit test result: you must assert");
-        delay(2000);
+        delay(5000);
     }
 };

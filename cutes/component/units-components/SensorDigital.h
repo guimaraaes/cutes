@@ -23,25 +23,26 @@ public:
     int read()
     {
         int value = digitalRead(this->pin);
+        Serial.println((String) "--- Value readed: " + (int)value);
         this->addHistory(this->pin, value);
-        Serial.println(value);
         return value;
     };
 
     void unitTest()
     {
-        Serial.println("Begining unit test to component in pin " + this->pin);
-        this->assertValue(HIGH);
-        this->assertValue(LOW);
+        Serial.println((String) "Begining unit test to component in pin " + this->pin);
+        this->assertValue(1);
+        this->assertValue(0);
+        Serial.println();
+        Serial.println();
     }
 
     void assertValue(int value)
     {
-        Serial.println("--- Put within 2 seconds component with the value " + value);
-        delay(2000);
+        Serial.println((String) "--- Put within 2 seconds component with the value " + value);
+        delay(5000);
         int valueReaded = this->read();
-        Serial.println("--- Unit test result: " + (valueReaded == value));
-        Serial.println("--- Value readed: " + valueReaded);
+        Serial.println((String) "--- Unit test result: " + (valueReaded == value));
         delay(2000);
     }
 };
