@@ -15,5 +15,5 @@ public:
     void configuration();
     void setup();
     void loop();
-    void unitTests();
+    void runUnitTests();
 };

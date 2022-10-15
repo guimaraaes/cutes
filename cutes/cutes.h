@@ -4,3 +4,4 @@
 #include "component/units-creatores/CreatorUltrasonic.h"
 #include "component/units-creatores/CreatorActuatorDigital.h"
 #include "component/units-creatores/CreatorSensorDigital.h"
+#include "test/IntegrationTests.h"
