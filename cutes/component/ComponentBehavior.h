@@ -13,12 +13,4 @@ public:
     {
         this->pin = pin;
     };
-
-    bool proceed_time(int time)
-    {
-        Interation element1 = history->list->shift();
-        Interation element2 = history->list->get(0);
-
-        return (element2.time - element1.time) >= time;
-    }
 };

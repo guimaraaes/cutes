@@ -33,6 +33,14 @@ public:
 
     // History(const History &) = delete;
 
+    bool proceedTime(int time)
+    {
+        Interation element1 = this->list->shift();
+        Interation element2 = this->list->get(0);
+
+        return (element2.time - element1.time) >= time;
+    }
+
 public:
     History()
     {
