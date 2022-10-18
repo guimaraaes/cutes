@@ -1,10 +1,5 @@
-// #include <Arduino.h>
 
-#include "../../../cutes/embedded_system/EmbeddedSystem.h"
-#include "../../../cutes/component/units-creatores/CreatorActuatorDigital.h"
-#include "../../../cutes/component/units-creatores/CreatorSensorDigital.h"
-
-class Arduino : public EmbeddedSystem
+class LaunchPadMotorValve : public EmbeddedSystem
 {
 
 public:
@@ -16,60 +11,70 @@ public:
     ActuatorDigital *valve;
 
     int actuation = 0;
-    Arduino(String description, String author) : EmbeddedSystem(description, author){};
+
+    LaunchPadMotorValve(String description, String author) : EmbeddedSystem(description, author){};
     void configuration(){};
 
     void setup()
     {
-        CreatorSensorDigital *creator_sensor_digital = new CreatorSensorDigital();
-        buttonMotor = creator_sensor_digital->createComponent(7);
-        buttonValve = creator_sensor_digital->createComponent(12);
-        buttonCancel = creator_sensor_digital->createComponent(13);
+        CreatorSensorDigital *creatorSensorDigital = new CreatorSensorDigital();
+        buttonMotor = creatorSensorDigital->createComponent(7);
+        buttonValve = creatorSensorDigital->createComponent(12);
+        buttonCancel = creatorSensorDigital->createComponent(13);
 
-        CreatorActuatorDigital *creator_actuator_digital = new CreatorActuatorDigital();
-        motor = creator_actuator_digital->createComponent(3);
-        valve = creator_actuator_digital->createComponent(11);
+        CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
+        motor = creatorActuatorDigital->createComponent(3);
+        valve = creatorActuatorDigital->createComponent(11);
     }
     void loop()
     {
-
         if (buttonValve->read() == HIGH)
-        { // Se o botão for pressionado
+        {
             if (buttonCancel->read() == LOW)
-            { // Se o botão não estiver pressionado
+            {
                 delay(3000);
                 actuation = actuation + 1;
                 switch (actuation)
                 {
                 case '1':
                     valve->write(HIGH);
-                    delay(20000); // Solenoide abre por 20s
+                    delay(20000);
                     valve->write(LOW);
                     break;
                 case '2':
                     valve->write(HIGH);
-                    delay(32000); // Solenoide abre por 32s
+                    delay(32000);
                     valve->write(LOW);
                     break;
                 case '3':
                     valve->write(HIGH);
-                    delay(400000); // Solenoide abre por 40s
+                    delay(400000);
                     valve->write(LOW);
                     break;
                 }
             }
         }
         if (buttonMotor->read() == HIGH)
-        { // Se o botão for pressionado
+        {
             if (buttonCancel->read() == LOW)
-            { // Se o botão não estiver pressionado
+            {
                 delay(3000);
                 motor->write(HIGH);
 
-                delay(200); // Motor trabalha por 0,2s
+                delay(200);
                 motor->write(LOW);
             }
         }
     }
+
+    void runUnitTests()
+    {
+        buttonMotor->unitTest();
+        buttonValve->unitTest();
+        buttonCancel->unitTest();
+
+        motor->unitTest();
+        valve->unitTest();
+    }
 };
-Arduino launch_pad = Arduino("sistema embarcado para acionamento e inserção de combustível de foguete pet", "Sara Guimarães");
+LaunchPadMotorValve launchPadMotorValve = LaunchPadMotorValve("sistema embarcado para acionamento e inserção de combustível de foguete pet", "Sara Guimarães");
