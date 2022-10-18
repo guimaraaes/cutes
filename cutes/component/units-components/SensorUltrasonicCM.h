@@ -1,5 +1,6 @@
 #pragma once
 #include "../Component.h"
+#include "../../lib/Ultrasonic/src/Ultrasonic.h"
 
 #ifdef TEST_ENVIROMENT
 #include "../units-behaviors/Numeric.h"
