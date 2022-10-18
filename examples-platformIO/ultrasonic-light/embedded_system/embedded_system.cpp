@@ -1,5 +1,4 @@
 
-
 class UltrasonicLight : public EmbeddedSystem
 {
 
@@ -12,11 +11,11 @@ public:
 
   void setup()
   {
-    CreatorActuatorDigital *creator_light = new CreatorActuatorDigital();
-    this->light = creator_light->createComponent(13);
+    CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
+    this->light = creatorActuatorDigital->createComponent(13);
 
-    CreatorUltrasonic *creator_ultrasonic = new CreatorUltrasonic();
-    this->ultrasonic = creator_ultrasonic->createComponent(4, 5);
+    CreatorUltrasonic *creatorUltrasonic = new CreatorUltrasonic();
+    this->ultrasonic = creatorUltrasonic->createComponent(4, 5);
   }
 
   void loop()
