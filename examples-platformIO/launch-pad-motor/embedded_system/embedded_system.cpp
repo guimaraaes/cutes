@@ -1,12 +1,5 @@
-
-
-#include "../../../cutes/embedded_system/EmbeddedSystem.h"
-#include "../../../cutes/component/units-creatores/CreatorActuatorDigital.h"
-#include "../../../cutes/component/units-creatores/CreatorSensorDigital.h"
-
-class Arduino : public EmbeddedSystem
+class LaunchPadMotor : public EmbeddedSystem
 {
-
 public:
     SensorDigital *buttonActuation;
     SensorDigital *buttonCancel;
@@ -15,19 +8,19 @@ public:
     ActuatorDigital *ledRed;
     ActuatorDigital *ledGreen;
 
-    Arduino(String description, String author) : EmbeddedSystem(description, author){};
+    LaunchPadMotor(String description, String author) : EmbeddedSystem(description, author){};
     void configuration(){};
 
     void setup()
     {
-        CreatorSensorDigital *creator_sensor_digital = new CreatorSensorDigital();
-        buttonActuation = creator_sensor_digital->createComponent(4);
-        buttonCancel = creator_sensor_digital->createComponent(3);
+        CreatorSensorDigital *creatorSensorDigital = new CreatorSensorDigital();
+        buttonActuation = creatorSensorDigital->createComponent(4);
+        buttonCancel = creatorSensorDigital->createComponent(3);
 
-        CreatorActuatorDigital *creator_actuator_digital = new CreatorActuatorDigital();
-        motor = creator_actuator_digital->createComponent(5);
-        ledRed = creator_actuator_digital->createComponent(1);
-        ledGreen = creator_actuator_digital->createComponent(2);
+        CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
+        motor = creatorActuatorDigital->createComponent(5);
+        ledRed = creatorActuatorDigital->createComponent(1);
+        ledGreen = creatorActuatorDigital->createComponent(2);
     }
     void loop()
     {
@@ -56,7 +49,7 @@ public:
             }
         }
     };
-    void unitTests()
+    void runUnitTests()
     {
         buttonActuation->unitTest();
         buttonCancel->unitTest();
@@ -66,4 +59,4 @@ public:
         ledGreen->unitTest();
     }
 };
-Arduino launch_pad = Arduino("sistema embarcado para acionamento de foguete pet", "Sara Guimarães");
+LaunchPadMotor launchPadMotor = LaunchPadMotor("sistema embarcado para acionamento de foguete pet", "Sara Guimarães");

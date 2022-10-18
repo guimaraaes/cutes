@@ -1,22 +1,33 @@
 #include <Arduino.h>
 
-#define TEST_ENVIROMENT
-#define Test_ArduinoUnit
+#define CREATE_ENVIROMENT
+// #define TEST_ENVIROMENT
+
+#include "../../../cutes/cutes.h"
 
 #include "../embedded_system/embedded_system.cpp"
 
-#include "../lib/ArduinoUnit/src/ArduinoUnit.h"
-#include "../test/test_ArduinoUnit.cpp"
-
+#ifdef TEST_ENVIROMENT
+#include "../test/test.cpp"
+#endif
 void setup()
 {
   // put your setup code here, to run once:
-  // launch_pad.setup();
+  Serial.begin(9600);
+#ifdef CREATE_ENVIROMENT
+  launchPadMotor.setup();
+#endif
 }
 
 void loop()
 {
-  // put your main code here, to run repeatedly:
-  // launch_pad.loop();
-  Test::run();
+// put your main code here, to run repeatedly:
+#ifdef CREATE_ENVIROMENT
+  launchPadMotor.loop();
+#endif
+
+#ifdef TEST_ENVIROMENT
+  launchPadMotor.runUnitTests();
+  integrationTests.run();
+#endif
 }
