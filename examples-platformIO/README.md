@@ -29,10 +29,10 @@
 
 #### Árvore de casos de teste
 
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-ultrasonic-light.png" width="30%" height="30%">
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-ultrasonic-light.png" width="50%" height="50%">
 
 
-### path-launch-pad-motor
+### launch-pad-motor
 
 #### Statechart ([acesse a documentação aqui](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/launch-pad-motor))
 
