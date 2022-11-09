@@ -1,0 +1,127 @@
+testclass StatechartTest for statechart Statechart {
+	
+	
+	@Test
+	operation testCancelDecisionActivateValve() {
+		enter
+		raise buttonValve.ON
+		raise buttonCancel.ON
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	@Test
+	operation testDecisionActivateValve1() {
+		enter
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		assert valve.OPEN
+		assert activate == 1
+		proceed 20s
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	@Test
+	operation testDecisionActivateValve2() {
+		enter
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		proceed 20s
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		assert valve.OPEN
+		assert activate == 2
+		proceed 32s
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	@Test
+	operation testDecisionActivateValve3() {
+		enter
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		proceed 20s
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		proceed 32s
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		assert valve.OPEN
+		assert activate == 3
+		proceed 40s
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	@Test
+	operation testDecisionActivateValveOutlier() {
+		enter
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		proceed 20s
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		proceed 32s
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		proceed 40s
+		raise buttonValve.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	@Test
+	operation testCancelDecisionActivateMotor() {
+		enter
+		raise buttonMotor.ON
+		raise buttonCancel.ON
+		assert motor.OFF
+		assert valve.CLOSE
+		exit
+	}
+	
+	@Test
+	operation testDecisionActivateMotor() {
+		enter
+		raise buttonMotor.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		assert motor.ON
+		exit
+	}
+	
+	@Test
+	operation testDecisionActivateMotorTime() {
+		enter
+		raise buttonMotor.ON
+		raise buttonCancel.OFF
+		proceed 3001 ms
+		assert motor.ON
+		proceed 200 ms
+		assert valve.CLOSE
+		assert motor.OFF
+		exit
+	}
+	
+	
+	
+	
+}

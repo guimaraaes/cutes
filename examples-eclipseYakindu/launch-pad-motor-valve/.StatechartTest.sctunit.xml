@@ -1,0 +1,18 @@
+<testsuite name="StatechartTest" time="">
+  <testcase name="testCancelDecisionActivateValve" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testCancelDecisionActivateValve" time="">
+  </testcase>
+  <testcase name="testDecisionActivateValve1" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testDecisionActivateValve1" time="">
+  </testcase>
+  <testcase name="testDecisionActivateValve2" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testDecisionActivateValve2" time="">
+  </testcase>
+  <testcase name="testDecisionActivateValve3" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testDecisionActivateValve3" time="">
+  </testcase>
+  <testcase name="testDecisionActivateValveOutlier" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testDecisionActivateValveOutlier" time="">
+  </testcase>
+  <testcase name="testCancelDecisionActivateMotor" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testCancelDecisionActivateMotor" time="">
+  </testcase>
+  <testcase name="testDecisionActivateMotor" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testDecisionActivateMotor" time="">
+  </testcase>
+  <testcase name="testDecisionActivateMotorTime" classname="platform:/resource/launch-pad-motor-valve/StatechartTest.sctunit#StatechartTest.testDecisionActivateMotorTime" time="">
+  </testcase>
+</testsuite>

@@ -1,16 +1,12 @@
 <testsuite name="StatechartTest" time="">
-  <testcase name="testActivateMotor" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateMotor" time="">
+  <testcase name="testState1Actuation" classname="platform:/resource/launch-pad-motor/StatechartTest.sctunit#StatechartTest.testState1Actuation" time="">
   </testcase>
-  <testcase name="testActivateMotorCancel" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateMotorCancel" time="">
+  <testcase name="testState2Actuation" classname="platform:/resource/launch-pad-motor/StatechartTest.sctunit#StatechartTest.testState2Actuation" time="">
   </testcase>
-  <testcase name="testActivateValveCancel" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveCancel" time="">
+  <testcase name="testCancelActuation" classname="platform:/resource/launch-pad-motor/StatechartTest.sctunit#StatechartTest.testCancelActuation" time="">
   </testcase>
-  <testcase name="testActivateValveTime1" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveTime1" time="">
+  <testcase name="testActuation" classname="platform:/resource/launch-pad-motor/StatechartTest.sctunit#StatechartTest.testActuation" time="">
   </testcase>
-  <testcase name="testActivateValveTime2" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveTime2" time="">
-  </testcase>
-  <testcase name="testActivateValveTime3" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveTime3" time="">
-  </testcase>
-  <testcase name="testActivateValveOutTimes" classname="platform:/resource/Yakindu-BaseTorque/StatechartTest.sctunit#StatechartTest.testActivateValveOutTimes" time="">
+  <testcase name="testActuationTime" classname="platform:/resource/launch-pad-motor/StatechartTest.sctunit#StatechartTest.testActuationTime" time="">
   </testcase>
 </testsuite>
