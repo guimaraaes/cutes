@@ -40,6 +40,30 @@
 
 #### Funcionalidades
 
+- Detectar botão de acionamento para motor;
+  - Quando acionado:
+    - Ligar led vermelho por 5 segundos;
+    - Após os 5 segundos, ligar led verde por 2 segundos;
+  - Após os 7 segundos, verificar se o botão de cancelar acionamento foi pressionado:
+    - Quando acionado:
+      - Desligar todos os componentes (motor, led vermelho e led verde);
+    - Quando não acionado:
+     - Ligar o motor por 200 milisegundos e desligar a luz vermelha;
+     - Após os 200 milisegundos, desligar o motor e a luz verde.
+
+
+#### Árvore de casos de teste
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor.png" width="30%" height="30%">
+
+
+### launch-pad-motor-valve
+
+#### Statechart ([acesse a documentação aqui](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/launch-pad-motor-valve))
+
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/statechart_launch-pad-motor-valve.png" width="50%" height="50%">
+
+#### Funcionalidades
+
 - Detectar botões de acionamento para motor e válvula e acionar o componente correspondente ao botão;
 - Cancelar acionamento do abastecimento ou lançamento caso o botão de cancelar acionamento seja pressionado durante o tempo de verificação de 3s;
 - Acionar o motor por 0,2 segundos caso o botão de lançamento seja acionado;
@@ -48,4 +72,4 @@
 - Acionar a válvula solenóide por 40 segundos caso o botão de abastecimento seja acionado na terceira vez.
 
 #### Árvore de casos de teste
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor.png" width="30%" height="30%">
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor-valve.png" width="30%" height="30%">
