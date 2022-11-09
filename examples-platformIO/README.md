@@ -72,4 +72,4 @@
 - Acionar a válvula solenóide por 40 segundos caso o botão de abastecimento seja acionado na terceira vez.
 
 #### Árvore de casos de teste
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor-valve.png" width="30%" height="30%">
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor-valve.png" width="50%" height="50%">
