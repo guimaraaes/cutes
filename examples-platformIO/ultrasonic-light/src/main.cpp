@@ -16,9 +16,7 @@ void setup()
 {
   // put your setup code here, to run once:
   Serial.begin(9600);
-#ifdef CREATE_ENVIROMENT
   ultrasonicLight.setup();
-#endif
 }
 
 void loop()
@@ -29,7 +27,8 @@ void loop()
 #endif
 
 #ifdef TEST_ENVIROMENT
-  ultrasonicLight.runUnitTests();
+  // ultrasonicLight.runUnitTests();
+
   integrationTests.run();
 #endif
 }

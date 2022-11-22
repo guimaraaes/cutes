@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define CREATE_ENVIROMENT
-// #define TEST_ENVIROMENT
+// #define CREATE_ENVIROMENT
+#define TEST_ENVIROMENT
 
 #include "../../../cutes/cutes.h"
 

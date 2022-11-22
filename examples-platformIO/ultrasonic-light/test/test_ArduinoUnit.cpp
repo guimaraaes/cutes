@@ -8,7 +8,6 @@ public:
     {
         Serial.println(name);
         delay(3000);
-        ultrasonicLight.setup();
         ultrasonicLight.loop();
     };
 
@@ -29,13 +28,22 @@ test(test_0to20)
 {
     integrationTests.enter("test_0to20");
 
-    if (!ultrasonicLight.ultrasonic->behavior->raisedViVf(0, 20))
-        fail();
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 20));
 
-    assertTrue(ultrasonicLight.light->behavior->isRaisedLow());
+    assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
 
-    if (!history->proceedTime(4 * 1000))
-        fail();
+    integrationTests.exit();
+}
+
+test(test_0to20Decision)
+{
+    integrationTests.enter("test_0to20AndDecision");
+
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 20));
+
+    assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
+
+    assertTrue(history->proceedTime(1 * 1000));
 
     integrationTests.exit();
 }
@@ -44,14 +52,24 @@ test(test_20to30)
 {
     integrationTests.enter("test_20to30");
 
-    if (!ultrasonicLight.ultrasonic->behavior->raisedViVf(20, 30))
-        fail();
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(20, 30));
 
-    assertTrue(ultrasonicLight.light->behavior->isRaisedHigh());
-    assertTrue(ultrasonicLight.light->behavior->isRaisedLow());
+    assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
+    assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
 
-    if (!history->proceedTime(4 * 1000))
-        fail();
+    integrationTests.exit();
+}
+
+test(test_20to30Decision)
+{
+    integrationTests.enter("test_20to30Decision");
+
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(20, 30));
+
+    assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
+    assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
+
+    assertTrue(history->proceedTime(1 * 1000));
 
     integrationTests.exit();
 }
@@ -60,13 +78,22 @@ test(test_30toLarger)
 {
     integrationTests.enter("test_30toLarger");
 
-    if (!ultrasonicLight.ultrasonic->behavior->raisedViVf(30, 400))
-        fail();
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(30, 400));
 
-    assertTrue(ultrasonicLight.light->behavior->isRaisedHigh());
+    assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
 
-    if (!history->proceedTime(4 * 1000))
-        fail();
+    integrationTests.exit();
+}
+
+test(test_30toLargerDecision)
+{
+    integrationTests.enter("test_30toLargerDecision");
+
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(30, 400));
+
+    assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
+
+    assertTrue(history->proceedTime(1 * 1000));
 
     integrationTests.exit();
 }

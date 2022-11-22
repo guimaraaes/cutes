@@ -20,27 +20,23 @@ public:
 
   void loop()
   {
-    Serial.println("loop");
     float distance = ultrasonic->read_cm();
     if (distance < 20)
     {
       light->write(LOW);
-      distance = ultrasonic->read_cm();
       delay(1000);
     }
     if (distance >= 20 && distance < 30)
     {
       light->write(HIGH);
-      delay(500);
+      delay(1000);
       light->write(LOW);
-      delay(500);
-      distance = ultrasonic->read_cm();
+      delay(1000);
       delay(1000);
     }
     if (distance >= 30)
     {
       light->write(HIGH);
-      distance = ultrasonic->read_cm();
       delay(1000);
     }
   }
