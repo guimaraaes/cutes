@@ -7,7 +7,7 @@ class History
 
 public:
     LinkedList<Interation> *list;
-    void showList()
+    void getHistory()
     {
         Serial.println("---- history embedded system ----");
         Interation element = Interation();

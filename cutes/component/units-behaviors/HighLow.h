@@ -5,39 +5,58 @@
 class HighLow : public ComponentBehavior
 {
 
+    bool findElementInValue(int value)
+    {
+        Interation element = history->list->shift();
+
+        bool elementInValueAndInPin = this->isElementInValueAndInPin(element, value, this->pin);
+        bool historyHasElements = history->list->size() > 0;
+
+        while (!elementInValueAndInPin && historyHasElements)
+        {
+            elementInValueAndInPin = this->isElementInValueAndInPin(element, value, this->pin);
+            historyHasElements = history->list->size() > 0;
+            element = history->list->shift();
+        }
+
+        return elementInValueAndInPin;
+    }
+
+    bool isElementInValueAndInPin(Interation element, int value, int pin)
+    {
+        bool elementInValue = element.value == value;
+        bool elementInPin = element.pin == this->pin;
+        return elementInValue && elementInPin;
+    };
+
 public:
     HighLow(int pin) : ComponentBehavior(pin){};
 
-    bool isRaisedHigh()
+    bool isSensorHigh()
     {
-        Interation element = history->list->shift();
-        return element.value == 1 && element.pin == this->pin;
-    };
-    bool isRaisedLow()
-    {
-        // Serial.println("is raised low");
-        Interation element = history->list->shift();
-        return element.value == 0 && element.pin == this->pin;
-    };
-    bool raiseHigh()
-    {
-        Interation element = history->list->shift();
-        while ((element.value != 1 || element.pin != this->pin) && history->list->size() > 0)
-            element = history->list->shift();
-        return element.value == 1 && element.pin == this->pin;
+        return this->findElementInValue(HIGH);
     };
 
-    bool raiseLow()
+    bool isSensorLow()
     {
-        Interation element = history->list->shift();
-        while ((element.value != 0 || element.pin != this->pin) && history->list->size() > 0)
-            element = history->list->shift();
-        return element.value == 0 && element.pin == this->pin;
+        return this->findElementInValue(LOW);
     };
 
     bool outLimit()
     {
         Interation element = history->list->shift();
-        return element.value != 0 && element.value != 1 && element.pin == this->pin;
+        return element.value != LOW && element.value != HIGH;
+    };
+
+    bool isActuatorHigh()
+    {
+        Interation element = history->list->shift();
+        return this->isElementInValueAndInPin(element, HIGH, this->pin);
+    };
+
+    bool isActuatorLow()
+    {
+        Interation element = history->list->shift();
+        return this->isElementInValueAndInPin(element, LOW, this->pin);
     };
 };
