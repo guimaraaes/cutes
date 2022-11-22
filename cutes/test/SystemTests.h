@@ -3,7 +3,7 @@
 #include "../component/ComponentBehavior.h"
 #include "../history/History.h"
 
-class IntegrationTests
+class SystemTests
 {
 
 public:
