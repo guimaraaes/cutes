@@ -26,6 +26,6 @@ void loop()
 
 #ifdef TEST_ENVIROMENT
   launchPadMotor.runUnitTests();
-  integrationTests.run();
+  systemTests.run();
 #endif
 }

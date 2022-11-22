@@ -1,9 +1,9 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-class LaunchPadMotorIntegrationTests : public IntegrationTests
+class LaunchPadMotorSystemTests : public SystemTests
 {
 public:
-    LaunchPadMotorIntegrationTests(){};
+    LaunchPadMotorSystemTests(){};
     void enter(String name)
     {
         Serial.println(name);
@@ -22,22 +22,22 @@ public:
     }
 };
 
-LaunchPadMotorIntegrationTests integrationTests = LaunchPadMotorIntegrationTests();
+LaunchPadMotorSystemTests systemTests = LaunchPadMotorSystemTests();
 
 test(testState1Actuation)
 {
-    integrationTests.enter("testState1Actuation");
+    systemTests.enter("testState1Actuation");
 
     assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
     assertTrue(launchPadMotor.ledRed->behavior->isActuatorHigh());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(testState2Actuation)
 {
-    integrationTests.enter("testState2Actuation");
+    systemTests.enter("testState2Actuation");
 
     assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
@@ -45,12 +45,12 @@ test(testState2Actuation)
 
     assertTrue(launchPadMotor.ledGreen->behavior->isActuatorHigh());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(testStateCancelActuation)
 {
-    integrationTests.enter("testStateCancelActuation");
+    systemTests.enter("testStateCancelActuation");
 
     assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
@@ -60,12 +60,12 @@ test(testStateCancelActuation)
 
     assertTrue(launchPadMotor.motor->behavior->isActuatorLow());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(testActuation)
 {
-    integrationTests.enter("testActuation");
+    systemTests.enter("testActuation");
 
     assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
@@ -75,12 +75,12 @@ test(testActuation)
 
     assertTrue(launchPadMotor.motor->behavior->isActuatorHigh());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(testActuationTime)
 {
-    integrationTests.enter("testActuation");
+    systemTests.enter("testActuation");
 
     assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
@@ -94,5 +94,5 @@ test(testActuationTime)
 
     assertTrue(launchPadMotor.motor->behavior->isActuatorLow());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
