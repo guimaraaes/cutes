@@ -23,9 +23,9 @@
 
 #### Funcionalidades
 
-- Luz pagada para distância no intervalo de \[0, 20\[ de um obstáculo até o ultrasônico;
-- Luz piscando com intervalo de 0.segundos para distância no intervalo de \[20, 30\[ de um obstáculo até o ultrasônico;
-- Luz pagada para distância no intervalo de \[30, infinito\[ de um obstáculo até o ultrasônico.
+- Luz apagada para distância no intervalo de \[0, 20\[ de um obstáculo até o ultrasônico;
+- Luz piscando com intervalo de 1 segundo para distância no intervalo de \[20, 30\[ de um obstáculo até o ultrasônico;
+- Luz ligada para distância no intervalo de \[30, infinito\[ de um obstáculo até o ultrasônico.
 
 #### Árvore de casos de teste
 
@@ -36,7 +36,7 @@
 
 #### Statechart ([acesse a documentação aqui](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/launch-pad-motor))
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/statechart_launch-pad-motor.png" width="50%" height="50%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/statechart_launch-pad-motor.png" width="70%" height="70%">
 
 #### Funcionalidades
 
@@ -72,4 +72,4 @@
 - Acionar a válvula solenóide por 40 segundos caso o botão de abastecimento seja acionado na terceira vez.
 
 #### Árvore de casos de teste
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor-valve.png" width="50%" height="50%">
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-launch-pad-motor-valve.png" width="70%" height="70%">
