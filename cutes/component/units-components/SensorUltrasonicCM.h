@@ -40,18 +40,32 @@ public:
     void unitTest()
     {
         Serial.println((String) "Begining unit test to component in pin " + this->pin);
-        this->assertValue(10);
+        this->assertValue(2);
         this->assertValue(20);
+        this->assertValue(400);
         Serial.println();
         Serial.println();
     }
 
-    void assertValue(int value)
+    bool assertValue(int value)
     {
-        Serial.println((String) "--- Put within 2 seconds component with the value " + value);
-        delay(5000);
-        int valueReaded = this->read_cm();
-        Serial.println((String) "--- Unit test result: " + (valueReaded == value));
-        delay(2000);
+        bool reload = true;
+        bool result = false;
+        while (reload)
+        {
+            Serial.println((String) "--- Put within 5 seconds component with the value " + value);
+            delay(5000);
+            int valueReaded = this->read_cm();
+            Serial.println((String) "--- Unit test result: you must assert. Wait to answer." + (valueReaded == value));
+            delay(2000);
+            Serial.println((String) "---- Value expected" + value);
+            Serial.println((String) "---- Value readed" + valueReaded);
+            delay(2000);
+            Serial.println("Unit test pass?");
+            result = Serial.read();
+            Serial.println("Reload unit test?");
+            reload = Serial.read();
+        }
+        return result;
     }
 };
