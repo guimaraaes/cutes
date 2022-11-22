@@ -8,7 +8,6 @@ public:
     {
         Serial.println(name);
         delay(3000);
-        launchPadMotor.setup();
         launchPadMotor.loop();
     };
 
@@ -29,10 +28,9 @@ test(testState1Actuation)
 {
     integrationTests.enter("testState1Actuation");
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedHigh())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
-    assertTrue(launchPadMotor.ledRed->behavior->isRaisedHigh());
+    assertTrue(launchPadMotor.ledRed->behavior->isActuatorHigh());
 
     integrationTests.exit();
 }
@@ -41,12 +39,11 @@ test(testState2Actuation)
 {
     integrationTests.enter("testState2Actuation");
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedHigh())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
-    history->proceedTime(5 * 1000);
+    assertTrue(history->proceedTime(5 * 1000));
 
-    assertTrue(launchPadMotor.ledGreen->behavior->isRaisedHigh());
+    assertTrue(launchPadMotor.ledGreen->behavior->isActuatorHigh());
 
     integrationTests.exit();
 }
@@ -55,15 +52,13 @@ test(testStateCancelActuation)
 {
     integrationTests.enter("testStateCancelActuation");
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedHigh())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
-    history->proceedTime(7 * 1000);
+    assertTrue(history->proceedTime(7 * 1000));
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedHigh())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
-    assertTrue(launchPadMotor.motor->behavior->isRaisedLow());
+    assertTrue(launchPadMotor.motor->behavior->isActuatorLow());
 
     integrationTests.exit();
 }
@@ -72,15 +67,13 @@ test(testActuation)
 {
     integrationTests.enter("testActuation");
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedHigh())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
-    history->proceedTime(7 * 1000);
+    assertTrue(history->proceedTime(7 * 1000));
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedLow())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorLow());
 
-    assertTrue(launchPadMotor.motor->behavior->isRaisedHigh());
+    assertTrue(launchPadMotor.motor->behavior->isActuatorHigh());
 
     integrationTests.exit();
 }
@@ -89,19 +82,17 @@ test(testActuationTime)
 {
     integrationTests.enter("testActuation");
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedHigh())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
 
-    history->proceedTime(7 * 1000);
+    assertTrue(history->proceedTime(7 * 1000));
 
-    if (!launchPadMotor.buttonActuation->behavior->isRaisedLow())
-        fail();
+    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorLow());
 
-    assertTrue(launchPadMotor.motor->behavior->isRaisedHigh());
+    assertTrue(launchPadMotor.motor->behavior->isActuatorHigh());
 
-    history->proceedTime(200);
+    assertTrue(history->proceedTime(200));
 
-    assertTrue(launchPadMotor.motor->behavior->isRaisedLow());
+    assertTrue(launchPadMotor.motor->behavior->isActuatorLow());
 
     integrationTests.exit();
 }
