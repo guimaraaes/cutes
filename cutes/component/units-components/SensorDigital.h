@@ -45,7 +45,7 @@ public:
         {
             Serial.println((String) "--- Put within 5 seconds component with the value " + value);
             delay(5000);
-            int valueReaded = this->read_cm();
+            int valueReaded = this->read();
             Serial.println((String) "--- Unit test result: you must assert. Wait to answer." + (valueReaded == value));
             delay(2000);
             Serial.println((String) "---- Value expected" + value);
