@@ -29,6 +29,6 @@ void loop()
 #ifdef TEST_ENVIROMENT
   // ultrasonicLight.runUnitTests();
 
-  integrationTests.run();
+  systemTests.run();
 #endif
 }

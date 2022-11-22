@@ -1,9 +1,9 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-class UltrasonicLightIntegrationTests : public IntegrationTests
+class UltrasonicLightSystemTests : public SystemTests
 {
 public:
-    UltrasonicLightIntegrationTests(){};
+    UltrasonicLightSystemTests(){};
     void enter(String name)
     {
         Serial.println(name);
@@ -22,22 +22,22 @@ public:
     }
 };
 
-UltrasonicLightIntegrationTests integrationTests = UltrasonicLightIntegrationTests();
+UltrasonicLightSystemTests systemTests = UltrasonicLightSystemTests();
 
 test(test_0to20)
 {
-    integrationTests.enter("test_0to20");
+    systemTests.enter("test_0to20");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 20));
 
     assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(test_0to20Decision)
 {
-    integrationTests.enter("test_0to20AndDecision");
+    systemTests.enter("test_0to20AndDecision");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 20));
 
@@ -45,24 +45,24 @@ test(test_0to20Decision)
 
     assertTrue(history->proceedTime(1 * 1000));
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(test_20to30)
 {
-    integrationTests.enter("test_20to30");
+    systemTests.enter("test_20to30");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(20, 30));
 
     assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
     assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(test_20to30Decision)
 {
-    integrationTests.enter("test_20to30Decision");
+    systemTests.enter("test_20to30Decision");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(20, 30));
 
@@ -71,23 +71,23 @@ test(test_20to30Decision)
 
     assertTrue(history->proceedTime(1 * 1000));
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(test_30toLarger)
 {
-    integrationTests.enter("test_30toLarger");
+    systemTests.enter("test_30toLarger");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(30, 400));
 
     assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(test_30toLargerDecision)
 {
-    integrationTests.enter("test_30toLargerDecision");
+    systemTests.enter("test_30toLargerDecision");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(30, 400));
 
@@ -95,5 +95,5 @@ test(test_30toLargerDecision)
 
     assertTrue(history->proceedTime(1 * 1000));
 
-    integrationTests.exit();
+    systemTests.exit();
 }
