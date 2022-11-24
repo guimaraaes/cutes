@@ -15,9 +15,7 @@ void setup()
 {
   // put your setup code here, to run once:
   Serial.begin(9600);
-#ifdef CREATE_ENVIROMENT
   launchPadMotorValve.setup();
-#endif
 }
 
 void loop()
@@ -29,6 +27,6 @@ void loop()
 
 #ifdef TEST_ENVIROMENT
   launchPadMotorValve.runUnitTests();
-  integrationTests.run();
+  systemTests.run();
 #endif
 }
