@@ -17,6 +17,7 @@ public:
         CreatorSensorDigital *creatorSensorDigital = new CreatorSensorDigital();
         pir = creatorSensorDigital->createComponent(3);
     };
+
     void loop()
     {
         if (pir->read() == HIGH)
@@ -37,4 +38,5 @@ public:
         light->unitTest();
     }
 };
+
 PirLight pirLight = PirLight("sistema embarcado acender luz enquanto movimento for detectado", "Sara Guimarães");

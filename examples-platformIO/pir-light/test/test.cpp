@@ -1,9 +1,9 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-class SirLightSystemTests : public SystemTests
+class PirLightSystemTests : public SystemTests
 {
 public:
-    SirLightSystemTests(){};
+    PirLightSystemTests(){};
     void enter(String name)
     {
         Serial.println(name);
@@ -22,7 +22,7 @@ public:
     }
 };
 
-SirLightSystemTests systemTests = SirLightSystemTests();
+PirLightSystemTests systemTests = PirLightSystemTests();
 
 test(testLightOn)
 {
