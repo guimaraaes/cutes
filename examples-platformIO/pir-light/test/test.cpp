@@ -1,14 +1,13 @@
 #include "../lib/ArduinoUnit/src/ArduinoUnit.h"
 
-class PirLightIntegrationTests : public IntegrationTests
+class SirLightSystemTests : public SystemTests
 {
 public:
-    PirLightIntegrationTests(){};
+    SirLightSystemTests(){};
     void enter(String name)
     {
         Serial.println(name);
         delay(3000);
-        pirLight.setup();
         pirLight.loop();
     };
 
@@ -23,32 +22,30 @@ public:
     }
 };
 
-PirLightIntegrationTests integrationTests = PirLightIntegrationTests();
+SirLightSystemTests systemTests = SirLightSystemTests();
 
 test(testLightOn)
 {
-    integrationTests.enter("testLightOn");
+    systemTests.enter("testLightOn");
 
-    if (!pirLight.pir->behavior->raiseHigh())
-        fail();
+    assertTrue(!pirLight.pir->behavior->isSensorHigh());
 
-    assertTrue(pirLight.light->behavior->isRaisedHigh());
+    assertTrue(pirLight.light->behavior->isActuatorHigh());
 
-    history->proceedTime(4 * 1000);
+    assertTrue(history->proceedTime(4 * 1000));
 
-    integrationTests.exit();
+    systemTests.exit();
 }
 
 test(testLightOff)
 {
-    integrationTests.enter("testLightOff");
+    systemTests.enter("testLightOff");
 
-    if (!pirLight.pir->behavior->raiseLow())
-        fail();
+    assertTrue(pirLight.pir->behavior->isSensorLow());
 
-    assertTrue(pirLight.light->behavior->isRaisedLow());
+    assertTrue(pirLight.light->behavior->isActuatorLow());
 
-    history->proceedTime(4 * 1000);
+    assertTrue(history->proceedTime(4 * 1000));
 
-    integrationTests.exit();
+    systemTests.exit();
 }
