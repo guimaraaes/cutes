@@ -28,19 +28,19 @@ test(testActivateMotor)
 {
     systemTests.enter("testActivateMotor");
 
-    assertTrue(launchPadMotorValve.buttonMotor->behavior->isRaisedHigh());
+    assertTrue(launchPadMotorValve.buttonMotor->behavior->isSensorHigh());
 
     assertTrue(history->proceedTime(1 * 1000));
 
-    assertTrue(launchPadMotorValve.buttonCancel->behavior->isRaisedLow());
+    assertTrue(launchPadMotorValve.buttonCancel->behavior->isSensorLow());
 
     assertTrue(history->proceedTime(3 * 1000));
 
-    assertTrue(launchPadMotorValve.motor->behavior->isRaisedHigh());
+    assertTrue(launchPadMotorValve.motor->behavior->isActuatorHigh());
 
     assertTrue(history->proceedTime(0.2 * 1000));
 
-    assertTrue(launchPadMotorValve.motor->behavior->isRaisedLow());
+    assertTrue(launchPadMotorValve.motor->behavior->isActuatorLow());
 
     systemTests.exit();
 }
