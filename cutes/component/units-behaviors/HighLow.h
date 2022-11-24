@@ -42,12 +42,6 @@ public:
         return this->findElementInValue(LOW);
     };
 
-    bool outLimit()
-    {
-        Interation element = history->list->shift();
-        return element.value != LOW && element.value != HIGH;
-    };
-
     bool isActuatorHigh()
     {
         Interation element = history->list->shift();
@@ -58,5 +52,15 @@ public:
     {
         Interation element = history->list->shift();
         return this->isElementInValueAndInPin(element, LOW, this->pin);
+    };
+
+    bool isSensorOutLimit()
+    {
+        return !isSensorHigh() && !isSensorLow();
+    };
+
+    bool isActuatorOutLimit()
+    {
+        return !isActuatorHigh() && !isActuatorLow();
     };
 };
