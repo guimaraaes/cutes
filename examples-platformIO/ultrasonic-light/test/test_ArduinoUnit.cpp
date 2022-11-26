@@ -24,11 +24,11 @@ public:
 
 UltrasonicLightSystemTests systemTests = UltrasonicLightSystemTests();
 
-test(test_0to20)
+test(test_0to30)
 {
-    systemTests.enter("test_0to20");
+    systemTests.enter("test_0to30");
 
-    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 20));
+    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 30));
 
     assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
 
@@ -37,36 +37,10 @@ test(test_0to20)
 
 test(test_0to20Decision)
 {
-    systemTests.enter("test_0to20AndDecision");
+    systemTests.enter("test_0to30AndDecision");
 
     assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(0, 20));
 
-    assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
-
-    assertTrue(history->proceedTime(1 * 1000));
-
-    systemTests.exit();
-}
-
-test(test_20to30)
-{
-    systemTests.enter("test_20to30");
-
-    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(20, 30));
-
-    assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
-    assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
-
-    systemTests.exit();
-}
-
-test(test_20to30Decision)
-{
-    systemTests.enter("test_20to30Decision");
-
-    assertTrue(ultrasonicLight.ultrasonic->behavior->isSensorViVf(20, 30));
-
-    assertTrue(ultrasonicLight.light->behavior->isActuatorHigh());
     assertTrue(ultrasonicLight.light->behavior->isActuatorLow());
 
     assertTrue(history->proceedTime(1 * 1000));

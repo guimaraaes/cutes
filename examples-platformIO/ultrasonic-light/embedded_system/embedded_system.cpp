@@ -21,15 +21,8 @@ public:
   void loop()
   {
     float distance = ultrasonic->read_cm();
-    if (distance < 20)
+    if (distance < 30)
     {
-      light->write(LOW);
-      delay(1000);
-    }
-    if (distance >= 20 && distance < 30)
-    {
-      light->write(HIGH);
-      delay(500);
       light->write(LOW);
       delay(1000);
     }

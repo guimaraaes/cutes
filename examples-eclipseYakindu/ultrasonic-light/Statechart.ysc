@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_iQcicNoUEeyi6IX4XyQFwg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;&#xA;interface ultrasonic:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;in event _0to20&#xA;&#x9;in event _30toLarger&#xA;&#x9;&#xA;interface light:&#xA;&#x9;out event ON&#xA;&#x9;out event OFF&#xA;" name="Statechart">
+  <sgraph:Statechart xmi:id="_iQcicNoUEeyi6IX4XyQFwg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;&#xA;interface ultrasonic:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;in event _0to30&#xA;&#x9;in event _30toLarger&#xA;&#x9;&#xA;interface light:&#xA;&#x9;out event ON&#xA;&#x9;out event OFF&#xA;" name="Statechart">
     <regions xmi:id="_iQlFU9oUEeyi6IX4XyQFwg" name="main_region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_iQlFVNoUEeyi6IX4XyQFwg">
         <outgoingTransitions xmi:id="_yKbLQN-YEeyNrLeL4nlqXw" specification="" target="_P4XswN-XEey6hNWCmjl7fA"/>
@@ -12,7 +12,7 @@
         <outgoingTransitions xmi:id="_96tUsN-TEey6hNWCmjl7fA" specification="after 1s" target="_P4XswN-XEey6hNWCmjl7fA"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_P4XswN-XEey6hNWCmjl7fA" name="Decision" incomingTransitions="_iQmTctoUEeyi6IX4XyQFwg _96tUsN-TEey6hNWCmjl7fA _yKbLQN-YEeyNrLeL4nlqXw">
-        <outgoingTransitions xmi:id="_iQoIotoUEeyi6IX4XyQFwg" specification="ultrasonic._0to20" target="_iQlsYNoUEeyi6IX4XyQFwg"/>
+        <outgoingTransitions xmi:id="_iQoIotoUEeyi6IX4XyQFwg" specification="ultrasonic._0to30" target="_iQlsYNoUEeyi6IX4XyQFwg"/>
         <outgoingTransitions xmi:id="_pHGGYN-UEey6hNWCmjl7fA" specification="ultrasonic._30toLarger" target="_tWvhcNoUEeyi6IX4XyQFwg"/>
       </vertices>
     </regions>
