@@ -51,7 +51,7 @@ public:
     {
         bool reload = true;
         bool result = false;
-        while (reload)
+        while (reload && Serial.available() > 0)
         {
             Serial.println((String) "--- Put within 5 seconds component with the value " + value);
             delay(5000);

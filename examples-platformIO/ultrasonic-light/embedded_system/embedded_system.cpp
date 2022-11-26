@@ -29,9 +29,8 @@ public:
     if (distance >= 20 && distance < 30)
     {
       light->write(HIGH);
-      delay(1000);
+      delay(500);
       light->write(LOW);
-      delay(1000);
       delay(1000);
     }
     if (distance >= 30)

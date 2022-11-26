@@ -23,4 +23,21 @@ public:
     };
 
     void unitTest(int value);
+
+    // bool assertValueSensor(int value)
+    // {
+    //     Serial.println((String) "--- Put within 5 seconds component with the value " + value);
+    //     delay(5000);
+    //     int valueReaded = this->read_cm();
+    //     Serial.println((String) "--- Unit test result: you must assert. Wait to answer." + (valueReaded == value));
+    //     delay(2000);
+    //     Serial.println((String) "---- Value expected" + value);
+    //     Serial.println((String) "---- Value readed" + valueReaded);
+    //     delay(2000);
+    //     Serial.println("Unit test pass?");
+    //     bool result = Serial.read();
+    //     Serial.println("Reload unit test?");
+    //     bool reload = Serial.read();
+    //     return [ result, reload ];
+    // }
 };

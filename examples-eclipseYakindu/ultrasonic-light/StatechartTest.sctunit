@@ -8,14 +8,7 @@ testclass StatechartTest for statechart Statechart {
 		proceed 1 s
 	}
 	
-	@Test
-	operation test_20to30() {
-		enter
-		raise ultrasonic._20to30
-		assert light.ONOFF
-		proceed 1 s
-	}
-	
+ 
 	@Test
 	operation test_30toLarger() {
 		enter
