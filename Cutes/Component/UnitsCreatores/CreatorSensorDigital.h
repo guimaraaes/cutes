@@ -1,7 +1,7 @@
 #pragma once
 #include "../Creator.h"
 #include "../Component.h"
-#include "../units-components/SensorDigital.h"
+#include "../UnitsComponents/SensorDigital.h"
 
 class CreatorSensorDigital : public Creator
 {

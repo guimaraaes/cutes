@@ -1,6 +1,6 @@
 #pragma once
-#include "../history/History.h"
-#include "../history/Interation.h"
+#include "../History/History.h"
+#include "../History/Interation.h"
 
 class ComponentBehavior
 {

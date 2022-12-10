@@ -9,8 +9,7 @@
 ## ultrasonic-light
 ### Funcionalidades
 
-- Luz apagada para distância no intervalo de \[0, 20\[ de um obstáculo até o ultrasônico;
-- Luz piscando com intervalo de 1 segundo para distância no intervalo de \[20, 30\[ de um obstáculo até o ultrasônico;
+- Luz apagada para distância no intervalo de \[0, 30\[ de um obstáculo até o ultrasônico;
 - Luz ligada para distância no intervalo de \[30, infinito\[ de um obstáculo até o ultrasônico.
 
 ## launch-pad-motor

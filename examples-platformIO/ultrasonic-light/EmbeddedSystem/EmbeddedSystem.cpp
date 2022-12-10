@@ -20,7 +20,7 @@ public:
 
   void loop()
   {
-    float distance = ultrasonic->read_cm();
+    float distance = ultrasonic->read();
     if (distance < 30)
     {
       light->write(LOW);
@@ -33,10 +33,10 @@ public:
     }
   }
 
-  void runUnitTests()
+  void runComponentTests()
   {
-    light->unitTest();
-    ultrasonic->unitTest();
+    light->componentTest();
+    ultrasonic->componentTest();
   }
 };
-UltrasonicLight ultrasonicLight = UltrasonicLight("sistema embarcado alerta com luz de acordo com a distância", "Sara Guimarães");
+UltrasonicLight embeddedSystem = UltrasonicLight("sistema embarcado alerta com luz de acordo com a distância", "Sara Guimarães");
