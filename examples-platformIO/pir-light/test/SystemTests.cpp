@@ -8,7 +8,7 @@ public:
     {
         Serial.println(name);
         delay(3000);
-        pirLight.loop();
+        embeddedSystem.loop();
     };
 
     void exit()
@@ -28,9 +28,9 @@ test(testLightOn)
 {
     systemTests.enter("testLightOn");
 
-    assertTrue(!pirLight.pir->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.pir->behavior->isSensorHigh());
 
-    assertTrue(pirLight.light->behavior->isActuatorHigh());
+    assertTrue(embeddedSystem.light->behavior->isActuatorHigh());
 
     assertTrue(history->proceedTime(4 * 1000));
 
@@ -41,9 +41,9 @@ test(testLightOff)
 {
     systemTests.enter("testLightOff");
 
-    assertTrue(pirLight.pir->behavior->isSensorLow());
+    assertTrue(embeddedSystem.pir->behavior->isSensorLow());
 
-    assertTrue(pirLight.light->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.light->behavior->isActuatorLow());
 
     assertTrue(history->proceedTime(4 * 1000));
 

@@ -1,31 +1,37 @@
+
+#define CREATE_ENVIROMENT
+// #define COMPONENT_TESTS_ENVIROMENT
+// #define SYSTEM_TESTS_ENVIROMENT
 #include <Arduino.h>
-// #define CREATE_ENVIROMENT
-#define TEST_ENVIROMENT
 
-#include "../../../cutes/cutes.h"
+#include "../../../Cutes/Cutes.h"
 
-#include "../embedded-system/embedded-system.cpp"
+#include "../EmbeddedSystem/EmbeddedSystem.cpp"
 
-#ifdef TEST_ENVIROMENT
-#include "../test/test.cpp"
+#ifdef SYSTEM_TESTS_ENVIROMENT
+#include "../test/SystemTests.cpp"
 #endif
 
 void setup()
 {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pirLight.setup();
+  embeddedSystem.setup();
 }
 
 void loop()
 {
 // put your main code here, to run repeatedly:
 #ifdef CREATE_ENVIROMENT
-  pirLight.loop();
+  embeddedSystem.loop();
 #endif
 
-#ifdef TEST_ENVIROMENT
-  pirLight.runUnitTests();
+#ifdef COMPONENT_TESTS_ENVIROMENT
+  embeddedSystem.runComponentTests();
+
+#endif
+
+#ifdef SYSTEM_TESTS_ENVIROMENT
   systemTests.run();
 #endif
 }

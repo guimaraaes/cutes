@@ -55,8 +55,8 @@ public:
         int valueReaded = this->read();
         Serial.println("--- Component test result: you must assert. Wait to answer.");
         delay(2000);
-        Serial.println((String) "---- Value expected" + value);
-        Serial.println((String) "---- Value readed" + valueReaded);
+        Serial.println((String) "---- Value expected " + value);
+        Serial.println((String) "---- Value readed " + valueReaded);
         delay(2000);
     }
 };

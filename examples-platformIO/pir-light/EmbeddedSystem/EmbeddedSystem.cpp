@@ -32,11 +32,11 @@ public:
         }
     };
 
-    void runUnitTests()
+    void runComponentTests()
     {
-        pir->unitTest();
-        light->unitTest();
+        pir->componentTest();
+        light->componentTest();
     }
 };
 
-PirLight pirLight = PirLight("sistema embarcado acender luz enquanto movimento for detectado", "Sara Guimarães");
+PirLight embeddedSystem = PirLight("sistema embarcado acender luz enquanto movimento for detectado", "Sara Guimarães");
