@@ -173,6 +173,8 @@ class PirLightSystemTests : public SystemTests
             Test::run();
         }
 };
+
+PirLightSystemTests systemTests = PirLightSystemTests();
 ```
 ### Casos de teste
 

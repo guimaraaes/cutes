@@ -2,7 +2,7 @@
 #include "../Component.h"
 
 #ifdef SYSTEM_TESTS_ENVIROMENT
-#include "../units-behaviors/Numeric.h"
+#include "../UnitsBehaviors/Numeric.h"
 #endif
 class SensorAnalogic : public Component
 {

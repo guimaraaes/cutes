@@ -1,6 +1,5 @@
 #pragma once
 #include "../ComponentBehavior.h"
-#include "../Component.h"
 
 class HighLow : public ComponentBehavior
 {
