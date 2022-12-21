@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
-// #define CREATE_ENVIROMENT
+#define CREATE_ENVIROMENT
 // #define COMPONENT_TESTS_ENVIROMENT
-#define SYSTEM_TESTS_ENVIROMENT
+// #define SYSTEM_TESTS_ENVIROMENT
 
 #include "../../../Cutes/Cutes.h"
 
@@ -33,6 +33,8 @@ void loop()
 #endif
 
 #ifdef SYSTEM_TESTS_ENVIROMENT
-  systemTests.run();
+  // systemTests.run();
+  Test::run();
+  // run();
 #endif
 }

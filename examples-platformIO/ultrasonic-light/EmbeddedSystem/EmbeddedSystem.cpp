@@ -11,6 +11,7 @@ public:
 
   void setup()
   {
+
     CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
     this->light = creatorActuatorDigital->createComponent(13);
 
