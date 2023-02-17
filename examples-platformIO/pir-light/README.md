@@ -3,15 +3,15 @@
 
 ## Elicitar requisitos
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="30%" height="30%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="90%" height="90%">
 
 ## Statechart ([acesse a documentação aqui com os casos de teste](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/pir-light))
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/statechart.png" width="30%" height="30%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/statechart.png" width="50%" height="50%">
 
 ## Árvore de caminhos do Statechart 
 
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="30%" height="30%">
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="40%" height="40%">
 
 ### Casos de teste para cobertura de 100%
 
@@ -21,7 +21,7 @@
 ## Esquemático do circuito eletrônico
 
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/esquematico-circuito.png" width="50%" height="50%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/esquematico-circuito.png" width="30%" height="30%">
 
 ## Arquitetura do projeto
 Ao criar o projeto com o PlatformIO, a estrutura do projeto deve ser atualizada para a seguinte:
