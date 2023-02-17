@@ -3,14 +3,15 @@
 
 ## Elicitar requisitos
 
-- Luz acesa ao detectar o movimento no sensor PIR;
-- Luz apagada quando o movimento no sensor PIR não é detectado.
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="30%" height="30%">
 
 ## Statechart ([acesse a documentação aqui com os casos de teste](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/pir-light))
 
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/statechart.png" width="30%" height="30%">
+
 ## Árvore de caminhos do Statechart 
 
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/path-pir-light.png" width="30%" height="30%">
+  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="30%" height="30%">
 
 ### Casos de teste para cobertura de 100%
 
@@ -19,7 +20,8 @@
 
 ## Esquemático do circuito eletrônico
 
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/statechart_pir-light.png" width="50%" height="50%">
+
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/esquematico-circuito.png" width="50%" height="50%">
 
 ## Arquitetura do projeto
 Ao criar o projeto com o PlatformIO, a estrutura do projeto deve ser atualizada para a seguinte:
