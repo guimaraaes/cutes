@@ -20,4 +20,4 @@
 
 ## Esquemático do circuito eletrônico
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/esquematico-circuito.png" width="30%" height="30%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/ultrasonic-light/assets/esquematico-circuito.png" width="30%" height="30%">
