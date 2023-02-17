@@ -1,6 +1,6 @@
-# framework-teste-embarcados-arduino-nodemcu
+# cutes
 
-- CUTES: Creation and testing of units and integration for components of embedded systems with arduino.
+- Creation and testing of units and integration for components of embedded systems with arduino
 
 ## atividades para realizar testes em sistemas embarcados
 
