@@ -3,7 +3,7 @@
 
 ## Elicitar requisitos
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/launch-pad-motor/assets/requisitos.png" width="80%" height="80%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/launch-pad-motor/assets/requisitos.png" width="100%" height="100%">
 
 ## Statechart ([acesse a documentação aqui com os casos de teste](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/launch-pad-motor))
 
