@@ -3,7 +3,7 @@
 
 ## Elicitar requisitos
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="90%" height="90%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="80%" height="80%">
 
 ## Statechart ([acesse a documentação aqui com os casos de teste](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/pir-light))
 
@@ -11,7 +11,7 @@
 
 ## Árvore de caminhos do Statechart 
 
-  <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="40%" height="40%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="30%" height="30%">
 
 ### Casos de teste para cobertura de 100%
 
@@ -19,7 +19,6 @@
 - Caso 2: Iniciando no estado de decisão, após não ser detectado nenhum movimento, verificar se a luz está em estado de desligado. 
 
 ## Esquemático do circuito eletrônico
-
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/esquematico-circuito.png" width="30%" height="30%">
 
