@@ -1,20 +1,18 @@
 # cutes
 
-- Creation and testing of units and integration for components of embedded systems with arduino
+- Criação e teste de componentes e de sistema para sistemas embarcados com arduino.
 
 ## atividades para realizar testes em sistemas embarcados
 
-- A primeira atividade de um projeto consiste em:
+As atividades a serem realizadas são agrupadas em etapas de desenvolvimento, sendo estas: Documentação e modelagem, prototipagem eletrônica, codificação e análise, conforme apresentadas na Figura a seguir. 
 
-  - elicitar e documentar os requisitos funcionais e não funcionais, assim como os componentes, em um diagrama de requisitos da SysADL.
-  - Seguindo com um conjunto de atividades com a ferramenta Yakindu Statechart Tool para modelar o funcionamento do sistema em statechart;
-  - e definir os casos de testes que garantam cobertura de 100% da máquina modelada.
+ - A primeira atividade de um projeto consiste em elicitar e documentar os requisitos funcionais e não funcionais, assim como os componentes, em um diagrama de requisitos da SysADL;
+ - Seguindo a criação do statechart no Yakindu Statechart Tool para descrever o funcionamento do sistema já realizar a análise do path deste statechart para conseguir selecionar os casos de teste que devem ser criados para garantir uma cobertura de 100% da máquina modelada;
+ - A próxima atividade consiste na definição dos casos de teste no Yakindu Statechart Tool para seguir com a prototipação eletrônica utilizando o Fritizing e um laboratório que disponibilize os componentes necessários;
+ - Na etapa de codificação temos a atividade de traduzir a lógica de controle do statechart para o Arduino com o framework CUTES e uma atividade para a tradução também dos casos de teste;
+ - Por fim, na etapa de análise temos a aplicação dos testes unitários e dos testes de sistema para avaliar o comportamento do SE.
 
-- O próximo conjunto de atividades é destinado para a criação do SE:
-  - a prototipação eletrônica utilizando o Fritizing e um laboratório que disponibilize os componentes necessários seguindo com a atividade de definir a lógica de controle para o arduino com o CUTES.
-  - Na atividade de teste os casos de testes do Yakindu Statechart Tool são traduzidos para C++ com o CUTES.
-
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/cutes-atividades.png" width="100%" height="100%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/metodologia-guimaraes.png" width="100%" height="100%">
 
 ## análise de consumo de memória
 
@@ -24,7 +22,7 @@ Para a Figura a seguir foram utilizadas as informações retornadas pela Platfor
 
 ## outros tópicos
 
-### [arquitetura do CUTES](https://github.com/guimaraaes/cutes/tree/main/cutes)
+### [arquitetura do CUTES](https://github.com/guimaraaes/cutes/tree/main/Cutes)
 
 ### [exemplos de aplicação](https://github.com/guimaraaes/cutes/tree/main/examples-platformIO)
 
