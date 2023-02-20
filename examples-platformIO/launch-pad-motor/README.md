@@ -11,7 +11,7 @@
 
 ## Árvore de caminhos do Statechart 
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/launch-pad-motor/assets/path-statechart.png" width="50%" height="50%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/launch-pad-motor/assets/path-statechart.png" width="30%" height="30%">
 
 ### Casos de teste para cobertura de 100%
 
@@ -23,4 +23,4 @@
 
 ## Esquemático do circuito eletrônico
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/launch-pad-motor/assets/esquematico-circuito.png" width="40%" height="40%">
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/launch-pad-motor/assets/esquematico-circuito.png" width="50%" height="50%">
