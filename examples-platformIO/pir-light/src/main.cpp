@@ -28,7 +28,6 @@ void loop()
 
 #ifdef COMPONENT_TESTS_ENVIROMENT
   embeddedSystem.runComponentTests();
-
 #endif
 
 #ifdef SYSTEM_TESTS_ENVIROMENT

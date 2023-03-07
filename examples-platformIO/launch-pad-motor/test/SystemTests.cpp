@@ -8,12 +8,12 @@ public:
     {
         Serial.println(name);
         delay(3000);
-        launchPadMotor.loop();
+        embeddedSystem.loopES();
     };
 
     void exit()
     {
-        history->list->clear();
+        history->list.clear();
     };
 
     void run()
@@ -28,9 +28,9 @@ test(testState1Actuation)
 {
     systemTests.enter("testState1Actuation");
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
 
-    assertTrue(launchPadMotor.ledRed->behavior->isActuatorHigh());
+    assertTrue(embeddedSystem.ledRed->behavior->isActuatorHigh());
 
     systemTests.exit();
 }
@@ -39,11 +39,11 @@ test(testState2Actuation)
 {
     systemTests.enter("testState2Actuation");
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
 
     assertTrue(history->proceedTime(5 * 1000));
 
-    assertTrue(launchPadMotor.ledGreen->behavior->isActuatorHigh());
+    assertTrue(embeddedSystem.ledGreen->behavior->isActuatorHigh());
 
     systemTests.exit();
 }
@@ -52,13 +52,13 @@ test(testStateCancelActuation)
 {
     systemTests.enter("testStateCancelActuation");
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
 
     assertTrue(history->proceedTime(7 * 1000));
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
 
-    assertTrue(launchPadMotor.motor->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.motor->behavior->isActuatorLow());
 
     systemTests.exit();
 }
@@ -67,13 +67,13 @@ test(testActuation)
 {
     systemTests.enter("testActuation");
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
 
     assertTrue(history->proceedTime(7 * 1000));
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorLow());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorLow());
 
-    assertTrue(launchPadMotor.motor->behavior->isActuatorHigh());
+    assertTrue(embeddedSystem.motor->behavior->isActuatorHigh());
 
     systemTests.exit();
 }
@@ -82,17 +82,17 @@ test(testActuationTime)
 {
     systemTests.enter("testActuation");
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorHigh());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
 
     assertTrue(history->proceedTime(7 * 1000));
 
-    assertTrue(launchPadMotor.buttonActuation->behavior->isSensorLow());
+    assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorLow());
 
-    assertTrue(launchPadMotor.motor->behavior->isActuatorHigh());
+    assertTrue(embeddedSystem.motor->behavior->isActuatorHigh());
 
     assertTrue(history->proceedTime(200));
 
-    assertTrue(launchPadMotor.motor->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.motor->behavior->isActuatorLow());
 
     systemTests.exit();
 }

@@ -11,7 +11,7 @@ public:
     LaunchPadMotor(String description, String author) : EmbeddedSystem(description, author){};
     void configuration(){};
 
-    void setup()
+    void setupES()
     {
         CreatorSensorDigital *creatorSensorDigital = new CreatorSensorDigital();
         buttonActuation = creatorSensorDigital->createComponent(4);
@@ -22,7 +22,7 @@ public:
         ledRed = creatorActuatorDigital->createComponent(1);
         ledGreen = creatorActuatorDigital->createComponent(2);
     }
-    void loop()
+    void loopES()
     {
         motor->write(LOW);
         ledRed->write(LOW);
@@ -49,14 +49,14 @@ public:
             }
         }
     };
-    void runUnitTests()
+    void runComponentTests()
     {
-        buttonActuation->unitTest();
-        buttonCancel->unitTest();
+        buttonActuation->componentTest();
+        buttonCancel->componentTest();
 
-        motor->unitTest();
-        ledRed->unitTest();
-        ledGreen->unitTest();
+        motor->componentTest();
+        ledRed->componentTest();
+        ledGreen->componentTest();
     }
 };
-LaunchPadMotor launchPadMotor = LaunchPadMotor("sistema embarcado para acionamento de foguete pet", "Sara Guimarães");
+LaunchPadMotor embeddedSystem = LaunchPadMotor("sistema embarcado para acionamento de foguete pet", "Sara Guimarães");
