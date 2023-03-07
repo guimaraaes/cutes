@@ -13,7 +13,7 @@ public:
         this->author = author;
     };
     void configuration();
-    void setup();
-    void loop();
+    void setupES();
+    void loopES();
     void runComponentTests();
 };

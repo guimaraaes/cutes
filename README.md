@@ -26,4 +26,4 @@ Para a Figura a seguir foram utilizadas as informações retornadas pela Platfor
 
 ### [exemplos de aplicação](https://github.com/guimaraaes/cutes/tree/main/examples-platformIO)
 
-### :mailbox: Dúvidas? Me manda um [e-mail](sguimaraaes@gmail.com)
+## :mailbox: Dúvidas? Me manda um [e-mail](sguimaraaes@gmail.com)

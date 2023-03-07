@@ -24,7 +24,6 @@ public:
 
     void write(int value)
     {
-
         digitalWrite(this->pin, value);
         this->addHistory(this->pin, value);
     };

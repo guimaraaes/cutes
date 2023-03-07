@@ -8,7 +8,8 @@ class SystemTests
 
 public:
     EmbeddedSystem *embeddedsystem;
-    History *history;
+    History *history = History::getInstance();
     void enter(String name);
     void exit();
+    void run();
 };

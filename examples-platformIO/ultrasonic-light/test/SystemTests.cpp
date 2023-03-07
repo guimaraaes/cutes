@@ -4,16 +4,19 @@ class UltrasonicLightSystemTests : public SystemTests
 {
 public:
     UltrasonicLightSystemTests(){};
+
     void enter(String name)
     {
         Serial.println(name);
+        setup();
         delay(3000);
-        embeddedSystem.loop();
+        embeddedSystem.loopES();
+        history->getHistory();
     };
 
     void exit()
     {
-        history->list->clear();
+        history->list.clear();
     };
 
     void run()
@@ -24,43 +27,25 @@ public:
 
 UltrasonicLightSystemTests systemTests = UltrasonicLightSystemTests();
 
-void enter(String name)
-{
-    Serial.begin(9600);
-    embeddedSystem.setup();
-    Serial.println(name);
-    delay(3000);
-    embeddedSystem.loop();
-};
-
-void exit()
-{
-    history->list->clear();
-};
-
-void run()
-{
-    Test::run();
-}
-
 test(test_0to30)
 {
-    enter("test_0to30");
+    systemTests.enter("test_0to30");
 
-    assertTrue(embeddedSystem.ultrasonic->behavior->isSensorViVf(0, 30));
-
+    // Serial.println(embeddedSystem.ultrasonic->behavior->raiseSensorViVf(0, 30));
+    assertTrue(embeddedSystem.ultrasonic->behavior->raiseSensorViVf(0, 30));
+    // Serial.println(embeddedSystem.light->behavior->isActuatorLow());
     assertTrue(embeddedSystem.light->behavior->isActuatorLow());
 
-    exit();
+    systemTests.exit();
 }
 
-// test(test_30toLarger)
-// {
-//     systemTests.enter("test_30toLarger");
+test(test_30toLarger)
+{
+    systemTests.enter("test_30toLarger");
 
-//     assertTrue(embeddedSystem.ultrasonic->behavior->isSensorViVf(30, 400));
+    assertTrue(embeddedSystem.ultrasonic->behavior->raiseSensorViVf(30, 400));
 
-//     assertTrue(embeddedSystem.light->behavior->isActuatorHigh());
+    assertTrue(embeddedSystem.light->behavior->isActuatorHigh());
 
-//     systemTests.exit();
-// }
+    systemTests.exit();
+}

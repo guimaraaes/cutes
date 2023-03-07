@@ -1,52 +1,60 @@
 #pragma once
 #include "../lib/LinkedList/LinkedList.h"
-#include "Interation.h"
+#include "Interaction.h"
 
 class History
 {
+protected:
+    History()
+    {
+        list = LinkedList<Interaction *>();
+    }
+    static History *history_;
 
 public:
-    LinkedList<Interation> *list;
+    LinkedList<Interaction *> list;
+    static History *getInstance();
+
     void getHistory()
     {
-        Serial.println("---- history embedded system ----");
-        Interation element = Interation();
-        for (int i = 0; i < list->size(); i++)
+        Serial.println("---- begin history embedded system ----");
+        Interaction *interaction;
+        for (int i = 0; i < this->list.size(); i++)
         {
-            element = list->get(i);
-            Serial.print(element.time);
+            interaction = this->list.get(i);
+            Serial.print(interaction->time);
             Serial.print(", ");
-            Serial.print(element.pin);
+            Serial.print(interaction->pin);
             Serial.print(", ");
-            Serial.print(element.value);
+            Serial.print(interaction->value);
 
             Serial.println(" ");
         }
+        Serial.println("---- end history embedded system ----");
     }
 
-    static History *get()
+    History(History &other) = delete;
+
+    void operator=(const History &) = delete;
+
+    bool proceedTime(unsigned long time)
     {
-        if (history == 0)
-            history = new History();
-        return history;
+        Interaction *interaction1 = this->list.shift();
+        Interaction *interaction2 = this->list.get(0);
+
+        return (interaction2->time - interaction1->time) >= time;
     }
-
-    // History(const History &) = delete;
-
-    bool proceedTime(int time)
-    {
-        Interation element1 = this->list->shift();
-        Interation element2 = this->list->get(0);
-
-        return (element2.time - element1.time) >= time;
-    }
-
-public:
-    History()
-    {
-        list = new LinkedList<Interation>();
-    }
-    static History *history;
 };
-History *History::history = 0;
-History *history = History::get();
+History *History::history_ = nullptr;
+;
+
+History *History::getInstance()
+{
+    if (history_ == nullptr)
+    {
+        history_ = new History();
+    }
+    return history_;
+}
+
+History *history = History::getInstance();

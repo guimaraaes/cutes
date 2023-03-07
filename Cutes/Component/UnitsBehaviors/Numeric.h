@@ -6,28 +6,28 @@ class Numeric : public ComponentBehavior
     int upperValue;
     int lowerValue;
 
-    bool findElementInViVf(int Vi, int Vf)
+    bool findInteractionInViVf(int Vi, int Vf)
     {
-        Interation element = history->list->shift();
+        Interaction *interaction = history->list.shift();
 
-        bool elementInViVfAndInPin = this->isElementViVfAndPin(element, Vi, Vf, this->pin);
-        bool historyHasElements = history->list->size() > 0;
+        bool interactionFound = this->isInteractionInViVfAndPin(interaction, Vi, Vf, this->pin);
+        bool historyHasInteractions = history->list.size() > 0;
 
-        while (!elementInViVfAndInPin && historyHasElements)
+        while (!interactionFound && historyHasInteractions)
         {
-            elementInViVfAndInPin = this->isElementViVfAndPin(element, Vi, Vf, this->pin);
-            historyHasElements = history->list->size() > 0;
-            element = history->list->shift();
+            interaction = history->list.shift();
+            interactionFound = this->isInteractionInViVfAndPin(interaction, Vi, Vf, this->pin);
+            historyHasInteractions = history->list.size() > 0;
         }
 
-        return elementInViVfAndInPin;
+        return interactionFound;
     }
 
-    bool isElementViVfAndPin(Interation element, int Vi, int Vf, int pin)
+    bool isInteractionInViVfAndPin(Interaction *interaction, int Vi, int Vf, int pin)
     {
-        bool elementInViVf = element.value < Vi && element.value >= Vf;
-        bool elementInPin = element.pin == this->pin;
-        return elementInViVf && elementInPin;
+        bool interactionInViVf = interaction->value >= Vi && interaction->value <= Vf;
+        bool interactionInPin = interaction->pin == this->pin;
+        return interactionInViVf && interactionInPin;
     }
 
 public:
@@ -37,20 +37,20 @@ public:
         this->lowerValue = lower;
     }
 
-    bool isSensorViVf(int Vi, int Vf)
+    bool raiseSensorViVf(int Vi, int Vf)
     {
-        return this->findElementInViVf(Vi, Vf);
+        return this->findInteractionInViVf(Vi, Vf);
     };
 
     bool isActuatorViVf(int Vi, int Vf)
     {
-        Interation element = history->list->shift();
-        return this->isElementViVfAndPin(element, Vi, Vf, this->pin);
+        Interaction *interaction = history->list.shift();
+        return this->isInteractionInViVfAndPin(interaction, Vi, Vf, this->pin);
     };
 
     bool isSensorOutLimit()
     {
-        return this->isSensorViVf(this->lowerValue, this->upperValue);
+        return this->raiseSensorViVf(this->lowerValue, this->upperValue);
     };
 
     bool isActuatorOutLimit()

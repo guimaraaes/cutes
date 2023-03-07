@@ -9,9 +9,8 @@ public:
   UltrasonicLight(String description, String author) : EmbeddedSystem(description, author){};
   void configuration(){};
 
-  void setup()
+  void setupES()
   {
-
     CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
     this->light = creatorActuatorDigital->createComponent(13);
 
@@ -19,9 +18,10 @@ public:
     this->ultrasonic = creatorUltrasonic->createComponent(4, 5);
   }
 
-  void loop()
+  void loopES()
   {
     float distance = ultrasonic->read();
+
     if (distance < 30)
     {
       light->write(LOW);
