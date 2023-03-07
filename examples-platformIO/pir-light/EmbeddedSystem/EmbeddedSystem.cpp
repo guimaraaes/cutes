@@ -9,7 +9,7 @@ public:
     PirLight(String description, String author) : EmbeddedSystem(description, author){};
     void configuration(){};
 
-    void setup()
+    void setupES()
     {
         CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
         light = creatorActuatorDigital->createComponent(13);
@@ -18,7 +18,7 @@ public:
         pir = creatorSensorDigital->createComponent(3);
     };
 
-    void loop()
+    void loopES()
     {
         if (pir->read() == HIGH)
         {
