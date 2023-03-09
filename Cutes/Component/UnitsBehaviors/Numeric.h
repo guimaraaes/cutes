@@ -1,7 +1,7 @@
 #pragma once
-#include "../ComponentBehavior.h"
+#include "../Behavior.h"
 
-class Numeric : public ComponentBehavior
+class Numeric : public Behavior
 {
     int upperValue;
     int lowerValue;
@@ -31,7 +31,7 @@ class Numeric : public ComponentBehavior
     }
 
 public:
-    Numeric(int pin, int upper, int lower) : ComponentBehavior(pin)
+    Numeric(int pin, int upper, int lower) : Behavior(pin)
     {
         this->upperValue = upper;
         this->lowerValue = lower;

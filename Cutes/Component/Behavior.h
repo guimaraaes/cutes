@@ -2,14 +2,14 @@
 #include "../History/History.h"
 #include "../History/Interaction.h"
 
-class ComponentBehavior
+class Behavior
 {
 
 public:
     int pin;
     History *history = History::getInstance();
 
-    ComponentBehavior(int pin)
+    Behavior(int pin)
     {
         this->pin = pin;
     };

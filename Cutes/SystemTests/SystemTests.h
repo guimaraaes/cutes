@@ -1,6 +1,6 @@
 #pragma once
 #include "../EmbeddedSystem/EmbeddedSystem.h"
-#include "../Component/ComponentBehavior.h"
+#include "../Component/Behavior.h"
 #include "../History/History.h"
 
 class SystemTests

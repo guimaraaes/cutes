@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef SYSTEM_TESTS_ENVIROMENT
-#include "ComponentBehavior.h"
+#include "Behavior.h"
 #include "../History/History.h"
 #include "../History/Interaction.h"
 #endif
@@ -11,7 +11,7 @@ class Component
 public:
     int pin;
 #ifdef SYSTEM_TESTS_ENVIROMENT
-    ComponentBehavior *behavior;
+    Behavior *behavior;
     History *history = History::getInstance();
 
 #endif

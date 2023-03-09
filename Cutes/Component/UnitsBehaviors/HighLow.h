@@ -1,7 +1,7 @@
 #pragma once
-#include "../ComponentBehavior.h"
+#include "../Behavior.h"
 
-class HighLow : public ComponentBehavior
+class HighLow : public Behavior
 {
 
     bool findElementInValue(int value)
@@ -29,7 +29,7 @@ class HighLow : public ComponentBehavior
     };
 
 public:
-    HighLow(int pin) : ComponentBehavior(pin){};
+    HighLow(int pin) : Behavior(pin){};
 
     bool raiseSensorHigh()
     {
