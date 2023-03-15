@@ -47,14 +47,4 @@ public:
         Interaction *interaction = history->list.shift();
         return this->isInteractionInViVfAndPin(interaction, Vi, Vf, this->pin);
     };
-
-    bool isSensorOutLimit()
-    {
-        return this->raiseSensorViVf(this->lowerValue, this->upperValue);
-    };
-
-    bool isActuatorOutLimit()
-    {
-        return this->isActuatorViVf(this->lowerValue, this->upperValue);
-    };
 };

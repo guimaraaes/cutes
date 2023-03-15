@@ -52,15 +52,4 @@ public:
         Interaction *interaction = history->list.shift();
         return this->isInteractionInValueAndInPin(interaction, LOW, this->pin);
     };
-
-    bool isSensorOutLimit()
-    {
-        // TODO: Refactor this
-        return !raiseSensorHigh() && !raiseSensorLow();
-    };
-
-    bool isActuatorOutLimit()
-    {
-        return !isActuatorHigh() && !isActuatorLow();
-    };
 };
