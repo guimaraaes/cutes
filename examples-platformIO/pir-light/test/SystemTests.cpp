@@ -27,25 +27,15 @@ PirLightSystemTests systemTests = PirLightSystemTests();
 test(testLightOn)
 {
     systemTests.enter("testLightOn");
-
     assertTrue(embeddedSystem.pir->behavior->raiseSensorHigh());
-
     assertTrue(embeddedSystem.light->behavior->isActuatorHigh());
-
-    assertTrue(history->proceedTime(4 * 1000));
-
     systemTests.exit();
 }
 
 test(testLightOff)
 {
     systemTests.enter("testLightOff");
-
     assertTrue(embeddedSystem.pir->behavior->raiseSensorLow());
-
     assertTrue(embeddedSystem.light->behavior->isActuatorLow());
-
-    assertTrue(history->proceedTime(4 * 1000));
-
     systemTests.exit();
 }

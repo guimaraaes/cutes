@@ -30,22 +30,15 @@ UltrasonicLightSystemTests systemTests = UltrasonicLightSystemTests();
 test(test_0to30)
 {
     systemTests.enter("test_0to30");
-
-    // Serial.println(embeddedSystem.ultrasonic->behavior->raiseSensorViVf(0, 30));
     assertTrue(embeddedSystem.ultrasonic->behavior->raiseSensorViVf(0, 30));
-    // Serial.println(embeddedSystem.light->behavior->isActuatorLow());
     assertTrue(embeddedSystem.light->behavior->isActuatorLow());
-
     systemTests.exit();
 }
 
 test(test_30toLarger)
 {
     systemTests.enter("test_30toLarger");
-
     assertTrue(embeddedSystem.ultrasonic->behavior->raiseSensorViVf(30, 400));
-
     assertTrue(embeddedSystem.light->behavior->isActuatorHigh());
-
     systemTests.exit();
 }

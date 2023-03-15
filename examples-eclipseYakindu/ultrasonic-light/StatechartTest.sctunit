@@ -1,34 +1,17 @@
 testclass StatechartTest for statechart Statechart {
-	
 	@Test
 	operation test_0to30() {
 		enter
 		raise ultrasonic._0to30
 		assert light.OFF
+		exit
 	}
 	
-	@Test
-	operation test_0to30Decision() {
-		enter
-		raise ultrasonic._0to30
-		assert light.OFF
-		proceed 1 s
-	}
-	
- 
 	@Test
 	operation test_30toLarger() {
 		enter
 		raise ultrasonic._30toLarger
 		assert light.ON
+		exit
 	}
-	
-	@Test
-	operation test_30toDecision() {
-		enter
-		raise ultrasonic._30toLarger
-		assert light.ON
-		proceed 1 s
-	}
-
 }

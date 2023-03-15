@@ -1,4 +1,3 @@
-
 class UltrasonicLight : public EmbeddedSystem
 {
 
