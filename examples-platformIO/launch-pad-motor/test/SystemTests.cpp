@@ -29,6 +29,7 @@ test(testState1Actuation)
     systemTests.enter("testState1Actuation");
     assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
     assertTrue(embeddedSystem.ledRed->behavior->isActuatorHigh());
+    history->proceedTime(5 * 1000);
     systemTests.exit();
 }
 
@@ -38,6 +39,7 @@ test(testState2Actuation)
     assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
     history->proceedTime(5 * 1000);
     assertTrue(embeddedSystem.ledGreen->behavior->isActuatorHigh());
+    history->proceedTime(2 * 1000);
     systemTests.exit();
 }
 
@@ -48,6 +50,8 @@ test(testStateCancelActuation)
     history->proceedTime(7 * 1000);
     assertTrue(embeddedSystem.buttonActuation->behavior->raiseSensorHigh());
     assertTrue(embeddedSystem.motor->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.ledGreen->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.ledRed->behavior->isActuatorLow());
     systemTests.exit();
 }
 
@@ -70,5 +74,7 @@ test(testActuationTime)
     assertTrue(embeddedSystem.motor->behavior->isActuatorHigh());
     history->proceedTime(200);
     assertTrue(embeddedSystem.motor->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.ledGreen->behavior->isActuatorLow());
+    assertTrue(embeddedSystem.ledRed->behavior->isActuatorLow());
     systemTests.exit();
 }

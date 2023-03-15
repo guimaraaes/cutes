@@ -5,8 +5,7 @@ testclass StatechartTest for statechart Statechart {
 		enter
 		raise pir.ON
  		assert light.ON
- 		proceed 1s
-
+ 		exit
 	}
 	
 	@Test
@@ -14,7 +13,6 @@ testclass StatechartTest for statechart Statechart {
 		enter
 		raise pir.OFF
  		assert light.OFF
- 		proceed 1s
+ 		exit
 	}
-
 }

@@ -41,8 +41,8 @@ Em `EmbeddedSystem/EmbeddedSystem.cpp` temos a classe `PirLight` com o funcionam
 - Instâncias dos componentes (sem configuração dos pinos);
 - Método construtor `PirLight` para receber a descrição e o nome do autor do sistema (ao final da classe é criada a instância `embeddedSystem` com essas informações);
 - Método de `configuration` (não aplicado nesse exemplo);
-- Método `setup` para criar os componentes com a configuração dos pinos com instâncias das classes de criação;
-- Método `loop` para implementar a lógica de controle;
+- Método `setupES` para criar os componentes com a configuração dos pinos com instâncias das classes de criação;
+- Método `loopES` para implementar a lógica de controle;
 - Método `runComponentTests` para testar os componentes.
 
 ```
@@ -56,12 +56,12 @@ class PirLight : public EmbeddedSystem
     PirLight(String description, String author) : EmbeddedSystem(description, author){};
     void configuration(){};
 
-    void setup()
+    void setupES()
     {
         ...
     };
     
-    void loop()
+    void loopES()
     {
         ...
     };
@@ -75,12 +75,12 @@ class PirLight : public EmbeddedSystem
 PirLight embeddedSystem = PirLight("sistema embarcado acender luz enquanto movimento for detectado", "Sara Guimarães");
 ```
 
-### setup
+### setupES
 
-- Método `setup` para criar os componentes com a configuração dos pinos com instâncias das classes de criação;
+- Método `setupES` para criar os componentes com a configuração dos pinos com instâncias das classes de criação;
 
 ```
-    void setup()
+    void setupES()
     {
         CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
         light = creatorActuatorDigital->createComponent(13);
@@ -90,12 +90,12 @@ PirLight embeddedSystem = PirLight("sistema embarcado acender luz enquanto movim
     };
 ```
 
-### loop
+### loopES
 
-- Método `loop` para implementar a lógica de controle;
+- Método `loopES` para implementar a lógica de controle;
 
 ```
-    void loop()
+    void loopES()
     {
         if (pir->read() == HIGH)
         {
@@ -161,7 +161,7 @@ class PirLightSystemTests : public SystemTests
         {
             Serial.println(name);
             delay(3000);
-            embeddedSystem.loop();
+            embeddedSystem.loopES();
         };
 
         void exit()
@@ -191,7 +191,7 @@ Cada caso de teste é resultado da tradução do caso gerado no Yakindu para a i
 		enter
 		raise pir.ON
  		assert light.ON
- 		proceed 1s
+        exit
 	}
 ```
 
@@ -201,20 +201,15 @@ Cada caso de teste é resultado da tradução do caso gerado no Yakindu para a i
 test(testLightOn)
 {
     systemTests.enter("testLightOn");
-
-    assertTrue(embeddedSystem.pir->behavior->isSensorHigh());
-
+    assertTrue(embeddedSystem.pir->behavior->raiseSensorHigh());
     assertTrue(embeddedSystem.light->behavior->isActuatorHigh());
-
-    assertTrue(history->proceedTime(4 * 1000));
-
     systemTests.exit();
 }
 
 ```
 ##### método `proceedTime`
 
-Assim como no Yakindu, esse método é utilizado para realizar um avanço no tempo, no CUTES, entretanto, ele também pode ser utilizado em uma assertiva para o valor `True` para validar se o sistema embarcado de fato permaneceu ativo durante esse período.
+Assim como no Yakindu, esse método é utilizado para realizar um avanço no tempo, no CUTES, entretanto, ele também pode ser utilizado em uma assertiva para o valor `True`, pois seu retorno é um boolean, para validar se o sistema embarcado de fato permaneceu ativo durante esse período.
 
 
 #### Caso 2: teste para luz em estado desligado
@@ -226,7 +221,7 @@ Assim como no Yakindu, esse método é utilizado para realizar um avanço no tem
 		enter
 		raise pir.OFF
  		assert light.OFF
- 		proceed 1s
+ 		exit
 	}
 ```
 
@@ -236,13 +231,8 @@ Assim como no Yakindu, esse método é utilizado para realizar um avanço no tem
 test(testLightOff)
 {
     systemTests.enter("testLightOff");
-
-    assertTrue(embeddedSystem.pir->behavior->isSensorLow());
-
+    assertTrue(embeddedSystem.pir->behavior->raiseSensorLow());
     assertTrue(embeddedSystem.light->behavior->isActuatorLow());
-
-    assertTrue(history->proceedTime(4 * 1000));
-
     systemTests.exit();
 }
 ```
@@ -282,7 +272,7 @@ void setup()
 {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  embeddedSystem.setup();
+  embeddedSystem.setupES();
 }
 ```
 
@@ -293,7 +283,7 @@ void loop()
 {
 // put your main code here, to run repeatedly:
 #ifdef CREATE_ENVIROMENT
-  embeddedSystem.loop();
+  embeddedSystem.loopES();
 #endif
 
 #ifdef COMPONENT_TESTS_ENVIROMENT
