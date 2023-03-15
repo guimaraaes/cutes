@@ -17,9 +17,9 @@
 
 - Caso 1: Iniciando no estado de decisão de ativação, ao decidir acionar o motor deve ser verificado o estado 1 de preparação para acionamento com o led vermelho ligado por 5 segundos;
 - Caso 2: Iniciando no estado de decisão de ativação, ao decidir acionar o motor deve ser verificado o estado 2 de preparação para acionamento com o led verde ligado por 2 segundos;
-- Caso 3: Iniciando no estado de decisão de ativação, ao decidir acionar o motor e em seguida decidir cancelar o acionamento, o componente não deve ser acionado;
+- Caso 3: Iniciando no estado de decisão de ativação, ao decidir acionar o motor e em seguida decidir cancelar o acionamento, o componente não deve ser acionado e as luzes são apagadas;
 - Caso 4: Iniciando no estado de decisão de ativação, ao decidir acionar o motor este deve ser acionado por 0,2 segundos. 
-- Caso 4: Iniciando no estado de decisão de ativação, ao decidir acionar o motor este deve ser acionado por 0,2 segundos e posteriomente todos os componentes são desligados. 
+- Caso 5: Iniciando no estado de decisão de ativação, ao decidir acionar o motor e não havendo cancelamento do acionamento, após o acionamento,todos os componentes são desligados. 
 
 ## Esquemático do circuito eletrônico
 
