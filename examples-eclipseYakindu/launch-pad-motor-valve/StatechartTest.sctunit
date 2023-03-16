@@ -1,6 +1,4 @@
 testclass StatechartTest for statechart Statechart {
-	
-	
 	@Test
 	operation testCancelDecisionActivateValve() {
 		enter
@@ -120,8 +118,4 @@ testclass StatechartTest for statechart Statechart {
 		assert motor.OFF
 		exit
 	}
-	
-	
-	
-	
 }

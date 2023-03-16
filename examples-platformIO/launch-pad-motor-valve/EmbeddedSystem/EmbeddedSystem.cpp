@@ -15,7 +15,7 @@ public:
     LaunchPadMotorValve(String description, String author) : EmbeddedSystem(description, author){};
     void configuration(){};
 
-    void setup()
+    void setupES()
     {
         CreatorSensorDigital *creatorSensorDigital = new CreatorSensorDigital();
         buttonMotor = creatorSensorDigital->createComponent(7);
@@ -26,7 +26,7 @@ public:
         motor = creatorActuatorDigital->createComponent(3);
         valve = creatorActuatorDigital->createComponent(11);
     }
-    void loop()
+    void loopES()
     {
         if (buttonValve->read() == HIGH)
         {
@@ -67,14 +67,14 @@ public:
         }
     }
 
-    void runUnitTests()
+    void runComponentTests()
     {
-        buttonMotor->unitTest();
-        buttonValve->unitTest();
-        buttonCancel->unitTest();
+        buttonMotor->componentTest();
+        buttonValve->componentTest();
+        buttonCancel->componentTest();
 
-        motor->unitTest();
-        valve->unitTest();
+        motor->componentTest();
+        valve->componentTest();
     }
 };
-LaunchPadMotorValve launchPadMotorValve = LaunchPadMotorValve("sistema embarcado para acionamento e inserção de combustível de foguete pet", "Sara Guimarães");
+LaunchPadMotorValve embeddedSystem = LaunchPadMotorValve("sistema embarcado para acionamento e inserção de combustível de foguete pet", "Sara Guimarães");
