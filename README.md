@@ -1,6 +1,6 @@
 # Guimarães
 
-- Criação e teste de componentes e de sistema para sistemas embarcados com arduino.
+- Apoiando a construção de testes automatizados guiados por documentação para sistemas embarcados com Arduino.
 
 ## Metodologia para Desenvolvimento de Sistemas Embarcados com Arduino e o Framework Guimarães
 
