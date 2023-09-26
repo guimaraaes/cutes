@@ -13,8 +13,7 @@ Nesta subseção, apresentamos a metodologia seguida para apoiar o desenvolvimen
 5. **Análise**
 
 Essas etapas são ilustradas na Figura abaixo:
-
-![Figura Guimarães-atividades](inserir_link_para_imagem_aqui)
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/metodologia-guimaraes.png" width="100%" height="100%">
 
 Apesar de serem utilizadas ferramentas específicas nas outras atividades da metodologia, como o *Graphor* para o diagrama de requisitos, o *Tinkercad* para documentar o circuito eletrônico e o *Yakindu Statechart Tool* para modelagem do sistema e definição dos testes, essas ferramentas podem ser substituídas por outras que também satisfaçam o propósito.
 
@@ -47,7 +46,6 @@ Na etapa de codificação, temos as seguintes atividades:
 Na etapa de análise, temos a execução dos testes. Os testes de componentes são os testes de unidade da engenharia de software e são elaborados para avaliar o comportamento de sensores e atuadores. Já os testes de sistemas são os testes de funcionalidade e avaliam as interações entre os componentes para atender a determinados requisitos funcionais.
 
 
-<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/metodologia-guimaraes.png" width="100%" height="100%">
 
 ## Outros tópicos
 
