@@ -1,4 +1,4 @@
-# Guimarães
+# Documentação do Framework Guimarães
 
 - Apoiando a construção de testes automatizados guiados por documentação para sistemas embarcados com Arduino.
 
