@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_iQcicNoUEeyi6IX4XyQFwg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;&#xA;interface ultrasonic:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;in event _0to30&#xA;&#x9;in event _30toLarger&#xA;&#x9;&#xA;interface light:&#xA;&#x9;out event ON&#xA;&#x9;out event OFF&#xA;" name="Statechart">
+  <sgraph:Statechart xmi:id="_iQcicNoUEeyi6IX4XyQFwg" specification="@EventDriven&#xA;interface ultrasonic:&#xA;&#x9;in event _0to30&#xA;&#x9;in event _30toLarger&#xA;&#x9;&#xA;interface light:&#xA;&#x9;out event ON&#xA;&#x9;out event OFF&#xA;" name="Statechart">
     <regions xmi:id="_iQlFU9oUEeyi6IX4XyQFwg" name="main_region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_iQlFVNoUEeyi6IX4XyQFwg">
         <outgoingTransitions xmi:id="_yKbLQN-YEeyNrLeL4nlqXw" specification="" target="_P4XswN-XEey6hNWCmjl7fA"/>
@@ -116,7 +116,7 @@
     <edges xmi:id="_iQp-E9oUEeyi6IX4XyQFwg" type="Transition" element="_iQoIotoUEeyi6IX4XyQFwg" source="_P4Zh8N-XEey6hNWCmjl7fA" target="_iQp939oUEeyi6IX4XyQFwg">
       <children xsi:type="notation:DecorationNode" xmi:id="_iQp-FNoUEeyi6IX4XyQFwg" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_iQp-FdoUEeyi6IX4XyQFwg"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_iQp-FtoUEeyi6IX4XyQFwg" x="88" y="12"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_iQp-FtoUEeyi6IX4XyQFwg" x="42" y="-14"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_iQp-F9oUEeyi6IX4XyQFwg" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_iQp-GNoUEeyi6IX4XyQFwg" fontName="Verdana"/>
@@ -127,7 +127,7 @@
     <edges xmi:id="_96wYAN-TEey6hNWCmjl7fA" type="Transition" element="_96tUsN-TEey6hNWCmjl7fA" source="_tW2PINoUEeyi6IX4XyQFwg" target="_P4Zh8N-XEey6hNWCmjl7fA">
       <children xsi:type="notation:DecorationNode" xmi:id="_96w_Ed-TEey6hNWCmjl7fA" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_96w_Et-TEey6hNWCmjl7fA"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_96xmIN-TEey6hNWCmjl7fA" x="-1" y="-29"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_96xmIN-TEey6hNWCmjl7fA" x="-31" y="9"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_96wYAd-TEey6hNWCmjl7fA" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_96w_EN-TEey6hNWCmjl7fA" fontName="Verdana"/>

@@ -4,6 +4,7 @@ testclass StatechartTest for statechart Statechart {
 		enter
 		raise ultrasonic._0to30
 		assert light.OFF
+		proceed 1s
 		exit
 	}
 	
@@ -12,6 +13,7 @@ testclass StatechartTest for statechart Statechart {
 		enter
 		raise ultrasonic._30toLarger
 		assert light.ON
+		proceed 1s
 		exit
 	}
 }
