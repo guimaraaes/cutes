@@ -4,7 +4,7 @@
 // #define COMPONENT_TESTS_ENVIROMENT
 #define SYSTEM_TESTS_ENVIROMENT
 
-#include "../../../Cutes/Cutes.h"
+#include "../lib/FrameworkGuimaraes/FrameworkGuimaraes.h"
 
 #include "../EmbeddedSystem/EmbeddedSystem.cpp"
 
