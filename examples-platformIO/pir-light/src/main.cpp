@@ -4,7 +4,7 @@
 #define SYSTEM_TESTS_ENVIROMENT
 #include <Arduino.h>
 
-#include "../../../Cutes/Cutes.h"
+#include "../lib/FrameworkGuimaraes/FrameworkGuimaraes.h"
 
 #include "../EmbeddedSystem/EmbeddedSystem.cpp"
 
