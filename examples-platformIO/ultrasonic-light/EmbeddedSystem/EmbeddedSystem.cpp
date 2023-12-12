@@ -5,12 +5,15 @@ public:
   ActuatorDigital *light;
   SensorUltrasonicCM *ultrasonic;
 
-  UltrasonicLight(String description, String author) : EmbeddedSystem(description, author){};
+  UltrasonicLight(String description, String author)
+      : EmbeddedSystem(description, author){};
+
   void configuration(){};
 
   void setupES()
   {
-    CreatorActuatorDigital *creatorActuatorDigital = new CreatorActuatorDigital();
+    CreatorActuatorDigital *creatorActuatorDigital =
+        new CreatorActuatorDigital();
     this->light = creatorActuatorDigital->createComponent(13);
 
     CreatorUltrasonic *creatorUltrasonic = new CreatorUltrasonic();
