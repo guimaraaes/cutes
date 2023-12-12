@@ -49,7 +49,7 @@ Na etapa de análise, temos a execução dos testes. Os testes de componentes s�
 
 ## Outros tópicos
 
-### [Arquitetura do Guimarães](https://github.com/guimaraaes/cutes/tree/main/Cutes)
+### [Arquitetura do Guimarães](https://github.com/guimaraaes/cutes/tree/main/FrameworkGuimaraes)
 
 ### [Exemplos de aplicação](https://github.com/guimaraaes/cutes/tree/main/examples-platformIO)
 
