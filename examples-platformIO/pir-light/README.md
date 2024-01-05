@@ -1,6 +1,5 @@
 # pir-light
 
-
 ## Elicitar requisitos
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="100%" height="100%">
@@ -13,7 +12,7 @@
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="30%" height="30%">
 
-### Casos de teste para cobertura de 100%
+### Casos de teste para atingir todos-os-caminhos-mínimos
 
 - Caso 1: Iniciando no estado de decisão, após ser detectado o movimento, verificar se a luz está em estado de ligado;
 - Caso 2: Iniciando no estado de decisão, após não ser detectado nenhum movimento, verificar se a luz está em estado de desligado. 
@@ -34,7 +33,7 @@ Ao criar o projeto com o PlatformIO, a estrutura do projeto deve ser atualizada 
 └── README.md               # Documentation
 ```
 
-## Códificação do SE com CUTES
+## Códificação do SE
 
 Em `EmbeddedSystem/EmbeddedSystem.cpp` temos a classe `PirLight` com o funcionamento do sistema através da definição de:
 
@@ -141,7 +140,7 @@ Begining component test to component in pin $PIN
 --- Component test result: you must assert. Wait to answer.
 ```
 
-## Códificação do SystemTests com CUTES 
+## Códificação do SystemTests
 Em `test/SystemTests.cpp` temos a classe `PirLightSystemTests` com o funcionamento do sistema através da definição de:
 
 - Componentes;
@@ -179,23 +178,23 @@ PirLightSystemTests systemTests = PirLightSystemTests();
 ```
 ### Casos de teste
 
-Cada caso de teste é resultado da tradução do caso gerado no Yakindu para a implementação em C++ com o CUTES.
+Cada caso de teste é resultado da tradução do caso gerado no Yakindu para a implementação em C++ com o Framework Guimarães.
 
 #### Caso 1: teste para luz em estado ligado
 
 - No Yakindu
 
 ```
-    @Test
-	operation testLightOn() {
-		enter
-		raise pir.ON
- 		assert light.ON
-        exit
-	}
+@Test
+operation testLightOn() {
+	enter
+	raise pir.ON
+	assert light.ON
+exit
+}
 ```
 
-- Com CUTES
+- Com o Framework Guimarães
 
 ```
 test(testLightOn)
@@ -207,25 +206,21 @@ test(testLightOn)
 }
 
 ```
-##### método `proceedTime`
-
-Assim como no Yakindu, esse método é utilizado para realizar um avanço no tempo, no CUTES, entretanto, ele também pode ser utilizado em uma assertiva para o valor `True`, pois seu retorno é um boolean, para validar se o sistema embarcado de fato permaneceu ativo durante esse período.
-
 
 #### Caso 2: teste para luz em estado desligado
 
 - No Yakindu
 ```
-	@Test
-	operation testLightOff() {
-		enter
-		raise pir.OFF
- 		assert light.OFF
- 		exit
-	}
+@Test
+operation testLightOff() {
+	enter
+	raise pir.OFF
+	assert light.OFF
+	exit
+}
 ```
 
-- Com CUTES
+- Com o Framework Guimarães
 
 ```
 test(testLightOff)
@@ -256,7 +251,7 @@ A seguir são incluídas as bibliotecas necessárias para execução do projeto:
 ```
 #include <Arduino.h>
 
-#include "../../../Cutes/Cutes.h"
+#include "../lib/FrameworkGuimaraes/FrameworkGuimaraes.h"
 
 #include "../EmbeddedSystem/EmbeddedSystem.cpp"
 
