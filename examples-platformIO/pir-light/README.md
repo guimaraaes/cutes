@@ -190,7 +190,7 @@ operation testLightOn() {
 	enter
 	raise pir.ON
 	assert light.ON
-exit
+	exit
 }
 ```
 
