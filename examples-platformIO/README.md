@@ -1,12 +1,12 @@
 # Exemplos
 
-## pir-light
+## pir-light (com statecharts)
 ### Funcionalidades
 
 - Luz acesa ao detectar o movimento no sensor PIR.
 - Luz apagada quando o movimento no sensor PIR não é detectado.
 
-## ultrasonic-light
+## ultrasonic-light (com Behavior Driven Development (BDD)) 
 ### Funcionalidades
 
 - Luz apagada para distância no intervalo de [0, 30[ de um obstáculo até o ultrassônico.
