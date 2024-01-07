@@ -220,7 +220,7 @@ test(test_30toLarger)
 ## Arquivo main
 O projeto pode atuar em três ambientes distintos:
 - Criação (`CREATE_ENVIROMENT`): Apenas o arquivo `EmbeddedSystem/EmbeddedSystem.cpp` com a lógica de funcionamento do arduino é executado;
-- Testes de componente (`COMPONENT_TESTS_ENVIROMENT`): Apenas os testes de componentes do método `runComponentTests` do arquivo `` são executados;
+- Testes de componente (`COMPONENT_TESTS_ENVIROMENT`): Apenas os testes de componentes do método `runComponentTests` do arquivo `EmbeddedSystem/EmbeddedSystem.cpp` são executados;
 - Testes do sistema (`SYSTEM_TESTS_ENVIROMENT`): Apenas os testes de sistema são executados do arquivo `test/SystemTests.cpp`.
 
 No aquivo `src/main.cpp` é definido o ambiente de execução. Apenas um `define` deve estar ativo por vez:
