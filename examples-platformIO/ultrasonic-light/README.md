@@ -5,6 +5,14 @@
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/ultrasonic-light/assets/requisitos.png" width="100%" height="100%">
 
+## Plano de Teste 
+
+Na etapa de plano de teste, temos:
+
+- Definir o caso de teste usando BDD para especificar o **Contexto** do caso de teste e as condições de **Dado**, **Quando** e **Então**.
+- O critério de parada fica por decisão do desenvolvedor.
+
+
 ## Esquemático do circuito eletrônico
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/ultrasonic-light/assets/esquematico-circuito.png" width="30%" height="30%">
