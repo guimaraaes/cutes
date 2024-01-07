@@ -20,16 +20,11 @@ Apesar de serem utilizadas ferramentas específicas nas outras atividades da met
 
 ### Modelagem Comportamental
 
-A primeira atividade do projeto consiste em elicitar e documentar os requisitos funcionais e não funcionais, assim como os componentes, em um diagrama de requisitos. Nesta atividade, foi utilizada a ferramenta *Graphor*. Seguindo, temos a criação do *statechart* para descrever o funcionamento do sistema. Nesta atividade, foi utilizada a ferramenta *Yakindu Statechart Tool*.
+A primeira atividade do projeto consiste em elicitar e documentar os requisitos funcionais e não funcionais, assim como os componentes, em um diagrama de requisitos. Nesta atividade, foi utilizada a ferramenta *Graphor*. 
 
 ### Plano de Teste
 
-Na etapa de plano de teste, temos as seguintes atividades:
-
-- Traduzir o *statechart* em uma árvore de caminhos para auxiliar a definição dos casos de teste.
-- Realizar a análise do caminho (*path*) da árvore para definir o caso de teste, identificando o caminho da árvore, o requisito funcional e os componentes utilizados no teste.
-- Descrever cada caso de teste na ferramenta *Yakindu*.
-- Analisar se todos os caminhos mínimos da árvore foram cobertos para decidir entre continuar criando casos de teste ou seguir para a próxima atividade.
+Essa etapa envolve a definição dos casos de teste e a análise dos critérios para determinar quando parar a criação desses casos. Os exemplos de caso presentes na documentação deste repositório seguem um plano de teste com statechart ou utilizam BDD (Behavior Driven Development).
 
 ### Prototipagem Eletrônica
 
