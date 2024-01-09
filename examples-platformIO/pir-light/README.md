@@ -4,15 +4,27 @@
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/requisitos.png" width="100%" height="100%">
 
-## Statechart ([acesse a documentação aqui com os casos de teste](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/pir-light))
+## Plano de Teste
+
+<img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/assets/metodologia-guimaraes-plano-teste-statechart.png" width="50%" height="50%">
+
+Na etapa de plano de teste, temos as seguintes atividades:
+
+- Realizar a modelagem comportamental com a criação do *statechart* para o sistema. Nesta atividade, foi utilizada a ferramenta *Yakindu Statechart Tool*.
+- Traduzir o *statechart* em uma árvore de caminhos para auxiliar a definição dos casos de teste.
+- Realizar a análise do caminho (*path*) da árvore para definir o caso de teste, identificando o caminho da árvore, o requisito funcional e os componentes utilizados no teste.
+- Descrever cada caso de teste na ferramenta *Yakindu*.
+- Analisar se todos os caminhos mínimos da árvore foram cobertos para decidir entre continuar criando casos de teste ou seguir para a próxima atividade.
+  
+### Statechart ([acesse a documentação aqui com os casos de teste](https://github.com/guimaraaes/cutes/tree/main/examples-eclipseYakindu/pir-light))
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/statechart.png" width="50%" height="50%">
 
-## Árvore de caminhos do Statechart 
+### Árvore de caminhos do Statechart 
 
 <img  src="https://github.com/guimaraaes/metodologia-teste-embarcados-arduino-nodemcu/blob/main/examples-platformIO/pir-light/assets/path-statechart.png" width="30%" height="30%">
 
-### Casos de teste para atingir todos-os-caminhos-mínimos
+#### Casos de teste para atingir todos-os-caminhos-mínimos
 
 - Caso 1: Iniciando no estado de decisão, após ser detectado o movimento, verificar se a luz está em estado de ligado;
 - Caso 2: Iniciando no estado de decisão, após não ser detectado nenhum movimento, verificar se a luz está em estado de desligado. 
