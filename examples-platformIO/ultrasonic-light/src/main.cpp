@@ -1,11 +1,10 @@
 #include <Arduino.h>
-#include <Ultrasonic.h>
+#include "../FrameworkGuimaraes/FrameworkGuimaraes.h"
+#include "../lib/Ultrasonic/src/Ultrasonic.h"
 
-// #define CREATE_ENVIROMENT
+#define CREATE_ENVIROMENT
 // #define COMPONENT_TESTS_ENVIROMENT
-#define SYSTEM_TESTS_ENVIROMENT
-
-#include "../lib/FrameworkGuimaraes/FrameworkGuimaraes.h"
+// #define SYSTEM_TESTS_ENVIROMENT
 
 #include "../EmbeddedSystem/EmbeddedSystem.cpp"
 #include "../lib/Ultrasonic/src/Ultrasonic.h"
