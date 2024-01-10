@@ -1,6 +1,6 @@
 # Documentação do Framework Guimarães
 
-- Apoiando a construção de testes automatizados guiados por documentação para sistemas embarcados com Arduino.
+- Apoiando a construção de testes semi-automatizados guiados por documentação para sistemas embarcados com Arduino.
 - Acesse a lib do Framework Guimarães [aqui](https://github.com/guimaraaes/FrameworkGuimaraes/tree/main)
 
 ## Metodologia para Desenvolvimento de Sistemas Embarcados com Arduino e o Framework Guimarães
